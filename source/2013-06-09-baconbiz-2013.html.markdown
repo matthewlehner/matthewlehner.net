@@ -1,0 +1,20 @@
+---
+title: BaconBiz 2013 Notes and Resources
+date: 2013-06-09 17:00 UTC
+---
+
+I've created this page as a resource for all the amazing resources and inspiration that came from BaconBizConf 2013. Thanks to Amy, Alex and all the other organizers for making such a successful conference!
+<h2>Notes on Talks</h2>
+<ol>
+	<li>Nathan Barry: <a title="Nathan Barry – Four Stories" href="http://matthewlehner.net/nathan-barry-four-stories/">Four Stories</a></li>
+	<li>Marc-André Cournoyer: <a title="Marc-André Cournoyer – The #1 Job of Your Sales Page" href="http://matthewlehner.net/marc-andre-cournoyer-the-1-job-of-your-sales-page/">The #1 Job of Your Sales Page</a></li>
+	<li>Brennan Dunn: <a title="Brennan Dunn – Making Lots of Cash With Newsletters" href="http://matthewlehner.net/brennan-dunn-making-lots-of-cash-with-newsletters/">Making Lots of Cash With Newsletters</a></li>
+	<li>Natalie and Chris Nagele: <a title="Natalie and Chris Nagele – How to Compete Against an 800lb Gorilla" href="http://matthewlehner.net/natalie-and-chris-nagele-how-to-compete-against-an-800lb-gorilla/">How to Compete Against an 800lb Gorilla</a></li>
+	<li>Patrick McKenzie: <a title="Patrick McKenzie – Conversion Optimization in Practice" href="http://matthewlehner.net/patrick-mckenzie-conversion-optimization-in-practice/">Conversion Optimization in Practice</a></li>
+	<li>Anthony Eden: <a title="Anthony Eden – Building a Business on the Side While Being Employed" href="http://matthewlehner.net/anthony-eden-building-a-business-on-the-side-while-being-employed/">Building a Business on the Side While Being Employed</a></li>
+</ol>
+<a title="Memorable Quotes From BaconBizConf 2013" href="http://matthewlehner.net/memorable-quotes-from-baconbizconf-2013/">Memorable Quotes</a>
+<h2>Blog Posts From Attendees and Speakers Relating to BaconBizConf 2013</h2>
+<ul>
+	<li>Sean Fioritto - <a href="http://www.planningforaliens.com/blog/2013/06/02/evolution-of-landing-page/">Evolution of a Landing Page</a></li>
+</ul>

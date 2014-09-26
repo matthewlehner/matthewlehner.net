@@ -1,0 +1,40 @@
+---
+title: Brennan Dunn - Making Lots of Cash With Newsletters
+date: 2013-06-10 16:50 UTC
+---
+
+The <a title="BaconBiz 2013 Notes and Resources" href="http://matthewlehner.net/baconbiz-2013/">BaconBiz Notes and Resources Page</a> with links to all my notes for the talks can be found <a title="BaconBiz 2013 Notes and Resources" href="http://matthewlehner.net/baconbiz-2013/">here</a>.
+
+Speaker: <a href="http://http://brennandunn.com/" target="_blank">Brennan Dunn</a> (<a href="http://twitter.com/brennandunn" target="_blank">@brennandunn</a>)
+
+A newsletter is not:
+
+* a list of names and email addresses
+* your personal piggy bank
+* something that should ever go cold
+
+A newsletter is teaching and talking, with scale
+
+<em>“My weekly newsletter is the glue that keeps my business together” </em>- Brennan Dunn
+
+<strong>Fact:</strong> Social media is less effective than email for selling (trust and urgency)
+<h2>4 steps to sell with email</h2>
+<h3>Step 1: Start with an action item as a concept</h3>
+
+* ask for personal replies
+* mine feedback and recycle this into future content
+
+<h3>Step 2: Plan the sale</h3>
+
+* use an editorial calendar to build momentum
+* give away your best content in the buildup
+
+<h3>Step 3: Deliver the content</h3>
+
+* ask: If I stripped away all salesy copy, would I still want to read this?
+* unsubscribes are the equivalent of hitting the back button. (don’t worry about this or take it personally)
+
+<h3>Step 4: Ask for the sale</h3>
+
+* golden ratio for selling: 3 content to 1 sales email
+

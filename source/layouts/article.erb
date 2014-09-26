@@ -1,0 +1,12 @@
+<% wrap_layout :layout do %>
+  <header class="post-header">
+    <h1><%= current_page.data.title %><h1>
+    <% if current_page.data.image %>
+      <%= image_tag current_page.data.image %>
+    <% end %>
+  </header>
+  <div class="entry-content">
+    <%= yield %>
+  </div>
+  <%= render_partial 'partials/article_footer_cta' %>
+<% end %>

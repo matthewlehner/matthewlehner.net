@@ -1,0 +1,48 @@
+---
+title: Patrick McKenzie - Conversion Optimization in Practice
+date: 2013-06-10 17:37 UTC
+---
+The <a title="BaconBiz 2013 Notes and Resources" href="http://matthewlehner.net/baconbiz-2013/">BaconBiz Notes and Resources Page</a> with links to all my notes for the talks can be found <a title="BaconBiz 2013 Notes and Resources" href="http://matthewlehner.net/baconbiz-2013/">here</a>.
+
+Speaker: <a href="http://www.kalzumeus.com/" target="_blank">Patrick McKenzie</a> (<a href="http://twitter.com/patio11" target="_blank">@patio11</a>)
+<h2><span style="line-height: 1.714285714; font-size: 1rem;">3 Stages of Bootstrapping</span></h2>
+If you have no product A/B testing is useless instead, talk to customers and build one copy of your site at a time until you get to 3,000 visitors per month.
+
+Fundamental SaaS equation: sum of [traffic * conversion-rate * (ARPU/churn)]
+<em>ARPU = Average revenue per user</em>
+
+Steps through signup funnel (each of these can be viewed as a mini funnel and optimized)
+
+ * Pre-signup
+ * sign up trial
+ * get usage (user enters data - this can be a ‘welcome guide’)
+ * get engagement (user invites team and they use app)
+
+<h3>Pre-Signup Funnel</h3>
+
+* Identify high value targets
+* Adding statistical numbers improve trust and not rounded numbers are better (46% is better than 40% or 50%)
+* Credibly promise that you will increase their revenue and decrease their costs
+* Buttons should look like buttons - they should be big and easy to click. (use the watermarking trick - can you identify the button easily?)
+* Button Copywriting basic structure: Verb + benefit + some mention of immediacy (ie. ‘Get started now’, ‘Start tracking your time now’, ‘Try Freckle for free’)
+
+<h3>Sign up for a trial</h3>
+
+* avoid ‘Sign Up’ as button text. It fails to convey value - ‘start with this plan’ is a good alternative
+* only ask for password once.
+* Plans and pricing do not make sales.
+* Features do not sell software
+* Benefits sell software.
+
+<h3>Onboarding Process</h3>
+
+* Establish teacher/student roles during the onboarding process and use this as a place to teach about the benefits to their business. This mindset will make the user trust the product more.
+* Throughout the process, continually be conveying value.
+
+<h2>Quick tips and recommendations!</h2>
+
+* Increased prices = less crazy customers
+* Engagement is the ultimate driver of lower churn rates
+  * Blog post by Patrick
+  * Blog post by Peldi of Balsamiq
+  * Talk by Gail Goodman of Constant Contact

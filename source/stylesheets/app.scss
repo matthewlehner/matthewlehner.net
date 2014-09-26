@@ -1,0 +1,144 @@
+$em-base: 22;
+
+@import 'normalize/normalize';
+@import 'bourbon/bourbon';
+@import 'neat/neat';
+@import 'base/base';
+
+$link-color: #1076B9;
+$link-color-active: $medium-gray;
+
+@import 'typeplate/vars-typeplate';
+@import 'typeplate/typeplate';
+
+@import 'extends';
+@import 'base';
+@import 'header';
+@import 'post';
+@import 'pagination';
+
+.post-list, .entry-list {
+  @extend %unstyled-list;
+}
+
+.entry-list {
+  li {
+    margin-bottom: 3em;
+  }
+}
+
+.newsletter-signup {
+  @include media($large-screen-up) {
+    border: 1px solid $secondary-accent-color;
+    width: flex-grid(10, 12);
+
+    .newsletter-form {
+      width: flex-grid(8, 10);
+      margin: 1.61em auto;
+    }
+  }
+
+  margin: 1.61em auto 3.22em;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+body { }
+
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+
+.banner { }
+
+
+/* ==========================================================================
+   Content
+   ========================================================================== */
+
+.content {
+  @include row;
+
+  .sidebar {
+    display: none;
+  }
+
+  blockquote {
+    p {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  p img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+}
+
+
+/* ==========================================================================
+   Primary Content
+   ========================================================================== */
+
+.main { }
+
+/* Gallery Shortcode */
+.gallery-row { padding: 15px 0; }
+
+
+
+/* ==========================================================================
+   Sidebar
+   ========================================================================== */
+
+.sidebar { }
+
+
+
+/* ==========================================================================
+   Posts
+   ========================================================================== */
+
+.hentry header { }
+.hentry time { }
+.hentry .byline { }
+.hentry .entry-content { }
+.hentry footer { }
+
+
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.content-info {
+  margin-top: 5em;
+
+  p {
+    font-size: 0.8em;
+    color: #AAA;
+  }
+}
+
+/* ==========================================================================
+   WordPress Generated Classes
+   See: http://codex.wordpress.org/CSS#WordPress_Generated_Classes
+   ========================================================================== */
+
+.aligncenter {
+  display: block;
+  margin: 0 auto;
+
+  figcaption {
+    text-align: center;
+  }
+}
+.alignleft { float: left; }
+.alignright { float: right; }
+figure.alignnone { margin-left: 0; margin-right: 0; }

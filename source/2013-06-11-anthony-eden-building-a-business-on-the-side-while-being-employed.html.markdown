@@ -1,0 +1,18 @@
+---
+title: Anthony Eden - Building a Business on the Side While Being Employed
+date: 2013-06-11 11:36 UTC
+---
+
+The <a title="BaconBiz 2013 Notes and Resources" href="http://matthewlehner.net/baconbiz-2013/">BaconBiz Notes and Resources Page</a> with links to all my notes for the talks can be found <a title="BaconBiz 2013 Notes and Resources" href="http://matthewlehner.net/baconbiz-2013/">here</a>.
+
+Speaker: <a href="http://anthonyeden.com/">Anthony Eden</a> (<a href="https://twitter.com/aeden">@aeden</a>)
+
+<h2>Employment</h2>
+  * <span style="text-decoration: underline;">honesty</span> - with your employer, business partner, life partner about what you are doing (if bootstrapping a business while working full time)
+  * Define a specific point where you will go full time on your own product (quit working for others) "10,000 customers or $30k/month recurring revenue"
+
+<h2>Product</h2>
+ * Focus on solving a problem in the simplest way for your customers
+ * Solution + Payment System = product
+ * Don't write software for admin stuff
+ * Do not complicate the product.

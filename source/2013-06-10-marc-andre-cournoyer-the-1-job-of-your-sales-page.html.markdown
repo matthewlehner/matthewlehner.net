@@ -1,0 +1,39 @@
+---
+title: "Marc-André Cournoyer - The #1 Job of Your Sales Page"
+date: 2013-06-10 09:38 UTC
+---
+The <a title="BaconBiz 2013 Notes and Resources" href="http://matthewlehner.net/baconbiz-2013/">BaconBiz Notes and Resources Page</a> with links to all my notes for the talks can be found <a title="BaconBiz 2013 Notes and Resources" href="http://matthewlehner.net/baconbiz-2013/">here</a>.
+
+<h2>Kill objections</h2>
+
+* complaint emails tell you why the sender won’t buy your product
+* on a sales page the P.S. text gets read more than the copy
+* have a followup survey
+
+<h2>Kill with psychology</h2>
+Book recommendation - <a href="http://www.amazon.com/gp/product/006124189X/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=006124189X&amp;linkCode=as2&amp;tag=mattlehn-20" target="_blank">Psychology of persuasion</a>, Robert B. Cialdini
+
+<em>“Every sale has five basic obstacles -</em>
+<em>no need</em>
+<em> no money</em>
+<em> no hurry</em>
+<em> no desire</em>
+<em> no trust”</em>
+- Zig Ziglar
+
+<h3>Objection - No money</h3>
+
+* Apply the principle of contrast - start with a higher price.
+* Anchor to the other price.
+* Only show features related to price in all other cases highlight benefits.
+
+<h3>Objection - No hurry</h3>
+
+* Introduce urgency by limiting spots and selling out
+* eBook - limited time discounts
+
+<h3>Objection - No trust</h3>
+
+* Gain trust with testimonials - these can be for other work (just make sure you state that)
+* Add money-back guarantee
+* Send sample of product

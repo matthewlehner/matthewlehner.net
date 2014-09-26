@@ -1,0 +1,9 @@
+.post-nav {
+  @include row;
+
+  text-align: center;
+
+  .pager {
+    @extend %inline-list;
+  }
+}
