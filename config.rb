@@ -73,11 +73,10 @@ end
 # Build-specific configuration
 configure :build do
   set :domain_name, "http://matthewlehner.net"
-  # For example, change the Compass output style for deployment
   activate :minify_css
-
-  # Minify Javascript on build
   activate :minify_javascript
+  activate :minify_html
+  activate :imageoptim
 
   # Enable cache buster
   activate :asset_hash
