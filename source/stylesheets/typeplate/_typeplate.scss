@@ -681,17 +681,20 @@ xmp {
 // -------------------------------------//
 
 pre code {
-	@extend %normal-wrap;
-	@include white-space(pre-wrap);
+  @extend %normal-wrap;
+  @include white-space(pre-wrap);
 }
 
 pre {
-	@include white-space(pre);
+  @include white-space(pre);
+  line-height: 1;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 code {
-	@include white-space(pre);
-	font-family: monospace;
+  @include white-space(pre);
+  font-family: monospace;
 }
 
 

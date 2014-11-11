@@ -4,7 +4,7 @@ meta_description: "use the deviceorientation event in mobile browsers to reprodu
 ---
 The unveiling of iOS 7 has brought a lot of focus onto whether or not the design direction that Apple has chosen to take has been the right path. In this article we're focusing on reproducing the parallax background effect used to 'create a whole new experience of depth' (as Jony Ive puts it). The effect is demonstrated in the <a href="http://www.apple.com/ios/ios7/#video" target="_blank">iOS 7 video</a> at the 2:45 mark. When you tilt your iOS device, the background moves slightly while the foreground elements stay fixed. This creates an effect which separates the two plains and gives a slight illusion of three dimensions.
 
-<a href="http://matthewlehner.net/wp-content/uploads/2013/06/ku-xlarge.gif"><img class="aligncenter  wp-image-29" alt="iOS 7 Background Parallax" src="http://matthewlehner.net/wp-content/uploads/2013/06/ku-xlarge.gif" width="640" height="360" /></a>
+<%= image_tag "ku-xlarge.gif" %>
 
 To reproduce this in a web browser, we're required to tap into the device's gyroscopes and accelerometers through the ```deviceorientation``` event. Luckily, modern browsers have enabled this API. On mobile platforms, this will be available in the following versions browsers: Safari 4.2 and  Android Browser 3 (or greater.) On the desktop, only Chrome and Firefox support it. For simplicity, this demo only supports webkit browsers (Safari, Chrome, Android) as the implementation is currently different in FireFox.
 
@@ -12,8 +12,7 @@ To reproduce this in a web browser, we're required to tap into the device's gyro
 
 To get information about how the device is positioned in space, we need to watch the &#96;deviceorientation&#96; event. This event will return values which will tell you how far the device is leaning and which way it is pointed, if the device has a compass. The returned values are: beta, the side-to-side value, gamma, the front-to-back value, and alpha, the compass direction. A basic example of listening to the &#96;deviceorientation&#96; data is as follows:
 
-```
-#!javascript
+```javascript
 window.addEventListener('deviceorientation', function(eventData) {
   // The compass direction - will return a value between 0 and 360
   eventData.alpha
@@ -30,8 +29,7 @@ Using this data, we will move the background around to create the same effect as
 
 <h3>HTML</h3>
 
-```
-#!xml
+```html
 <div id='background'>
   <div id='foreground'>
     Content for the foreground
@@ -43,8 +41,7 @@ Using this data, we will move the background around to create the same effect as
 
 We're using a non-repeating background asset from iOS7. The important thing here is to make the actual background image larger than its container, and then we manually center it with the 'background-size' and 'background-position' attributes. With a repeating background, this step can be skipped.
 
-```
-#!css
+```css
 #background {
   margin: 0 auto;
   padding-top: 100px;
@@ -65,7 +62,7 @@ We're using a non-repeating background asset from iOS7. The important thing her
 
 <h3>Finally, the JavaScript</h3>
 
-```
+```javascript
 var background = document.getElementByID('background');
 
 window.addEventListener('deviceorientation', function(eventData) {

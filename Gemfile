@@ -5,8 +5,10 @@ source 'http://rubygems.org'
 gem "middleman", "~>3.3.6"
 gem "middleman-blog"
 gem "middleman-imageoptim", "~>0.1.4"
-gem "middleman-disqus"
 gem "middleman-minify-html"
+gem "middleman-syntax"
+
+gem "middleman-disqus"
 gem "middleman-deploy"
 
 gem "bourbon"

@@ -36,6 +36,7 @@ activate :blog do |blog|
   blog.permalink = "/{title}.html"
   blog.layout = "article"
 end
+activate :directory_indexes
 
 # Automatic image dimensions on image_tag helper
 # activate :automatic_image_sizes
@@ -43,7 +44,8 @@ end
 set :markdown_engine, :redcarpet
 set :markdown, fenced_code_blocks: true, smartypants: true
 
-activate :directory_indexes
+activate :syntax
+
 
 # Methods defined in the helpers block are available in templates
 # helpers do
