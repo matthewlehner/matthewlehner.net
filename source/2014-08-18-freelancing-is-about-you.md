@@ -1,6 +1,7 @@
 ---
 title: Your Freelancing Business Is All About You
 date: 2014/08/18
+image: freelancing-is-about-your-opportunities.jpg
 meta_description: You have more opportunity available to you on your own than any employer will ever offer you. The best part is, you don’t need permission to access it.
 ---
 As a freelancer, there’s a constant pressure to increase your rates, find better clients, and generally *do better*. It’s a blessing, pushing us forward, and a curse, causing attacks of impostor syndrome and doubt when we compare our activities to those who are few steps ahead.

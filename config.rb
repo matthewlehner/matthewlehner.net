@@ -40,13 +40,9 @@ end
 # Automatic image dimensions on image_tag helper
 # activate :automatic_image_sizes
 
-# Reload the browser automatically whenever files change
-configure :development do
-  activate :livereload
-end
-
 set :markdown_engine, :redcarpet
-set :markdown, :fenced_code_blocks => true, :smartypants => true
+set :markdown, fenced_code_blocks: true, smartypants: true
+
 activate :directory_indexes
 
 # Methods defined in the helpers block are available in templates
@@ -62,8 +58,21 @@ set :js_dir, 'javascripts'
 
 set :images_dir, 'images'
 
+
+activate :disqus do |d|
+  # d.shortname = "matthewlehnerblog"
+  d.shortname = "mlblogdev"
+end
+
+# Reload the browser automatically whenever files change
+configure :development do
+  set :domain_name, "http://localhost:4567"
+  activate :livereload
+end
+
 # Build-specific configuration
 configure :build do
+  set :domain_name, "http://matthewlehner.net"
   # For example, change the Compass output style for deployment
   activate :minify_css
 

@@ -1,0 +1,202 @@
+---
+layout: false
+directory_index: false
+---
+
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="//localhost:4567/main-sitemap.xsl"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <% sitemap.resources.select { |page| page.destination_path =~ /\.html/ && !(page.destination_path =~ /thank-you/) }.each do |page| %>
+    <url>
+      <loc><%= sitemap.app.config.domain_name + page.url %></loc>
+      <lastmod><%= Time.new.iso8601 %></lastmod>
+      <changefreq><%= page.data.sitemap_changefreq || "Weekly" %></changefreq>
+      <priority><%= page.data.sitemap_priority || "0.6" %></priority>
+      <% if page.data.image %>
+        <image:image>
+          <image:loc><%= sitemap.app.config.domain_name + image_path(current_page.data.image) %></image:loc>
+          <image:caption><![CDATA[<%= page.data.title %>]]></image:caption>
+        </image:image>
+      <% end %>
+    </url>
+  <% end %>
+
+	<!-- <url> -->
+	<!-- 	<loc>http://matthewlehner.net/fieldguide&#45;for&#45;first&#45;time&#45;freelancers/</loc> -->
+	<!-- 	<lastmod>2013&#45;06&#45;18T20:57:39&#45;06:00</lastmod> -->
+	<!-- 	<changefreq>weekly</changefreq> -->
+	<!-- 	<priority>0.6</priority> -->
+	<!-- </url> -->
+	<!-- <url> -->
+	<!-- 	<loc>http://matthewlehner.net/how&#45;i&#45;started&#45;a&#45;6&#45;figure&#45;single&#45;person&#45;consultancy&#45;while&#45;learning&#45;to&#45;code/</loc> -->
+	<!-- 	<lastmod>2013&#45;06&#45;13T05:14:06&#45;06:00</lastmod> -->
+	<!-- 	<changefreq>weekly</changefreq> -->
+	<!-- 	<priority>0.6</priority> -->
+	<!-- </url> -->
+	<!-- <url> -->
+	<!-- 	<loc>http://matthewlehner.net/baconbiz&#45;2013/</loc> -->
+	<!-- 	<lastmod>2013&#45;06&#45;13T05:16:21&#45;06:00</lastmod> -->
+	<!-- 	<changefreq>weekly</changefreq> -->
+	<!-- 	<priority>0.6</priority> -->
+	<!-- </url> -->
+	<!-- <url> -->
+	<!-- 	<loc>http://matthewlehner.net/nathan&#45;barry&#45;four&#45;stories/</loc> -->
+	<!-- 	<lastmod>2013&#45;06&#45;13T05:16:15&#45;06:00</lastmod> -->
+	<!-- 	<changefreq>weekly</changefreq> -->
+	<!-- 	<priority>0.6</priority> -->
+	<!-- </url> -->
+	<!-- <url> -->
+	<!-- 	<loc>http://matthewlehner.net/marc&#45;andre&#45;cournoyer&#45;the&#45;1&#45;job&#45;of&#45;your&#45;sales&#45;page/</loc> -->
+	<!-- 	<lastmod>2013&#45;06&#45;13T05:16:10&#45;06:00</lastmod> -->
+	<!-- 	<changefreq>weekly</changefreq> -->
+	<!-- 	<priority>0.6</priority> -->
+	<!-- </url> -->
+	<!-- <url> -->
+	<!-- 	<loc>http://matthewlehner.net/brennan&#45;dunn&#45;making&#45;lots&#45;of&#45;cash&#45;with&#45;newsletters/</loc> -->
+	<!-- 	<lastmod>2013&#45;06&#45;13T05:16:04&#45;06:00</lastmod> -->
+	<!-- 	<changefreq>weekly</changefreq> -->
+	<!-- 	<priority>0.6</priority> -->
+	<!-- </url> -->
+	<!-- <url> -->
+	<!-- 	<loc>http://matthewlehner.net/patrick&#45;mckenzie&#45;conversion&#45;optimization&#45;in&#45;practice/</loc> -->
+	<!-- 	<lastmod>2013&#45;06&#45;13T05:15:58&#45;06:00</lastmod> -->
+	<!-- 	<changefreq>weekly</changefreq> -->
+	<!-- 	<priority>0.6</priority> -->
+	<!-- </url> -->
+	<!-- <url> -->
+	<!-- 	<loc>http://matthewlehner.net/memorable&#45;quotes&#45;from&#45;baconbizconf&#45;2013/</loc> -->
+	<!-- 	<lastmod>2013&#45;06&#45;13T05:15:53&#45;06:00</lastmod> -->
+	<!-- 	<changefreq>weekly</changefreq> -->
+	<!-- 	<priority>0.6</priority> -->
+	<!-- </url> -->
+	<!-- <url> -->
+	<!-- 	<loc>http://matthewlehner.net/natalie&#45;and&#45;chris&#45;nagele&#45;how&#45;to&#45;compete&#45;against&#45;an&#45;800lb&#45;gorilla/</loc> -->
+	<!-- 	<lastmod>2013&#45;06&#45;13T05:15:47&#45;06:00</lastmod> -->
+	<!-- 	<changefreq>weekly</changefreq> -->
+	<!-- 	<priority>0.6</priority> -->
+	<!-- </url> -->
+	<!-- <url> -->
+	<!-- 	<loc>http://matthewlehner.net/anthony&#45;eden&#45;building&#45;a&#45;business&#45;on&#45;the&#45;side&#45;while&#45;being&#45;employed/</loc> -->
+	<!-- 	<lastmod>2013&#45;06&#45;13T05:15:41&#45;06:00</lastmod> -->
+	<!-- 	<changefreq>weekly</changefreq> -->
+	<!-- 	<priority>0.6</priority> -->
+	<!-- </url> -->
+	<!-- <url> -->
+	<!-- 	<loc>http://matthewlehner.net/ios&#45;7&#45;style&#45;parallax&#45;background&#45;based&#45;on&#45;device&#45;orientation/</loc> -->
+	<!-- 	<lastmod>2013&#45;07&#45;28T19:26:09&#45;06:00</lastmod> -->
+	<!-- 	<changefreq>weekly</changefreq> -->
+	<!-- 	<priority>0.6</priority> -->
+	<!-- 	<image:image> -->
+	<!-- 		<image:loc>http://matthewlehner.net/wp&#45;content/uploads/2013/06/ku&#45;xlarge.gif</image:loc> -->
+	<!-- 		<image:caption><![CDATA[iOS 7 Background Parallax]]></image:caption> -->
+	<!-- 	</image:image> -->
+	<!-- </url> -->
+	<!-- <url> -->
+	<!-- 	<loc>http://matthewlehner.net/teach&#45;yourself&#45;to&#45;be&#45;a&#45;developer/</loc> -->
+	<!-- 	<lastmod>2013&#45;06&#45;26T16:58:14&#45;06:00</lastmod> -->
+	<!-- 	<changefreq>weekly</changefreq> -->
+	<!-- 	<priority>0.6</priority> -->
+	<!-- </url> -->
+	<!-- <url> -->
+	<!-- 	<loc>http://matthewlehner.net/get&#45;started&#45;with&#45;ember&#45;js&#45;in&#45;5&#45;minutes/</loc> -->
+	<!-- 	<lastmod>2013&#45;07&#45;29T15:38:58&#45;06:00</lastmod> -->
+	<!-- 	<changefreq>weekly</changefreq> -->
+	<!-- 	<priority>0.6</priority> -->
+	<!-- 	<image:image> -->
+	<!-- 		<image:loc>http://matthewlehner.net/wp&#45;content/uploads/2013/07/yeoman_ember_generator_options.png</image:loc> -->
+	<!-- 		<image:caption><![CDATA[yeoman menu for ember.js generator]]></image:caption> -->
+	<!-- 	</image:image> -->
+	<!-- 	<image:image> -->
+	<!-- 		<image:loc>http://matthewlehner.net/wp&#45;content/uploads/2013/07/Yeoman_Ember_Starter_Kit.png</image:loc> -->
+	<!-- 		<image:caption><![CDATA[Ember.js start page]]></image:caption> -->
+	<!-- 	</image:image> -->
+	<!-- 	<image:image> -->
+	<!-- 		<image:loc>http://matthewlehner.net/wp&#45;content/uploads/2013/07/Yeoman_Ember_Starter_Kit&#45;3.png</image:loc> -->
+	<!-- 		<image:caption><![CDATA[Yeoman Ember Starter Kit 3]]></image:caption> -->
+	<!-- 	</image:image> -->
+	<!-- </url> -->
+	<!-- <url> -->
+	<!-- 	<loc>http://matthewlehner.net/ember&#45;js&#45;routing&#45;and&#45;views/</loc> -->
+	<!-- 	<lastmod>2013&#45;07&#45;26T18:10:40&#45;06:00</lastmod> -->
+	<!-- 	<changefreq>weekly</changefreq> -->
+	<!-- 	<priority>0.6</priority> -->
+	<!-- 	<image:image> -->
+	<!-- 		<image:loc>http://matthewlehner.net/wp&#45;content/uploads/2013/07/Yeoman_Ember_Starter_Kit&#45;21&#45;e1374854765505.png</image:loc> -->
+	<!-- 		<image:caption><![CDATA[basic user navigation]]></image:caption> -->
+	<!-- 	</image:image> -->
+	<!-- 	<image:image> -->
+	<!-- 		<image:loc>http://matthewlehner.net/wp&#45;content/uploads/2013/07/Yeoman_Ember_Starter_Kit&#45;4.png</image:loc> -->
+	<!-- 		<image:caption><![CDATA[Found Tom.]]></image:caption> -->
+	<!-- 	</image:image> -->
+	<!-- 	<image:image> -->
+	<!-- 		<image:loc>http://matthewlehner.net/wp&#45;content/uploads/2013/07/Yeoman_Ember_Starter_Kit1.png</image:loc> -->
+	<!-- 		<image:caption><![CDATA[List of users.]]></image:caption> -->
+	<!-- 	</image:image> -->
+	<!-- 	<image:image> -->
+	<!-- 		<image:loc>http://matthewlehner.net/wp&#45;content/uploads/2013/07/Yeoman_Ember_Starter_Kit&#45;6.png</image:loc> -->
+	<!-- 		<image:caption><![CDATA[User edit screen]]></image:caption> -->
+	<!-- 	</image:image> -->
+	<!-- </url> -->
+	<!-- <url> -->
+	<!-- 	<loc>http://matthewlehner.net/ember&#45;js&#45;concepts&#45;for&#45;rails&#45;devs/</loc> -->
+	<!-- 	<lastmod>2013&#45;10&#45;22T01:46:35&#45;05:00</lastmod> -->
+	<!-- 	<changefreq>weekly</changefreq> -->
+	<!-- 	<priority>0.6</priority> -->
+	<!-- 	<image:image> -->
+	<!-- 		<image:loc>http://matthewlehner.net/wp&#45;content/uploads/2013/10/ember_concepts_for_rails_developers&#45;2.jpg</image:loc> -->
+	<!-- 		<image:caption><![CDATA[Ember.js Concepts for Rails Developers]]></image:caption> -->
+	<!-- 	</image:image> -->
+	<!-- </url> -->
+	<!-- <url> -->
+	<!-- 	<loc>http://matthewlehner.net/rails&#45;api&#45;testing&#45;guidelines/</loc> -->
+	<!-- 	<lastmod>2013&#45;08&#45;22T17:46:22&#45;06:00</lastmod> -->
+	<!-- 	<changefreq>weekly</changefreq> -->
+	<!-- 	<priority>0.6</priority> -->
+	<!-- </url> -->
+	<!-- <url> -->
+	<!-- 	<loc>http://matthewlehner.net/right&#45;cheap&#45;quick&#45;pick&#45;two/</loc> -->
+	<!-- 	<lastmod>2013&#45;10&#45;23T14:48:58&#45;05:00</lastmod> -->
+	<!-- 	<changefreq>weekly</changefreq> -->
+	<!-- 	<priority>0.6</priority> -->
+	<!-- </url> -->
+	<!-- <url> -->
+	<!-- 	<loc>http://matthewlehner.net/project&#45;management&#45;software&#45;broken/</loc> -->
+	<!-- 	<lastmod>2013&#45;11&#45;12T05:49:43&#45;05:00</lastmod> -->
+	<!-- 	<changefreq>weekly</changefreq> -->
+	<!-- 	<priority>0.6</priority> -->
+	<!-- 	<image:image> -->
+	<!-- 		<image:loc>http://matthewlehner.net/wp&#45;content/uploads/2013/11/graph&#45;of&#45;how&#45;much&#45;i&#45;love&#45;project&#45;management&#45;software&#45;1.jpg</image:loc> -->
+	<!-- 		<image:caption><![CDATA[Statistical analysis of caring about project management software to role.]]></image:caption> -->
+	<!-- 	</image:image> -->
+	<!-- </url> -->
+	<!-- <url> -->
+	<!-- 	<loc>http://matthewlehner.net/successes&#45;and&#45;failures&#45;2013/</loc> -->
+	<!-- 	<lastmod>2014&#45;08&#45;09T15:26:48&#45;06:00</lastmod> -->
+	<!-- 	<changefreq>weekly</changefreq> -->
+	<!-- 	<priority>0.6</priority> -->
+	<!-- 	<image:image> -->
+	<!-- 		<image:loc>http://matthewlehner.net/wp&#45;content/uploads/2014/01/2013&#45;in&#45;review.jpg</image:loc> -->
+	<!-- 		<image:caption><![CDATA[Lessons Learned: Successes and Failures of 2013]]></image:caption> -->
+	<!-- 	</image:image> -->
+	<!-- </url> -->
+	<!-- <url> -->
+	<!-- 	<loc>http://matthewlehner.net/vietnamese&#45;freelancing&#45;tips/</loc> -->
+	<!-- 	<lastmod>2014&#45;08&#45;06T14:33:50&#45;06:00</lastmod> -->
+	<!-- 	<changefreq>weekly</changefreq> -->
+	<!-- 	<priority>0.6</priority> -->
+	<!-- 	<image:image> -->
+	<!-- 		<image:loc>http://matthewlehner.net/wp&#45;content/uploads/2014/05/2014&#45;04&#45;20&#45;08.41.59&#45;e1407350252614.jpg</image:loc> -->
+	<!-- 		<image:caption><![CDATA[Freelancing Tips From a Vietnamese Tour Guide]]></image:caption> -->
+	<!-- 	</image:image> -->
+	<!-- </url> -->
+	<!-- <url> -->
+	<!-- 	<loc>http://matthewlehner.net/freelancing&#45;is&#45;about&#45;you/</loc> -->
+	<!-- 	<lastmod>2014&#45;08&#45;19T02:18:32&#45;06:00</lastmod> -->
+	<!-- 	<changefreq>weekly</changefreq> -->
+	<!-- 	<priority>0.6</priority> -->
+	<!-- 	<image:image> -->
+	<!-- 		<image:loc>http://matthewlehner.net/wp&#45;content/uploads/2014/08/freelancing&#45;is&#45;about&#45;your&#45;opportunities.jpg</image:loc> -->
+	<!-- 		<image:caption><![CDATA[Your Freelancing Business Is All About You]]></image:caption> -->
+	<!-- 	</image:image> -->
+	<!-- </url> -->
+</urlset>

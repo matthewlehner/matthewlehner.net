@@ -1,12 +1,21 @@
 <% wrap_layout :layout do %>
-  <header class="post-header">
-    <h1><%= current_page.data.title %><h1>
-    <% if current_page.data.image %>
-      <%= image_tag current_page.data.image %>
-    <% end %>
+  <% if current_page.data.image %>
+    <header class="post-header header-featured-image" style="background-image:url(<%= image_path current_page.data.image %>)">
+  <% else %>
+    <header class="post-header">
+  <% end %>
+    <h1 class="entry-title">
+      <%= current_page.data.title %>
+    </h1>
+    <p>
+      <span class="byline author vcard">By <a href="/author/mpl/" rel="author" class="fn">Matthew</a></span> on
+      <time class="published" datetime="<%= current_page.date %>"><%= current_page.date.strftime('%B %e %Y') %></time>
+</p>
   </header>
   <div class="entry-content">
     <%= yield %>
   </div>
   <%= render_partial 'partials/article_footer_cta' %>
+  <%= disqus %>
+  <%= disqus_count %>
 <% end %>
