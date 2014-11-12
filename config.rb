@@ -59,28 +59,21 @@ configure :development do
   activate :livereload
 end
 
-activate :deploy do |deploy|
-  deploy.build_before = true
-  deploy.method = :rsync
-  deploy.host   = "cedar"
-  deploy.path   = "~/apps/matthewlehner.net"
-end
-
 # Build-specific configuration
 configure :build do
   set :domain_name, "http://matthewlehner.net"
+  activate :asset_hash
   activate :minify_css
   activate :minify_javascript
   activate :minify_html
   activate :imageoptim
   activate :gzip
+end
 
-  # Enable cache buster
-  activate :asset_hash
-
-  # Use relative URLs
-  # activate :relative_assets
-
-  # Or use a different image path
-  # set :http_prefix, "/Content/images/"
+activate :deploy do |deploy|
+  # deploy.build_before = true
+  deploy.method = :rsync
+  deploy.host   = "cedar"
+  deploy.path   = "~/apps/matthewlehner.net"
+  deploy.flags  = "-avz --chmod=Du=rwx,Dgo=rx,Fu=rw,Fgo=r"
 end
