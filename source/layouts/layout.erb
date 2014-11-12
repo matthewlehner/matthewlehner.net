@@ -13,7 +13,6 @@
   <title><%= current_page.data.title || "Matthew Lehner" %></title>
 
   <%= stylesheet_link_tag "app" %>
-  <%= javascript_include_tag  "all" %>
 </head>
 
 <body class="<%= page_classes %>">
@@ -22,5 +21,6 @@
     <%= yield %>
   </section>
   <%= render_partial "partials/site-footer" %>
+  <%# <%= javascript_include_tag  "all" %>
 </body>
 </html>
