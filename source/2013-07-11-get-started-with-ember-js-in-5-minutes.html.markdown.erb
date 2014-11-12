@@ -18,7 +18,7 @@ meta_description: Create an Ember.js application in 5 minutes using Yeoman and i
 
 <p>To install Yeoman and the generators for an Ember application, simply run:</p>
 
-```#!bash
+```bash
 npm install -g yo
 npm install -g generator-ember
 ```
@@ -29,30 +29,34 @@ npm install -g generator-ember
 
 <p>Create a new directory for the application and switch into it:</p>
 
-```#!bash
+```bash
 mkdir ember-demo
 cd ember-demo
 ```
 
-<p>Running <code>yo ember</code> from the command line will give you a menu similar to this: <a href="http://matthewlehner.net/wp-content/uploads/2013/07/yeoman_ember_generator_options.png"><img src="http://matthewlehner.net/wp-content/uploads/2013/07/yeoman_ember_generator_options.png" alt="yeoman menu for ember.js generator" width="449" height="185" class="aligncenter size-full wp-image-120" /></a></p>
+Running <code>yo ember</code> from the command line will give you a menu similar to this:
+
+<figure><%= image_tag "yeoman_ember_generator_options.png", alt: "Yeoman menu for Ember.js generator" %></figure>
 
 <p>Say yes to the following options:</p>
 
-<ul>
-<li>Would you like to include Twitter Bootstrap for Sass?</li>
-</ul>
+* Would you like to include Twitter Bootstrap for Sass?
 
 <p>Following this, Yeoman will scaffold out an Ember app and automatically install its required dependencies by running <code>bower install</code> and <code>npm install</code>.</p>
 
 <p>Once this is done, all you need to do is run</p>
 
-```#!bash
+```bash
 grunt server
 ```
 
-<p>This will open a web browser with your app which should look something like this: <a href="http://matthewlehner.net/wp-content/uploads/2013/07/Yeoman_Ember_Starter_Kit.png"><img src="http://matthewlehner.net/wp-content/uploads/2013/07/Yeoman_Ember_Starter_Kit.png" alt="Ember.js start page" width="740" height="360" class="alignnone size-full wp-image-109" /></a></p>
+This will open a web browser with your app which should look something like this:
+<figure><%= image_tag "Yeoman_Ember_Starter_Kit.png", alt: "Ember.js starting
+page." %></figure>
 
-<p>with the following info available in your browser's console: <a href="http://matthewlehner.net/wp-content/uploads/2013/07/Yeoman_Ember_Starter_Kit-3.png"><img src="http://matthewlehner.net/wp-content/uploads/2013/07/Yeoman_Ember_Starter_Kit-3.png" alt="Yeoman_Ember_Starter_Kit-3" width="638" height="153" class="alignnone size-full wp-image-38" /></a></p>
+with the following info available in your browser's console:
+<figure><%= image_tag "Yeoman_Ember_Starter_Kit-3.png", alt: "Ember console"
+%></figure>
 
 <p>So, great, we're now running a very simple Ember app. Wasn't that easy?</p>
 
@@ -66,13 +70,13 @@ grunt server
 
 <p>The page is generated dynamically by Ember - have a look in <code>app/index.html</code> - you'll see that there's no markup, just a bunch of required scripts. Here's where the magic is happening.</p>
 
-<p>If you look in <code>app/templates</code>, you'll see <code>application.hbs</code> and <code>index.hbx</code>. Two handlebar template files that are telling Ember what to render. The three colours are coming from data stored in <code>scripts/app.js</code>.</p>
+<p>If you look in <code>app/templates</code>, you'll see <code>application.hbs</code> and <code>index.hbs</code>. Two handlebar template files that are telling Ember what to render. The three colours are coming from data stored in <code>scripts/app.js</code>.</p>
 
 <h3>app.js</h3>
 
 <p>You can see that the colors printed on the index page are defined here in the array. Add another item to the array, and the page will list that.</p>
 
-```#!javascript
+```javascript
 App.IndexRoute = Ember.Route.extend({
   model: function () {
     return ['red', 'yellow', 'blue'];
@@ -84,7 +88,7 @@ App.IndexRoute = Ember.Route.extend({
 
 <p>Here's the handlebar template that is used to render those items. Very simple, but a good illustration of how you can use handlebars to loop through an array.</p>
 
-```#!xml
+```html
 <div class="hero-unit">
   <ul>
   {{#each item in model}}

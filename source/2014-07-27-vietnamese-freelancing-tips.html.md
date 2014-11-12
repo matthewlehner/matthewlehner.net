@@ -2,6 +2,7 @@
 title: Freelancing Tips From a Vietnamese Tour Guide
 date: 2014-07-27
 meta_description: Stop hiding out in a sea of freelancers. Hang out where your clients are, build rapport, and establish credibility before anything else.
+image: ha-long-bay-vietnam.jpg
 ---
 A few months ago I had the opportunity to visit northern Vietnam for 5 days. On my last day there, I met Tung, a freelance tour guide. To find work, Tung spends time in an open park by a high end hotel where he meets tourists and engages them using a well-practised (and effective!) pitch.
 

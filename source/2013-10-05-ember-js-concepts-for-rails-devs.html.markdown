@@ -2,6 +2,7 @@
 title: Ember.js Concepts for Rails Developers
 date: 2013-10-05 00:00 UTC
 meta_description: A comparison of Rails vs Ember.js MVC definitions to understand the similarities and differences between how they delegate responsibilities.
+image: ember_concepts_for_rails_developers-2.jpg
 ---
 
 <p>Moving from a full stack framework like Rails to a front end framework like Ember.js is less of a leap than you might anticipate. You're probably already using jQuery for some elements of interactivity, but at a certain point, you came up against that wall of maintainability and ended up with a hearty serving of front end spaghetti code. Yum. Here's where a frontend framework can help, but this can cause a different kind of confusion.</p>

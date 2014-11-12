@@ -15,7 +15,7 @@ meta_description: Using Ember.js routing, view rendering and nested resources to
 
 <p>We need to set up a space for our sidebar navigation, and a main area where our logic will go. To do this, open up <code>app/templates/application.hbs</code> and change it to look like this:</p>
 
-```#!xml
+```xml
 <div>
   <div class="container-fluid" id="main">
     {{outlet}}
@@ -40,7 +40,7 @@ meta_description: Using Ember.js routing, view rendering and nested resources to
 
 <p>For this example, we want to set up our index template to render a list of users in a navigation panel on the left. Edit <code>app/templates/index.hbs</code> to look like this:</p>
 
-```#!xml
+```xml
 <div class="row-fluid">
   <div>
     <div class="span3">
@@ -57,11 +57,15 @@ meta_description: Using Ember.js routing, view rendering and nested resources to
 </div>
 ```
 
-<p>If you've scaffolded your application using Yeoman, then running <code>grunt server</code> will show you a page that looks like this:</p>
+If you've scaffolded your application using Yeoman, then running <code>grunt server</code> will show you a page that looks like this:
 
-<p><img src="http://matthewlehner.net/wp-content/uploads/2013/07/Yeoman_Ember_Starter_Kit-21-e1374854765505.png" alt="basic user navigation" width="364" height="144" class="size-full wp-image-113" /> Boring, but it's a start..</p>
+<figure>
+  <%= image_tag "Yeoman_Ember_Starter_Kit-21-e1374854765505.png", alt: "Very
+basic user navigation" %>
+  <figcaption>Boring, but it's a start...</figcaption>
+</figure>
 
-<p>Great, okay, so, we have a basic place where we could render a list of users to click on and a nested <code>{{outlet}}</code> - this is where we'll render a user profile.</p>
+Great, okay, so, we have a basic place where we could render a list of users to click on and a nested <code>{{outlet}}</code> - this is where we'll render a user profile.
 
 <h2>Rendering Data</h2>
 
@@ -69,7 +73,7 @@ meta_description: Using Ember.js routing, view rendering and nested resources to
 
 <p>Our first step will be to add the user model.</p>
 
-```#!javascript
+```javascript
 // app/scripts/models/user.js
 Users.User = DS.Model.extend({
   firstName: DS.attr('string'),
@@ -80,7 +84,7 @@ Users.User = DS.Model.extend({
 
 <p>Fixtures are built in to Ember-data. To add them, we'll just configure our data store.</p>
 
-```#!javascript
+```javascript
 // app/scripts/store.js
 Users.Store = DS.Store.extend({
   revision: 1,
@@ -90,13 +94,13 @@ Users.Store = DS.Store.extend({
 
 <p>We'll also have to tell yeoman to load this file by adding the following to <code>app/scripts/app.js</code>:</p>
 
-```#!javascript
+```javascript
 require('scripts/store');
 ```
 
 <p>You might notice the revision attribute. This just represents the revision of the API that you'll be communicating with, which, in our case is meaningless. Right now this is required, but I'm assuming that with development, Ember-data will just handle this automatically. Specifying <code>DS.FixtureAdapter</code> just means that we can add user fixtures and Ember.js will treat them like they've come from a web service. Let's do that. Add the these fixtures to the bottom of <code>app/scripts/user.js</code></p>
 
-```#!javascript
+```javascript
 Users.User.FIXTURES = [
   {
     id: 1,
@@ -113,7 +117,10 @@ Users.User.FIXTURES = [
 
 <p>Great - we've got some users. If you'd like to test it out, just type <code>Users.User.find(1).get('firstName')</code> into your browser console and you can see that the response is this:</p>
 
-<p><img src="http://matthewlehner.net/wp-content/uploads/2013/07/Yeoman_Ember_Starter_Kit-4.png" alt="Found Tom." width="330" height="90" class="size-full wp-image-115" /> Finding records with ember-data.</p>
+<figure>
+  <%= image_tag "Yeoman_Ember_Starter_Kit-4.png", alt: "Found Tom." %>
+  <figcaption>Finding records with ember-data.</figcaption>
+</figure>
 
 <h2>Rendering our data</h2>
 
@@ -121,7 +128,7 @@ Users.User.FIXTURES = [
 
 <p>First, we have to find this data. The route for the specific view will specifies which data is rendered in the template. To do this, we add the following logic to <code>app/scripts/router.js</code>:</p>
 
-```#!javascript
+```javascript
 Users.IndexRoute = Ember.Route.extend({
   model: function () {
     return Users.User.find();
@@ -129,9 +136,9 @@ Users.IndexRoute = Ember.Route.extend({
 });
 ```
 
-<p>This tells your ember.js app that the index route (remember, that's the default route for the '/' url) is dealing with the data found in the <code>Users.User</code> model. Now we'll tell the template in <code>app/templates/index.hbs</code> to render the users for us. Add the following handlebars logic inside the <code><ul class="nav nav-list"></code> tag:</p>
+This tells your Ember.js app that the index route (remember, that's the default route for the '/' url) is dealing with the data found in the `Users.User` model. Now we'll tell the template in `app/templates/index.hbs` to render the users for us. Add the following handlebars logic inside the `<ul class="nav nav-list">` tag:
 
-```#!xml
+```xml
 {{#each controller}}
   <li>{{firstName}} {{lastName}}</li>
 {{/each}}
@@ -139,7 +146,10 @@ Users.IndexRoute = Ember.Route.extend({
 
 <p>Refresh your page, and suddenly we're looking at a list of users!</p>
 
-<p><img src="http://matthewlehner.net/wp-content/uploads/2013/07/Yeoman_Ember_Starter_Kit1.png" alt="List of users." width="374" height="277" class="size-full wp-image-116" /> The users are rendering, just fine!</p>
+<figure>
+  <%= image_tag "Yeoman_Ember_Starter_Kit1.png", alt: "List of users." %>
+  <figcaption>The users are rendering, just fine!</figcaption>
+</figure>
 
 <h2>Doing something useful - Adding a UI for editing.</h2>
 
@@ -147,8 +157,7 @@ Users.IndexRoute = Ember.Route.extend({
 
 <p>Add the following to <code>app/scripts/router.js</code>:</p>
 
-```
-#!javascript
+```javascript
 Users.Router.map(function () {
   this.resource('index', {path: '/'}, function () {
     this.resource('user', { path: '/:user_id' });
@@ -164,8 +173,7 @@ Users.UserRoute = Ember.Route.extend({
 
 <p>update the list items in <code>app/templates/index.hbs</code> to link to each user resource:</p>
 
-```
-#!xml
+```xml
 <li>
   {{#linkTo 'user' this}}
     {{firstName}} {{lastName}}
@@ -175,8 +183,7 @@ Users.UserRoute = Ember.Route.extend({
 
 <p>and the following view template to <code>app/templates/user.hbs</code>:</p>
 
-```
-#!xml
+```xml
 <header>
   <h1>Editing {{firstName}} {{lastName}}</h1>
 </header>
@@ -191,7 +198,7 @@ Users.UserRoute = Ember.Route.extend({
 
 <p>And now we have editable users and thanks to Ember.js and Handlebars data binding implementation, wherever an attribute is rendered on the page, it will automatically change when edited. Try it out!</p>
 
-<p><a href="http://matthewlehner.net/wp-content/uploads/2013/07/Yeoman_Ember_Starter_Kit-6.png"><img src="http://matthewlehner.net/wp-content/uploads/2013/07/Yeoman_Ember_Starter_Kit-6.png" alt="User edit screen" width="838" height="297" class="aligncenter size-full wp-image-117" /></a></p>
+<figure><%= image_tag "Yeoman_Ember_Starter_Kit-6.png", alt: "User edit screen" %></figure>
 
 <p>Since this Ember.js tutorial is about routing and rendering views, lets examine what we've accomplished with this last step. You can see we've nested the <code>user</code> resource under the <code>index</code> route; because it's nested, this will automatically render to the <code>{{outlet}}</code> in our index template.</p>
 
