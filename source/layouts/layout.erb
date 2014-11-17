@@ -13,6 +13,7 @@
   <title><%= current_page.data.title || "Matthew Lehner" %></title>
 
   <%= stylesheet_link_tag "app" %>
+  <%= render_partial "partials/google-analytics" if build? %>
 </head>
 
 <body class="<%= page_classes %>">
