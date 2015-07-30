@@ -66,12 +66,12 @@ configure :build do
   activate :minify_css
   activate :minify_javascript
   activate :minify_html
-  activate :imageoptim
+  # activate :imageoptim
   activate :gzip
 end
 
 activate :deploy do |deploy|
-  # deploy.build_before = true
+  deploy.build_before = true
   deploy.method = :rsync
   deploy.host   = "cedar"
   deploy.path   = "~/apps/matthewlehner.net"
