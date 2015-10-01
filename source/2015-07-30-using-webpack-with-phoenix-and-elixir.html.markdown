@@ -88,11 +88,16 @@ the `watchers` option in `config/dev.exs` to look like this:
 
 Now, we'll test this by editing `web/static/js/app.js`. Make sure that the
 entire file is commented out – we don't have any ES2015 compilation working yet,
-so anything that relies on this syntax will not work.
+so anything that relies on this syntax will cause a compilation issue with
+webpack.
 
 At this point, the only thing we'll want to run is:
 
 ```javascript
+
+// Ensure that this import is commented out for now.
+// import "deps/phoenix_html/web/static/js/phoenix_html"
+
 alert('webpack compiled me.');
 ```
 
@@ -107,7 +112,7 @@ mix phoenix.server
 Now, when you open `http://localhost:4000` you'll see the alert, but CSS isn't
 being compiled, and we don't have support for ES2015. We'll fix that next.
 
-## Adding Babel and Sass Support to Webpack
+## Adding Babel and CSS Support
 
 Out of the box, webpack doesn't compile Sass, or JavaScript written with ES2015
 syntax for you, so we'll have to add the required loaders. Let's get started
@@ -136,18 +141,142 @@ module.exports = {
 }
 ```
 
-That's it. Restart the server, and you'll have support for all the great
-JavaScript features that Babel has to offer.
+This rules state that any file ending in `.js` that is required within the
+application will be run through Babel. Once it is in place, restart the server,
+and you'll have support for all the great JavaScript features that Babel has to
+offer.
 
-### Sass and Webpack
-Now we'll get Sass working. If you've used webpack before, you have probably
-seen how the general practices usually include `requiring` CSS within the
-individual components of your application. Since we're aiming for the exact
-functionality that Brunch provided, we'll have to implement our Sass compilation
-in a slightly different manner than is normal for webpack.
+#### Setting load paths
 
+With webpack, using `import` or `require` expects an explicit path, relative to
+the file you're working in. For exmample, if you have the following files:
 
+```
+app.js
+components/filePicker.js
+```
 
+To require `filePicker` from within `app.js` it'd look like this:
+
+```javascript
+// Brunch
+import filePicker from 'components/filePicker';
+
+// Webpack
+import filePicker from './components/filePicker';
+```
+
+This is not better or worse, just different. Since we're aiming for complete
+compatibility with the Brunch configuration we'll have to add a few load paths
+so that we can require relative modules.
+
+Add the following `webpack.config.js`:
+
+```javascript
+var path = require('path');
+
+module.exports = {
+  // Leave the entry, output, and module options we set previously...
+
+  resolve: {
+    modulesDirectories: [ __dirname ]
+  }
+}
+```
+
+Now we can add back the `phoenix_html` module in `web/static/js/app.js`:
+
+```javascript
+import "deps/phoenix_html/web/static/js/phoenix_html";
+```
+
+Restart the Phoenix server, and we should now have the Phoenix JavaScript
+included in our compiled file.
+
+### CSS and Webpack
+
+If you've used webpack before, you've probably seen CSS being required from
+within the individual components of your application. Instead of generating
+separate CSS files, webpack will inline any CSS required when loading the page.
+Again, since we're aiming for the exact functionality that Brunch provided,
+we'll have to separate out the CSS from our JavaScript bundle. Implementing our
+CSS compilation this way is slightly different from the way it is normally
+demonstrated in webpack tutorials.
+
+We need both the style and css loaders to actually parse and compile `css` files
+to their correct location. On top of this, we need the
+`extract-text-webpack-plugin` to pull the CSS out of our bundle and output it
+to its own file.
+
+```
+npm install css-loader extract-text-webpack-plugin --save-dev
+```
+
+Now we'll add an additional entry point for webpack pointing to the
+`app.css` file, redefine the output path to account for CSS and JS locations,
+add the style and css loaders, and configure the `ExtractText` plugin to output
+the individual CSS file. Here's what `webpack.config.js` file should look like
+when you're done:
+
+```javascript
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
+module.exports = {
+  entry: ["./web/static/js/app.js", "./web/static/css/app.css"],
+  output: {
+    path: "./priv/static",
+    filename: "js/app.js"
+  },
+
+  resolve: {
+    modulesDirectories: [ __dirname ]
+  },
+
+  module: {
+    loaders: [{
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loaders: ["babel"],
+      include: __dirname
+    }, {
+      test: /\.css$/,
+      loader: ExtractTextPlugin.extract("css")
+    }]
+  },
+
+  plugins: [
+    new ExtractTextPlugin("css/app.css")
+  ]
+};
+```
+
+With this configuration, webpack will grab the `web/static/css/app.css` file,
+parse the CSS and move it to `priv/static/css/app.css`. Restart your Phoenix
+server to see the stylesheets working. The only thing missing now are the static
+assets.
+
+## Handling Static Assets
+
+Last but not least, we need to move our static assets so that they're
+accessible. By default, Phoenix stores static assets in `web/static/assets` and
+moves them to `priv/static`, so `web/static/assets/favicon.ico` will move to
+`priv/static/favicon.ico`.
+
+This is something that webpack is not well suited for. We can get it to move
+files that are required within CSS or JS, but it simply isn't made for copying
+files from one place to another. Instead, we'll copy the files ourselves:
+
+```sh
+cp -R web/static/assets/**/* priv/static
+```
+and update `.gitignore` to reflect this change:
+
+```
+# /priv/static/ - Comment this line out, and add the following two lines.
+/priv/static/js/
+/priv/static/css/
+```
+
+And that's it. We're all done!
 
 [phoenix-webpack-post]: http://manukall.de/2015/05/01/automatically-building-your-phoenix-assets-with-webpack/
 [webpack-hmr-docs]: http://webpack.github.io/docs/hot-module-replacement-with-webpack.html
