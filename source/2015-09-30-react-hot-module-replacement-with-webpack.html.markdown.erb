@@ -1,7 +1,7 @@
 ---
-title: React Hot Module Replacement With Webpack
+title: Using Webpack's Hot Module Replacement with React
 date: 2015-09-30 17:23 UTC
-meta_description: Set up Webpack's hot module replacement with React. Here's how to set it up for use with we'll set it up with React
+meta_description: Set up webpack to provide hot module replacement for React. Using BabelJS and the react-transform-hmr plugin, HMR is trivial.
 tags: draft
 ---
 
@@ -142,7 +142,7 @@ so let's add in the interesting stuff: Babel for transpiling JSX and ES2015 (and
 beyond!), and React for the UI. Shut down the dev server and install Babel:
 
 ```shell
-npm install babel babel-loader --save-dev
+npm install babel-core babel-loader --save-dev
 ```
 
 Now we need to add this to our webpack build pipeline. Add the following beneath
