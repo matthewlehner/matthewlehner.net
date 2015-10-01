@@ -7,7 +7,7 @@ tags: draft
 <i>This guide was heavily inspired by Manuel Kallenbach's guide [Automatically
 Building Your Phoenix Assets with Webpack][phoenix-webpack-post], which got me
 started down this path. My goal here is to provide a 1-to-1 mapping of webpack
-to the default brunch setup that comes with Phoenix.</i>
+to the default Brunch setup that comes with Phoenix.</i>
 
 Phoenix, by default, uses Brunch for a build tool – and for most folks, it'll
 work, but I've grown fond of webpack because of features like [hot module
@@ -22,7 +22,7 @@ Brunch configuration that Phoenix comes with.
 Let's begin with a new Phoenix application, we won't be using the `--no-brunch`
 flag. `--no-brunch` assumes that you'll be managing your frontend assets
 statically and changes the directory structure slightly. It's easier to remove
-brunch rather than recreate the directory structure manually.
+Brunch rather than recreate the directory structure manually.
 
 When you're asked to install dependencies, say no.
 
@@ -30,13 +30,13 @@ When you're asked to install dependencies, say no.
 mix phoenix.new webpack_integration
 ```
 
-Next, we'll remove the brunch specific configuration:
+Next, we'll remove the Brunch specific configuration:
 
 ```bash
 rm brunch-config.js
 ```
 
-Then remove the brunch packages from the dependencies object in `package.json`.
+Then remove the Brunch packages from the dependencies object in `package.json`.
 When that's done, `package.json` should look like this:
 
 ```json
