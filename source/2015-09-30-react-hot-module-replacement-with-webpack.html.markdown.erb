@@ -231,14 +231,14 @@ class App extends Component {
 
 Now our component initialized a counter which increments a number every second.
 It's not a very interesting component, but for our purposes it's a good
-demostration of how state is lost when the browser reloads a page.
+demonstration of how state is lost when the browser reloads a page.
 By default webpack will trigger an entire page reload, which means that we lose
 the component's state. We can solve this with hot module replacement.
 
 ## Enabling Hot Module Replacement (HMR)
 
-Explaining how hot module replacement or HMR works, is worth an entire post in
-itself, if you're interested in learning more, check out the answer to [What
+Explaining how hot module replacement or HMR works is worth an entire post in
+itself. If you're interested in learning more, check out the answer to [What
 exactly is Hot Module Replacement in Webpack][2] on Stackoverflow.
 
 To enable it for us, we need to turn on hot reloading within Webpack itself, and
