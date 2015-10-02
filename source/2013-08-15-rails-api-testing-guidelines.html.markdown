@@ -52,16 +52,20 @@ describe "Messages API" do
 
     get '/api/v1/messages'
 
-    expect(response).to be_success            # test for the 200 status-code
     json = JSON.parse(response.body)
-    expect(json['messages'].length).to eq(10) # check to make sure the right amount of messages are returned
+
+    # test for the 200 status-code
+    expect(response).to be_success
+
+    # check to make sure the right amount of messages are returned
+    expect(json['messages'].length).to eq(10)
   end
 end
 ```
 
-This works exceptionally well for get, post and delete requests. Just check for the status code you want, and that the response body is as you expected. That being said, with this setup we'll be doing <code>json = JSON.parse(response.body)</code> a lot. This should be a helper method.
+This works exceptionally well for get, post and delete requests. Just check for the status code you want, and that the response body is as you expected. That being said, with this setup we'll be doing `json = JSON.parse(response.body)` a lot. This should be a helper method.
 
-<h3>Add JSON Helper</h3>
+### Add the `json` Helper
 
 To DRY things out for future tests, pull the json parsing logic into an RSpec helper. This is what I've done:
 
@@ -70,7 +74,7 @@ To DRY things out for future tests, pull the json parsing logic into an RSpec he
 module Requests
   module JsonHelpers
     def json
-      @json ||= JSON.parse(response.body)
+      JSON.parse(response.body)
     end
   end
 end
@@ -80,9 +84,9 @@ And then add the following line inside the config block of <code>spec_helper.rb<
 
 ```ruby
 RSpec.configure do |config|
+  # ... The rest of your RSpec config.
 
   config.include Requests::JsonHelpers, type: :request
-
 end
 ```
 
