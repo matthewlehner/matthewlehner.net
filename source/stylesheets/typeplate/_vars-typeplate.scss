@@ -7,14 +7,14 @@
 // -------------------------------------//
 
 $font-weight: 400;
-$line-height: 1.65;
+$line-height: 1.5;
 $font-size: 137.5; // percentage value (16 * 112.5% = 18px)
 $font-base: 16 * ($font-size/100); // converts our percentage to a pixel value
 $em-base: $font-base;
 $font-family: serif; // Non-font-face font-stack
 $serif-boolean: false;
 
-$custom-font-family: 'kepler-std'; // Custom font-face stack, if set will be added to the $font-family
+$custom-font-family: $base-font-family; // Custom font-face stack, if set will be added to the $font-family
 
 
 // $Paragraphs
