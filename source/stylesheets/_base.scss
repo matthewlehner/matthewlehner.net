@@ -14,8 +14,36 @@ blockquote {
   color: lighten($base-font-color, 20%);
 }
 
-pre code {
-  font-size: 0.727272em;
+pre {
+  background: lighten($light-gray, 10%);
+  line-height: 1.2;
+  margin: 2.2em auto;
+  overflow-x: auto;
+  white-space: pre;
+  word-wrap: normal;
+
+  code {
+    border-radius: $base-border-radius;
+    display: block;
+    font-size: 0.727272em;
+
+    // border-radius: 3px;
+    // color: rgba(46,48,58,0.96);
+    // font-size: 0.9rem;
+    outline: none;
+    overflow-x: auto;
+    padding: 0.8rem 1.1rem;
+    white-space: inherit;
+  }
+}
+
+:not(pre)>code {
+  background: lighten($light-gray, 10%);
+  border: $base-border;
+  border-radius: $base-border-radius;
+  font-size: $base-font-size * 0.727272;
+  padding: 2px;
+  white-space: nowrap;
 }
 
 a {
