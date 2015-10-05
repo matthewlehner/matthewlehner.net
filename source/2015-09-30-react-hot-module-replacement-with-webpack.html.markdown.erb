@@ -2,35 +2,37 @@
 title: Using Webpack's Hot Module Replacement with React
 date: 2015-09-30 17:23 UTC
 meta_description: Set up webpack to provide hot module replacement for React. Using BabelJS and the react-transform-hmr plugin, enabling HMR is only a few lines of configuration.
-tags: draft
+tags: react
 ---
 
-Out of the box, webpack supports a fancy new alternative to full page refreshes.
-Hot module replacement replaces the live code running on your development
-machine. The major benefit of hot module replacement is that state is not lost –
-if you've had to click a number of things to get to the point in your app that
-you're working on, you won't perform a full page refresh and lose the history of
-those actions.
+Out of the box, webpack supports a fancy new alternative to refreshing to see if
+your changes worked called hot module replacement, or HMR. At its core, HMR
+works by watching changes to files, and signaling the browser to replace
+specific modules, or functions, but not reload the entire page.
+
+The major benefit of hot module replacement is that state is not lost – if
+you've had to perform a number of actions to get to a specific state, you won't
+perform a full page refresh and lose the history of those actions.
 
 Here it is at work – notice that the timer doesn't reset to 0 as it would after
-a page reload.
+a page reload, and css changes auto refresh too.
 
 <figure>
   <%= image_tag "react-hmr.gif", alt: "Hot Module Replacement at work in React" %>
   <figcaption>React Hot Module Replacement at work</figcaption>
 </figure>
 
-Increasing the speed of of your feedback loop frees up more time to do
-meaningful work, focusing more on building your app, not clicking through a
-sequence you've clicked through 50 times already. There's nothing more
-frustrating than troubleshooting some UI bug that's at the end of 8 actions.
+Increasing the speed of your feedback loop frees time to do meaningful work and
+removes frustrating, repetitive activities from your workflow. If you're
+interested in a more in depth explanation of how it works, check out the answer
+to [What exactly is Hot Module Replacement in Webpack][what-is-hmr] on
+Stackoverflow.
 
-_Acknowledgments:_
-
-Before we get started, I have to give credit to [Dan Abramov][dan-abramov],
-his open source work, and his talk [Live React: Hot Reloading with Time
-Travel][time-travel-react] at react-europe.  Without his contributions to the
-community, hot module replacement in React would be a lot more difficult.
+_Acknowledgments:_ I have to give a big shout out and thank you to
+[Dan Abramov][dan-abramov], his open source work, and his talk [Live React: Hot
+Reloading with Time Travel][time-travel-react] at react-europe.  Without his
+contributions to the community, setting up HMR for React would be a lot more
+difficult. Thanks Dan!
 
 ## Install and Configure Webpack
 
@@ -251,10 +253,6 @@ the component's state. We can solve this with hot module replacement.
 
 ## Enabling Hot Module Replacement (HMR)
 
-Explaining how hot module replacement or HMR works, is worth an entire post in
-itself. If you're interested in learning more, check out the answer to [What
-exactly is Hot Module Replacement in Webpack][2] on Stackoverflow.
-
 To enable it for us, we need to turn on hot reloading within Webpack itself, and
 add the appropriate React tools to compile the modules with HMR support.
 
@@ -302,6 +300,6 @@ and edit our `start` script in `package.json` to enable the hot option:
 And now everything should be working as we anticipated!
 
 [1]: http://webpack.github.io/docs/loaders.html
-[2]: http://stackoverflow.com/questions/24581873/what-exactly-is-hot-module-replacement-in-webpack#answer-24587740
+[what-is-hmr]: http://stackoverflow.com/questions/24581873/what-exactly-is-hot-module-replacement-in-webpack#answer-24587740
 [time-travel-react]: https://www.youtube.com/watch?v=xsSnOQynTHs
 [dan-abramov]: https://twitter.com/dan_abramov
