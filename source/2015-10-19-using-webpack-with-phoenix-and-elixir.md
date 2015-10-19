@@ -1,18 +1,21 @@
 ---
 title: Using Webpack with Phoenix and Elixir
 date: 2015-10-19 02:38 UTC
+meta_description: Set up webpack as Phoenix's front end build tool to take advantage of hot module replacement and intelligent optimization for your front end app.
 tags: elixir, phoenix, webpack
 ---
 
-<i>This guide was heavily inspired by Manuel Kallenbach's guide [Automatically
-Building Your Phoenix Assets with Webpack][phoenix-webpack-post], which got me
-started down this path. My goal here is to provide a 1-to-1 mapping of webpack
-to the default Brunch setup that comes with Phoenix.</i>
+_This guide was inspired by Manuel Kallenbach's guide [Automatically
+Building Your Phoenix Assets with Webpack][phoenix-webpack-post]. This article
+provides a 1-to-1 mapping of webpack to the default Brunch setup that comes with
+Phoenix._
 
 Phoenix, by default, uses Brunch for a build tool – and for most folks, it'll
 work, but I've grown fond of webpack because of features like [hot module
 replacement][webpack-hmr-docs] and the ease of configuring loaders/processors in
-the build process.
+the build process. In my opinion, Elixir and Phoenix is the best for choice for
+server side architecture currently, so, naturally these should be paired with
+the best client side tools.
 
 By the end of this guide, you'll have wepback running at parity with the default
 Brunch configuration that Phoenix comes with.
