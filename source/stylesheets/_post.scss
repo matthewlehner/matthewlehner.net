@@ -1,4 +1,6 @@
 .post-header {
+  @include row;
+
   margin-bottom: 4em;
   margin-top: 2em;
   text-align: center;
