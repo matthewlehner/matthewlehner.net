@@ -1,7 +1,7 @@
 ---
 title: Using Webpack with Phoenix and Elixir
-date: 2015-07-30 02:38 UTC
-tags: draft
+date: 2015-10-19 02:38 UTC
+tags: elixir, phoenix, webpack
 ---
 
 <i>This guide was heavily inspired by Manuel Kallenbach's guide [Automatically
