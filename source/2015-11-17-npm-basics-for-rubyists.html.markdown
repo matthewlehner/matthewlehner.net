@@ -1,7 +1,7 @@
 ---
 title: npm Basics for Rubyists
 date: 2015-11-17 23:22 UTC
-tags: 
+meta_description: A quick start guide about npm for Rubyists entering the node.js ecosystem. Compare Ruby gems and bundler to their node.js and npm equivalents.
 ---
 
 I recently added npm to a Rails project in order to manage our frontend
@@ -26,18 +26,19 @@ lib-b v1.0.0
 ```
 
 Older versions of npm (pre 3.x) nested peer dependencies, which would mean that
-both versions of `dependency-a` were included in your app bundle. For front end,
-this duplication meant the size of the compiled JavaScript would be much larger
-than anticipated, and also added _interesting_ (read: horrible and difficult to
-debug) side effects. npm 3.3 flattens this graph, so peer dependencies are no
-longer nested in this manner, instead, you must specify the desired version of
-the peer dependency. Until now, this was the main advantage that other
-JavaScript package managers (like Bower) had over npm, but with this problem
-solved, it's the clear most simple path for dependencies.
+both versions of `dependency-a` were included in your app bundle. For the front
+end, this duplication meant the size of the compiled JavaScript would be much
+larger than anticipated, and could create bugs from version errors.
+
+As of npm 3.3 this dependency tree has been flattened. Peer dependencies must be
+installed explicitly, removing the duplication and allowing complete control
+over their versions. This removes the main advantage that other JavaScript
+package managers (like Bower) had over npm.
 
 ### npm — Node Package Manager
 
-There are two key things to know about with npm
+There are two key things to know when getting started with npm, how to install
+dependencies, and where they are specified.
 
 ##### `npm install`
 
@@ -53,32 +54,33 @@ well as configuration, and customized scripts relating to the project.
 
 When entering an unfamiliar project, this is the first place to look.
 
-That's it, if you're not doing any other front end work in a project, you
-probably won't have to touch `package.json`, and will only have to run `npm i`
-when the dependencies need to be updated.
-
 ### Installing dependencies
 
-In the Ruby ecosystem, there are two ways to install gems, directly with `gem
-install gemname`, or via the `Gemfile` with Bundler. All gems are installed
-system wide, or scoped to a user account, but if you've installed a gem, it is
-available for any project.
+In the Ruby ecosystem there are two ways to install gems, directly with `gem
+install gemname`, or via the `Gemfile` with Bundler. In node.js, npm is the only
+way to install node packages.
 
-npm has two ways of installing packages, globally, or locally. Global
-installation is similar to running `gem install` – it installs the package to
-a globally configured node directory and if this is added to your path, you'll
-be able to run any binaries that it installs.
 
-However, npm's default behaviour is to install the package locally, to whatever
-directory you are currently in. If you are in your home directory and install a
-package, npm will install it to `~/node_modules/package-name`.
+In Ruby, gems are installed system wide and if you've installed a gem, it is
+available for any project. npm has two ways of installing packages – globally,
+or locally.
+
+Global installation is similar to running `gem install` – it
+installs the package to a globally configured node directory, however, global
+packages are not available locally within local projects. Global packages are
+typically used for utilities and tooling.
+
+Local installation is npm's default behaviour and will make the installed
+packages available within the current directory. If you are in
+`~/code/app-time`, running `npm install backbone` will install to
+`~/code/app-time/node_modules/backbone`.
 
 Here's a quick overview of the different commands:
 
 #### Global Dependencies
 In npm, you would typically use global installed packages for tooling or
 utilities you will use often for multiple purposes. Examples of packages that
-are often installed globally are:
+are typically installed globally are:
 
 - [svgo][svgo-link]
 - [eslint][eslint-link]
@@ -98,23 +100,7 @@ npm install svgo -g
 
 Modern Ruby projects typically use Bundler for managing dependencies and stores
 these in the project's `Gemfile`. node.js uses npm and `package.json`,
-however, the responsibilities of `package.json` are not solely limited to
-listing dependencies and can include configuration for dependencies, as well as
-scripts to run these dependencies.
-
-The major difference between gems in Ruby and packages in node is where they are
-installed. In Ruby, all gems are installed globally, which can result in version
-conflicts when running a command like `rails` if multiple versions of the Rails
-gem are installed.
-
-By default, npm installs packages to a `node_modules` directory, relative to the
-directory you are in. It will not add an entry to `package.json`, but the
-package will exist for you locally. Typically one will use the `--save` or
-`--save-dev` flags when installing packages as this saves a record of it to
-`package.json`.
-
-The differences arise when installing packages – there are a number of options
-available:
+respectively.
 
 - `npm install` – Installs dependencies listed in `package.json`<br>
   **Ruby equivalent:** `bundle install`<br>
@@ -134,8 +120,11 @@ available:
 
 #### Running Locally Installed Executables
 
-Here's where the main difference between the npm and gem/bundler paradigm is
-really apparent – because dependencies are installed to a relative directory,
+Unlike the `Gemfile`, `package.json` has more responsibilities than listing
+dependencies and can include configuration options, as well as customizable
+scripts.
+
+Because dependencies are installed to a relative directory,
 the executable binaries aren't in your shell's `PATH` variable. In order to run
 a locally installed binary, you must prefix the command with `npm run`. For
 example, if you wanted to install and run svgo in a local folder, you would do
