@@ -11,6 +11,8 @@
 
   <!-- Use title if it's in the page YAML frontmatter -->
   <title><%= current_page.data.title || "Matthew Lehner" %></title>
+  <%= yield_content :head %>
+
 
   <%= stylesheet_link_tag "app" %>
   <%= render_partial "partials/google-analytics" if build? %>
