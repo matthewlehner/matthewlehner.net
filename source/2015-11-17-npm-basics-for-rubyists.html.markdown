@@ -4,12 +4,16 @@ date: 2015-11-17 23:22 UTC
 meta_description: A quick start guide about npm for Rubyists entering the node.js ecosystem. Compare Ruby gems and bundler to their node.js and npm equivalents.
 ---
 
-I recently added npm to a Rails project in order to manage our frontend
-dependencies. For front end development, this is a much better story than the
-copying js files to the vendor directory, or frontend library gems to the
-Gemfile. Since the release of npm 3, it has become the best choice for front end
-dependencies and will continue to hold this title because it is bundled with
-node.js.
+I recently began using npm in parallel with Sprockets on a Rails project. The
+front end needs had grown beyond the scope of what the default Rails & Sprockets
+configuration could handle – we're no longer just sprinkling JavaScript and have
+a few complex front end apps. For front end development, this is a much better
+story than copying files to the vendor directory, or adding frontend library
+gems to the Gemfile.
+
+npm is the best choice for JS package management for two reasons: it is bundled
+with node.js, and the recent release of npm 3 fixes its past quirks for use in
+front end web apps.
 
 ## Past problems with npm
 The main problem with npm in the past has been that peer dependencies were not
