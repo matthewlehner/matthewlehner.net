@@ -6,17 +6,15 @@ meta_description: A quick start guide about npm for Rubyists entering the node.j
 
 I recently added npm to a Rails project in order to manage our frontend
 dependencies. For front end development, this is a much better story than the
-typical copy js files to the vendor directory, or adding
-`frontend-library-rails` to the Gemfile. It's my opinion that npm has come out
-as the better choice for frontend dependencies recently and will continue to
-hold this title.
-
-npm is required for the other JS package managers, most of which were trying to
-solve the issue for specific use cases.
+copying js files to the vendor directory, or frontend library gems to the
+Gemfile. Since the release of npm 3, it has become the best choice for front end
+dependencies and will continue to hold this title because it is bundled with
+node.js.
 
 ## Past problems with npm
 The main problem with npm in the past has been that peer dependencies were not
-flattened, so your dependency graph could look like this:
+flattened, so it may have been requiring multiple versions of the same
+dependency, like this:
 
 ```
 lib-a v1.0.0
@@ -25,15 +23,15 @@ lib-b v1.0.0
   ↳ dependency-a v0.9
 ```
 
-Older versions of npm (pre 3.x) nested peer dependencies, which would mean that
-both versions of `dependency-a` were included in your app bundle. For the front
-end, this duplication meant the size of the compiled JavaScript would be much
-larger than anticipated, and could create bugs from version errors.
+Older versions of npm (pre 3.x) nested peer dependencies, which meant that both
+ versions of `dependency-a` were included in your app bundle. For the front end,
+this duplication meant the size of the compiled JavaScript would be much larger
+than anticipated, and could create bugs from version errors.
 
 As of npm 3.3 this dependency tree has been flattened. Peer dependencies must be
 installed explicitly, removing the duplication and allowing complete control
-over their versions. This removes the main advantage that other JavaScript
-package managers (like Bower) had over npm.
+over their versions. Clearing up the nested dependency problem removes the main
+advantage that other JavaScript package managers (like Bower) had over npm.
 
 ### npm — Node Package Manager
 
