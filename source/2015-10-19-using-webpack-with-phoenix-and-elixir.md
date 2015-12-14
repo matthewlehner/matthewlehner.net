@@ -2,6 +2,7 @@
 title: Using Webpack with Phoenix and Elixir
 date: 2015-10-19 02:38 UTC
 meta_description: Set up webpack as Phoenix's front end build tool to take advantage of hot module replacement and intelligent optimization for your front end app.
+image: webpack-and-phoenix-on-elixir.svg
 tags: elixir, phoenix, webpack
 ---
 
@@ -176,8 +177,6 @@ so that we can require relative modules.
 Add the following `webpack.config.js`:
 
 ```javascript
-var path = require('path');
-
 module.exports = {
   // Leave the entry, output, and module options we set previously...
 

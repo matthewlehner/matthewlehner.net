@@ -2,6 +2,7 @@
 title: "Lessons Learned: Successes and Failures of 2013"
 meta_description: 2013 was a great year for business. I narrowed down my business, but need to achieve a strong focus.
 image: 2013-in-review.jpg
+featured_image_old: true
 ---
 
 Career wise, 2013 has been the best year of my life; both financially and with my own personal fulfillment from work commitments. Just as importantly, I've been learning what motivates me and am transitioning my business to focus on these factors, rather than just focusing on the financials. Here's a quick list of accomplishments:
