@@ -19,7 +19,8 @@ server side architecture currently, so, naturally these should be paired with
 the best client side tools.
 
 By the end of this guide, you'll have wepback running at parity with the default
-Brunch configuration that Phoenix comes with.
+Brunch configuration that Phoenix comes with. Here's an [example
+repo][webpack-phoenix-example].
 
 ## Initializing the Phoenix Application
 
@@ -125,7 +126,7 @@ with Babel for JavaScript compilation.
 Install babel, and the babel loader for webpack:
 
 ```sh
-npm install babel-loader babel-core --save-dev
+npm install babel-loader babel-core babel-preset-es2015 --save-dev
 ```
 
 and add the following after the `output` options in `webpack.config.js`:
@@ -138,8 +139,10 @@ module.exports = {
     loaders: [{
       test: /\.js$/,
       exclude: /node_modules/,
-      loaders: ["babel"],
-      include: __dirname
+      loader: "babel",
+      query: {
+        presets: ["es2015"]
+      }
     }]
   }
 }
@@ -171,17 +174,17 @@ import filePicker from './components/filePicker';
 ```
 
 This is not better or worse, just different. Since we're aiming for complete
-compatibility with the Brunch configuration we'll have to add a few load paths
-so that we can require relative modules.
+compatibility with the Brunch configuration we'll have to add a configuration
+option to tell it to look in `web/static/js` for a module.
 
 Add the following `webpack.config.js`:
 
 ```javascript
 module.exports = {
-  // Leave the entry, output, and module options we set previously...
+  // Leave the entry, output, and module options we set previously
 
   resolve: {
-    modulesDirectories: [ __dirname ]
+    modulesDirectories: [ __dirname + "/web/static/js" ]
   }
 }
 ```
@@ -193,7 +196,23 @@ import "deps/phoenix_html/web/static/js/phoenix_html";
 ```
 
 Restart the Phoenix server, and we should now have the Phoenix JavaScript
-included in our compiled file.
+included in our compiled file. This long path to import is a bit ugly for me, so
+I like to alias the file within webpack. Add the following `alias` option to
+the `resolve` configuration area:
+
+```javascript
+resolve: {
+  modulesDirectories: [ __dirname + "/web/static/js" ],
+  alias: {
+    phoenix_html:
+      __dirname + "/deps/phoenix_html/web/static/js/phoenix_html.js",
+    phoenix:
+      __dirname + "/deps/phoenix/web/static/js/phoenix.js"
+  }
+}
+```
+
+Now, you can simply `import "phoenix_html"` or `import Phoenix from "phoenix"`.
 
 ### CSS and Webpack
 
@@ -230,7 +249,13 @@ module.exports = {
   },
 
   resolve: {
-    modulesDirectories: [ __dirname ]
+    modulesDirectories: [ __dirname + "/web/static/js" ],
+    alias: {
+      phoenix_html:
+        __dirname + "/deps/phoenix_html/web/static/js/phoenix_html.js",
+      phoenix:
+        __dirname + "/deps/phoenix/web/static/js/phoenix.js"
+    }
   },
 
   module: {
@@ -260,25 +285,60 @@ assets.
 
 Last but not least, we need to move our static assets so that they're
 accessible. By default, Phoenix stores static assets in `web/static/assets` and
-moves them to `priv/static`, so `web/static/assets/favicon.ico` will move to
+moves them to `priv/static`, so `web/static/assets/favicon.ico` will be moved to
 `priv/static/favicon.ico`.
 
-This is something that webpack is not well suited for. We can get it to move
-files that are required within CSS or JS, but it simply isn't made for copying
-files from one place to another. Instead, we'll copy the files ourselves:
+To do this, install the `copy-webpack-plugin`:
 
-```sh
-cp -R web/static/assets/**/* priv/static
-```
-and update `.gitignore` to reflect this change:
-
-```
-# /priv/static/ - Comment this line out, and add the following two lines.
-/priv/static/js/
-/priv/static/css/
+```bash
+npm install --save-dev copy-webpack-plugin
 ```
 
-And that's it. We're all done!
+and add its configuration to the plugins array in `webpack.config.js`:
+
+```javascript
+var CopyWebpackPlugin = require("copy-webpack-plugin");
+
+module.exports {
+  // ...
+  plugins: [
+    new ExtractTextPlugin("css/app.css"),
+    new CopyWebpackPlugin([{ from: "./web/static/assets" }])
+  ]
+}
+```
+
+There is one gotcha to this approach – assets are not automatically copied when
+added to `web/static/assets`. With this configuration, you are required to
+restart webpack when a file is added to this directory.
+
+## Building for Production
+
+The last step in this process is to tell elixir webpack to build production
+ready assets, this is simple. From the command line, run:
+
+```bash
+webpack -p
+```
+
+I've added this as a script in `package.json` like so:
+
+```json
+{
+  "scripts": {
+    "compile": "webpack -p"
+  }
+}
+```
+
+And that's it. We're all done! Now, just run `npm run compile` to build your
+assets during your deploy process and everything will work the same way that it
+did with Brunch.
+
+If you get stuck, have a look at my [example repo][webpack-phoenix-example].
+
+Enjoy!
 
 [phoenix-webpack-post]: http://manukall.de/2015/05/01/automatically-building-your-phoenix-assets-with-webpack/
 [webpack-hmr-docs]: http://webpack.github.io/docs/hot-module-replacement-with-webpack.html
+[webpack-phoenix-example]: https://github.com/matthewlehner/phoenix-webpack-example
