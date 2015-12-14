@@ -76,3 +76,14 @@ p img {
     font-size: 0.8em;
   }
 }
+
+// Webfonts!
+.wf-loading {
+  opacity: 0;
+}
+
+.wf-inactive,
+.wf-active {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
