@@ -3,28 +3,39 @@
   <meta name="twitter:url" content="<%= "#{domain_name}#{current_page.url}" %>">
   <meta name="twitter:title" content="<%= current_page.data.title %>">
   <meta name="twitter:description" content="<%= current_page.data.meta_description %>">
+  <% if current_page.data.image && !current_page.data.featured_image_old %>
+    <meta name="twitter:image" content="<%= "#{domain_name}#{image_path current_page.data.image.gsub(".svg", "-twit.png")}" %>">
+  <% end %>
 
   <meta property="og:url" content="<%= "#{domain_name}#{current_page.url}" %>">
   <meta property="og:type" content="article">
   <meta property="og:title" content="<%= current_page.data.title %>">
   <meta property="og:description" content="<%= current_page.data.meta_description %>">
   <meta property="og:site_name" content="Matthew Lehner's Blog">
+  <% if current_page.data.image && !current_page.data.featured_image_old %>
+    <meta name="og:image" content="<%= "#{domain_name}#{image_path current_page.data.image.gsub(".svg", "-og.jpg")}" %>">
+  <% end %>
 <% end %>
 
 <% wrap_layout :layout do %>
-  <% if current_page.data.image %>
-    <header class="post-header header-featured-image" style="background-image:url(<%= image_path current_page.data.image %>)">
+  <% if current_page.data.featured_image_old %>
+    <%= render_partial "partials/old-image-header" %>
   <% else %>
-    <header class="post-header">
+    <header class="post-header<%= " featured-image-container" if current_page.data.image %>">
+      <% if current_page.data.image %>
+        <figure>
+          <img src="<%= image_path current_page.data.image %>">
+        </figure>
+      <% end %>
+      <h1 class="entry-title">
+        <%= current_page.data.title %>
+      </h1>
+      <%# <p> %>
+      <%#   <span class="byline author vcard">By <a href="/about/" rel="author" class="fn">Matthew</a></span> on %>
+      <%#  <time class="published" datetime="<%= current_page.date %#>"><%= current_page.date.strftime('%B %e, %Y') %#></time> %>
+      <%# </p> %>
+    </header>
   <% end %>
-    <h1 class="entry-title">
-      <%= current_page.data.title %>
-    </h1>
-    <%# <p> %>
-    <%#   <span class="byline author vcard">By <a href="/about/" rel="author" class="fn">Matthew</a></span> on %>
-    <%#  <time class="published" datetime="<%= current_page.date %#>"><%= current_page.date.strftime('%B %e, %Y') %#></time> %>
-    <%# </p> %>
-  </header>
   <div class="entry-content">
     <%= yield %>
   </div>

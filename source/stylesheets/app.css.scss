@@ -20,15 +20,8 @@ $secondary-color: #aaa;
 @import "post";
 @import "pagination";
 
-.post-list,
-.entry-list {
+.post-list {
   @extend %unstyled-list;
-}
-
-.entry-list {
-  li {
-    margin-bottom: 3em;
-  }
 }
 
 .newsletter-signup {
