@@ -1,34 +1,28 @@
 .site-header {
-  padding-top: 1em;
   padding-bottom: 1em;
+  padding-top: 1em;
 
   a {
-    text-decoration: none; 
+    text-decoration: none;
   }
 }
 
 .navbar-brand {
-  @include media($large-screen-up) {
-    @include span-columns(4);
-    visibility: inherit;
-    height: auto;
-  }
-
   color: $base-font-color;
   display: block;
-  font-size: 28px;
   font-family: $header-font-family;
-  visibility: hidden;
+  font-size: 28px;
   height: 0;
+  visibility: hidden;
+
+  @include media($large-screen-up) {
+    @include span-columns(4);
+    height: auto;
+    visibility: inherit;
+  }
 }
 
 .navbar-nav {
-  @include media($large-screen-up) {
-    @include span-columns(8);
-    font-size: em(16);
-    text-align: right;
-  }
-
   font-family: $header-font-family;
   font-size: em(14);
   letter-spacing: 1px;
@@ -37,15 +31,21 @@
   text-align: center;
   text-transform: uppercase;
 
+  @include media($large-screen-up) {
+    @include span-columns(8);
+    font-size: em(16);
+    text-align: right;
+  }
+
   li {
     display: inline;
-    padding: 0 0 0 em(16);
     line-height: em(50);
     margin-left: em(16);
+    padding: 0 0 0 em(16);
 
     &:first-child {
-      padding-left: 0;
       margin-left: 0;
+      padding-left: 0;
     }
   }
 
