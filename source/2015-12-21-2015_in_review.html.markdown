@@ -86,12 +86,21 @@ applications.
 
 ### Technology Choices in 2016
 
+The nice list:
+
 * 👍 Elixir
 * 👍 React
 * 👍 Redux
 * 👍 npm
 * 👍 Babel/ES2015
 
+The naughty list:
+
 * 👎 Bower
 * 👎 Ember.js
 * 👎 ActionCable
+
+## General 2016 Hopes and Dreams
+
+I've been working on a screencast series for doing TDD with webpack, React, and
+Redux. We'll see where this goes!
