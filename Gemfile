@@ -19,3 +19,4 @@ gem "redcarpet"
 
 # Live-reloading plugin
 gem "middleman-livereload", "~> 3.4.4"
+gem "pry"
