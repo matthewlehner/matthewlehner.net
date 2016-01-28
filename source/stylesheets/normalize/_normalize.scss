@@ -7,9 +7,17 @@
  */
 
 html {
-  font-family: sans-serif; /* 1 */
+  box-sizing: border-box;
+  font-family: $base-font-family; /* 1 */
+  font-size: 137.5%;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  line-height: 1.5;
   -ms-text-size-adjust: 100%; /* 2 */
   -webkit-text-size-adjust: 100%; /* 2 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /**
@@ -17,6 +25,7 @@ html {
  */
 
 body {
+  color: $base-font-color;
   margin: 0;
 }
 

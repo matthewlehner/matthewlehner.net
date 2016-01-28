@@ -1,3 +1,54 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $header-font-color;
+  font-family: $header-font-family;
+  font-weight: 600;
+  line-height: $header-line-height;
+  margin-top: rem(36);
+  text-rendering: optimizeLegibility;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 1.95314rem;
+  margin-bottom: 0.768rem;
+}
+
+h2 {
+  font-size: 1.5625rem;
+  margin-bottom: 0.96rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1.2rem;
+}
+
+h4 {
+  font-size: 1rem;
+  letter-spacing: 0.02rem;
+  text-transform: uppercase;
+  margin-bottom: 0.81818rem;
+}
+
+h5 {
+  font-size: 0.8rem;
+}
+
+h6 {
+  font-size: 0.64rem;
+}
+
+h5,
+h6 {
+  margin-bottom: 10px;
+  margin-bottom: rem(10);
+}
+
 // a {
 //   color: $link-color;
 //   @include transition(color 0.2s ease-out);
@@ -25,6 +76,7 @@ pre {
   code {
     border-radius: $base-border-radius;
     display: block;
+    font-family: hack, monaco, courier, monospace;
     font-size: 0.727272em;
 
     // border-radius: 3px;
@@ -96,4 +148,38 @@ cite {
 
 .container {
   @extend %outer-container;
+}
+
+p,
+ol,
+ul,
+blockquote,
+pre,
+#respond,
+#disqus_thread {
+  margin: auto auto ($base-line-height/2);
+}
+
+abbr,
+acronym,
+blockquote,
+code,
+dir,
+kbd,
+listing,
+plaintext,
+q,
+tt,
+var,
+xmp {
+  css-hyphens: none;
+}
+
+abbr {
+  font-variant: small-caps;
+  text-transform: lowercase;
+
+  &[title]:hover {
+    cursor: help;
+  }
 }

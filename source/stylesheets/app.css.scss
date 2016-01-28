@@ -1,6 +1,7 @@
 @charset "utf-8";
 $em-base: 22;
 
+@import "variables";
 @import "normalize/normalize";
 @import "bourbon";
 @import "neat";
@@ -10,8 +11,8 @@ $link-color: #1076b9;
 $link-color-active: $medium-gray;
 $secondary-color: #aaa;
 
-@import "typeplate/vars-typeplate";
-@import "typeplate/typeplate";
+// @import "typeplate/vars-typeplate";
+// @import "typeplate/typeplate";
 @import "syntax";
 
 @import "extends";

@@ -1,14 +1,18 @@
 // Typography
-$sans-serif: $helvetica;
-$serif: "ff-tisa-web-pro", $georgia;
+// $sans-serif: $helvetica;
+$serif: "ff-tisa-web-pro", Georgia;
 $base-font-family: $serif;
-$header-font-family: "freight-sans-pro", sans-serif;
-
-// Sizes
 $base-font-size: 1em;
 $base-line-height: $base-font-size * 1.65;
-$unitless-line-height: $base-line-height / ($base-line-height * 0 + 1); // Strip units from line-height: https://developer.mozilla.org/en-US/docs/Web/CSS/line-height#Prefer_unitless_numbers_for_line-height_values
+$base-font-color: #444;
+
+// Headers
+$header-font-family: "freight-sans-pro", sans-serif;
 $header-line-height: $base-font-size * 1.25;
+$header-font-color: #222;
+
+// Sizes
+$unitless-line-height: $base-line-height / ($base-line-height * 0 + 1); // Strip units from line-height: https://developer.mozilla.org/en-US/docs/Web/CSS/line-height#Prefer_unitless_numbers_for_line-height_values
 $base-border-radius: em(3);
 
 // Colors
@@ -25,8 +29,6 @@ $light-orange: #F7D18C;
 $base-background-color: white;
 
 // Font Colors
-$base-font-color: $dark-gray;
-$header-font-color: #222;
 $base-accent-color: $blue;
 $secondary-accent-color: $light-orange;
 
