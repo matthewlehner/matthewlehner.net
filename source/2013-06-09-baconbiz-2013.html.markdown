@@ -1,6 +1,7 @@
 ---
 title: BaconBiz 2013 Notes and Resources
 date: 2013-06-09 17:00 UTC
+tags: hidden
 ---
 
 I've created this page as a resource for all the amazing resources and inspiration that came from BaconBizConf 2013. Thanks to Amy, Alex and all the other organizers for making such a successful conference!
