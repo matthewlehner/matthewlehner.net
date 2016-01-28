@@ -37,6 +37,8 @@ set :markdown, fenced_code_blocks: true, smartypants: true
 
 activate :syntax
 
+activate :autoprefixer
+
 # Methods defined in the helpers block are available in templates
 # helpers do
 #   def some_helper

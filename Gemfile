@@ -7,6 +7,7 @@ gem "middleman-blog"
 gem "middleman-imageoptim", "~>0.2.1"
 gem "middleman-minify-html"
 gem "middleman-syntax"
+gem "middleman-autoprefixer"
 
 gem "middleman-disqus"
 gem "middleman-deploy"
