@@ -37,7 +37,7 @@ set :markdown, fenced_code_blocks: true, smartypants: true
 
 activate :syntax
 
-activate :autoprefixer
+# activate :autoprefixer
 
 # Methods defined in the helpers block are available in templates
 # helpers do
@@ -46,9 +46,19 @@ activate :autoprefixer
 #   end
 # end
 
-set :css_dir, 'stylesheets'
-set :js_dir, 'javascripts'
-set :images_dir, 'images'
+helpers do
+  def domain_name
+    if build?
+      "http://matthewlehner.net"
+    else
+      "//localhost:4567"
+    end
+  end
+end
+
+set :css_dir, "stylesheets"
+set :js_dir, "javascripts"
+set :images_dir, "images"
 
 activate :disqus do |d|
   # d.shortname = "matthewlehnerblog"
@@ -57,24 +67,21 @@ end
 
 # Reload the browser automatically whenever files change
 configure :development do
-  set :domain_name, "http://localhost:4567"
   activate :livereload
 end
 
 # Build-specific configuration
 configure :build do
-  set :domain_name, "http://matthewlehner.net"
   activate :asset_hash
   activate :minify_css
   activate :minify_javascript
   activate :minify_html
-  # activate :imageoptim
   activate :gzip
 end
 
 activate :deploy do |deploy|
   deploy.build_before = true
-  deploy.method = :rsync
+  deploy.deploy_method = :rsync
   deploy.host   = "cedar"
   deploy.path   = "~/apps/matthewlehner.net"
   deploy.flags  = "-avz --chmod=Du=rwx,Dgo=rx,Fu=rw,Fgo=r"
