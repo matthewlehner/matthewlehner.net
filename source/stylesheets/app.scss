@@ -3,8 +3,8 @@ $em-base: 22;
 
 @import "variables";
 @import "normalize/normalize";
-@import "bourbon";
-@import "neat";
+@import "~bourbon/app/assets/stylesheets/bourbon";
+@import "~bourbon-neat/app/assets/stylesheets/neat";
 @import "base/base";
 
 $link-color: #1076b9;

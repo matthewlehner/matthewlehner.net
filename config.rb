@@ -22,23 +22,7 @@
 ###
 # Helpers
 ###
-
-activate :blog do |blog|
-  blog.permalink = "/{title}.html"
-  blog.layout = "article"
-end
-activate :directory_indexes
-
-# Automatic image dimensions on image_tag helper
-# activate :automatic_image_sizes
-
-set :markdown_engine, :redcarpet
-set :markdown, fenced_code_blocks: true, smartypants: true
-
-activate :syntax
-
-# activate :autoprefixer
-
+#
 # Methods defined in the helpers block are available in templates
 # helpers do
 #   def some_helper
@@ -56,12 +40,22 @@ helpers do
   end
 end
 
-set :css_dir, "stylesheets"
-set :js_dir, "javascripts"
-set :images_dir, "images"
+
+activate :blog do |blog|
+  blog.permalink = "/{title}.html"
+  blog.layout = "article"
+end
+activate :directory_indexes
+
+# Automatic image dimensions on image_tag helper
+# activate :automatic_image_sizes
+
+set :markdown_engine, :redcarpet
+set :markdown, fenced_code_blocks: true, smartypants: true
+
+activate :syntax
 
 activate :disqus do |d|
-  # d.shortname = "matthewlehnerblog"
   d.shortname = "mlblogdev"
 end
 
@@ -69,6 +63,12 @@ end
 configure :development do
   activate :livereload
 end
+
+activate :external_pipeline,
+         name: :webpack,
+         command: build? ? "npm run build" : "npm start",
+         source: ".tmp/dist",
+         latency: 1
 
 # Build-specific configuration
 configure :build do
