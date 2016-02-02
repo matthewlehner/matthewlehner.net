@@ -3,18 +3,18 @@ layout: false
 directory_index: false
 ---
 
-<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="<%= sitemap.app.config.domain_name + "/main-sitemap.xsl" %>"?>
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="<%= domain_name + "/main-sitemap.xsl" %>"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <% sitemap.resources.select { |page| page.destination_path =~ /\.html/ && !(page.destination_path =~ /thank-you/) }.each do |page| %>
     <url>
-      <loc><%= sitemap.app.config.domain_name + page.url %></loc>
+      <loc><%= domain_name + page.url %></loc>
       <lastmod><%= Time.new.iso8601 %></lastmod>
       <changefreq><%= page.data.sitemap_changefreq || "Weekly" %></changefreq>
       <priority><%= page.data.sitemap_priority || "0.6" %></priority>
       <% if page.data.image %>
         <image:image>
-          <image:loc><%= sitemap.app.config.domain_name + image_path(current_page.data.image) %></image:loc>
+          <image:loc><%= domain_name + image_path(current_page.data.image) %></image:loc>
           <image:caption><![CDATA[<%= page.data.title %>]]></image:caption>
         </image:image>
       <% end %>
