@@ -1,0 +1,18 @@
+<% content_for :head do %>
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="<%= "#{domain_name}#{current_page.url}" %>">
+  <meta name="twitter:title" content="<%= current_page.data.title %>">
+  <meta name="twitter:description" content="<%= current_page.data.meta_description %>">
+  <% if current_page.data.image && !current_page.data.featured_image_old %>
+    <meta name="twitter:image" content="<%= "#{domain_name}#{image_path current_page.data.image.gsub(".svg", "-twit.png")}" %>">
+  <% end %>
+
+  <meta property="og:url" content="<%= "#{domain_name}#{current_page.url}" %>">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="<%= current_page.data.title %>">
+  <meta property="og:description" content="<%= current_page.data.meta_description %>">
+  <meta property="og:site_name" content="Matthew Lehner's Blog">
+  <% if current_page.data.image && !current_page.data.featured_image_old %>
+    <meta name="og:image" content="<%= "#{domain_name}#{image_path current_page.data.image.gsub(".svg", "-og.jpg")}" %>">
+  <% end %>
+<% end %>

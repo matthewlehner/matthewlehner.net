@@ -148,6 +148,10 @@ cite {
   display: inline;
 }
 
+.body-content {
+  flex: 1;
+}
+
 .container {
   @extend %outer-container;
 }

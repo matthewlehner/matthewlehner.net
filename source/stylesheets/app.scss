@@ -63,7 +63,11 @@ p img {
 }
 
 .content-info {
-  margin-top: 5em;
+  background-color: lighten($light-gray, 10%);
+  border-top: 1px solid lighten($light-gray, 5%);
+  margin-top: 5rem;
+  padding-bottom: 5rem;
+  padding-top: 5rem;
 
   p {
     font-family: $header-font-family;

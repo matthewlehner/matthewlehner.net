@@ -17,7 +17,9 @@
 
 <body class="<%= page_classes %>">
   <%= render_partial "partials/site-header" %>
-  <%= yield %>
+  <main class="body-content">
+    <%= yield %>
+  </main>
   <%= render_partial "partials/site-footer" %>
 
   <%= render_partial "partials/webfonts" %>
