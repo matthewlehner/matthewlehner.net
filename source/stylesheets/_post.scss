@@ -54,8 +54,7 @@
 
 .entry-list,
 .entry-content,
-#respond,
-#disqus_thread {
+.discussion {
   margin-left: auto;
   margin-right: auto;
 
@@ -72,4 +71,8 @@
     margin: 1.6rem 0;
     text-align: center;
   }
+}
+
+.discussion {
+  margin-top: 7rem;
 }

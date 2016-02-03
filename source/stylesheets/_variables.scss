@@ -1,6 +1,6 @@
 // Typography
 // $sans-serif: $helvetica;
-$serif: "ff-tisa-web-pro", Georgia;
+$serif: "Arnhem Pro", Georgia;
 $base-font-family: $serif;
 $base-font-size: 1em;
 $base-line-height: $base-font-size * 1.65;
@@ -16,17 +16,17 @@ $unitless-line-height: $base-line-height / ($base-line-height * 0 + 1); // Strip
 $base-border-radius: em(3);
 
 // Colors
-$blue: #1076B9;
+$blue: #1076b9;
 $dark-gray: #333;
 $medium-gray: #666;
-$light-gray: #DDD;
-$light-red: #FBE3E4;
-$light-yellow: #FFF6BF;
-$light-green: #E6EFC2;
-$light-orange: #F7D18C;
+$light-gray: #ddd;
+$light-red: #fbe3e4;
+$light-yellow: #fff6bf;
+$light-green: #e6efc2;
+$light-orange: #f7d18c;
 
 // Background Color
-$base-background-color: white;
+$base-background-color: #fff;
 
 // Font Colors
 $base-accent-color: $blue;
@@ -53,7 +53,7 @@ $form-border-color: $base-border-color;
 $form-border-color-hover: darken($base-border-color, 10);
 $form-border-color-focus: $base-accent-color;
 $form-border-radius: $base-border-radius;
-$form-box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);
-$form-box-shadow-focus: $form-box-shadow, 0 0 5px rgba(darken($form-border-color-focus, 5), 0.7);
+// $form-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
+// $form-box-shadow-focus: $form-box-shadow, 0 0 5px rgba(darken($form-border-color-focus, 5), 0.7);
 $form-font-size: $base-font-size;
 $form-font-family: $base-font-family;

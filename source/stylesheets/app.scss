@@ -6,10 +6,11 @@ $em-base: 22;
 @import "~bourbon/app/assets/stylesheets/bourbon";
 @import "~bourbon-neat/app/assets/stylesheets/neat";
 @import "base/base";
+@import "fonts";
 
 $link-color: #1076b9;
 $link-color-active: $medium-gray;
-$secondary-color: #aaa;
+$secondary-color: #999;
 
 // @import "typeplate/vars-typeplate";
 // @import "typeplate/typeplate";
@@ -62,16 +63,16 @@ p img {
   max-width: 100%;
 }
 
-.content-info {
+.content-footer {
   background-color: lighten($light-gray, 10%);
   border-top: 1px solid lighten($light-gray, 5%);
   margin-top: 5rem;
-  padding-bottom: 5rem;
-  padding-top: 5rem;
+  padding-bottom: 3rem;
+  padding-top: 3rem;
 
   p {
-    font-family: $header-font-family;
     color: $secondary-color;
+    font-family: $header-font-family;
     font-size: 0.8em;
   }
 }

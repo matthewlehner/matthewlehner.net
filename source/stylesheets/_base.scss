@@ -67,8 +67,8 @@ blockquote {
 
 pre {
   background: lighten($light-gray, 10%);
-  border: $base-border;
-  border-radius: 2px;
+  border: 1px solid lighten($base-border-color, 5%);
+  border-radius: 3px;
   line-height: 1.2;
   margin: 2.2em auto;
   overflow-x: auto;
@@ -161,8 +161,7 @@ ol,
 ul,
 blockquote,
 pre,
-#respond,
-#disqus_thread {
+.discussion {
   margin: auto auto ($base-line-height/2);
 }
 
