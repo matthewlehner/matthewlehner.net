@@ -40,7 +40,6 @@ helpers do
   end
 end
 
-
 activate :blog do |blog|
   blog.permalink = "/{title}.html"
   blog.layout = "article"
@@ -60,9 +59,7 @@ activate :disqus do |d|
 end
 
 # Reload the browser automatically whenever files change
-configure :development do
-  activate :livereload
-end
+activate :livereload
 
 activate :external_pipeline,
          name: :webpack,
