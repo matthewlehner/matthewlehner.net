@@ -4,7 +4,7 @@
   "description": "matthewlehner.net ---",
   "main": "index.js",
   "scripts": {
-    "start": "$(npm root)/.bin/webpack --watch -d",
+    "start": "$(npm root)/.bin/webpack --watch -d --colors --progress",
     "build": "$(npm root)/.bin/webpack --bail -p",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -20,11 +20,13 @@
   },
   "homepage": "https://github.com/matthewlehner/matthewlehner.net#readme",
   "devDependencies": {
+    "autoprefixer": "^6.3.1",
     "bourbon": "^4.2.6",
     "bourbon-neat": "^1.7.2",
     "css-loader": "^0.23.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "node-sass": "^3.4.2",
+    "postcss-loader": "^0.8.0",
     "sass-loader": "^3.1.2",
     "style-loader": "^0.13.0",
     "webpack": "^1.12.12"
