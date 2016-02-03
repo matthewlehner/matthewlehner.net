@@ -5,19 +5,21 @@ sitemap_changefreq: Daily
 meta_description: I'm Matthew Lehner. I build great software and help teams do the same.
 ---
 
-<ul class="entry-list">
-<% blog.articles.each do |article| %>
-  <% unless (article.tags.include?("draft") || article.tags.include?("hidden")) %>
-    <li>
-      <header class="excerpt-header">
-          <h2 class="entry-title">
-            <a href="<%= article.url %>"><%= article.title %></a>
-        </h2>
-      </header>
-      <p class="entry-summary">
-        <%= article.data.meta_description %>
-      </p>
-    </li>
+<section class="wrap container">
+  <ul class="entry-list">
+  <% blog.articles.each do |article| %>
+    <% unless (article.tags.include?("draft") || article.tags.include?("hidden")) %>
+      <li>
+        <header class="excerpt-header">
+            <h2 class="entry-title">
+              <a href="<%= article.url %>"><%= article.title %></a>
+          </h2>
+        </header>
+        <p class="entry-summary">
+          <%= article.data.meta_description %>
+        </p>
+      </li>
+    <% end %>
   <% end %>
-<% end %>
-</ul>
+  </ul>
+</section>

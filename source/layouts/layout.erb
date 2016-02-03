@@ -17,16 +17,9 @@
 
 <body class="<%= page_classes %>">
   <%= render_partial "partials/site-header" %>
-  <section class="wrap container" role="document">
-    <%= yield %>
-  </section>
+  <%= yield %>
   <%= render_partial "partials/site-footer" %>
-  <%# <%= javascript_include_tag  "all" %>
 
-  <script src="https://use.typekit.net/vfd4njf.js"></script>
-  <script>try{Typekit.load({ async: true });}catch(e){
-      document.documentElement.classList.add("wf-inactive");
-      document.documentElement.classList.remove("wf-loading");
-  }</script>
+  <%= render_partial "partials/webfonts" %>
 </body>
 </html>
