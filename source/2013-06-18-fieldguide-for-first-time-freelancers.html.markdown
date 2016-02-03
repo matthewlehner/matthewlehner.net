@@ -1,11 +1,13 @@
 ---
-title: "Field guide for first time freelancers (How to make more money and enjoy more free time)"
+title: "Field guide for first time freelancers<br><small>(How to make more money and enjoy more free time)</small>"
 date: 2013-06-18 00:00 UTC
 ---
 
 If you’re a developer who is currently working for someone else, you’ve probably had dreams of the cushy life you'd live if you just quit your and started doing freelance work. Who wouldn’t want to? Work the hours you want to, from anywhere (bed, coffee shops, your grandmother’s dining room table), take as much time off as you want and still make great money. This is totally doable and if done right, can make you more money, while picking the projects and people that you want. 2 and a half years ago I started freelancing and have never looked back. I'm making more money than ever before and work about half the hours I did before. I paint a pretty good picture, but here are some things I've learned that I wish I'd known at the beginning.
 
-<h2>Learn (and practice) Value Based Pricing</h2>
+Learn (and practice) Value Based Pricing
+---
+
 To put this simply, your rate will define the calibre of client that you will work with. If you have the ability to deliver a quality product, then charging more is the first step in establishing yourself as an expert. Experts have the trust of their clients and aren’t treated like wage jockeys.
 
 There are countless people who will make websites for pennies. Their services are cheap because they produce a single product and have a specific output. Their product is viewed by their customers as a single outcome, just a website. Simply reframing 'building a site' to 'implementing a [money making/time saving/money saving] solution' that is actively working to increase their profits puts you on a different level than 'the other guy'. 
@@ -18,8 +20,14 @@ Also, making more money means having to work less. You’re freelancing because 
 
 Resource: <a href="http://breakingthetimebarrier.freshbooks.com/">Breaking the Time Barrier</a>
 
-<h2>Cashflow</h2>
-Now that you’ve established a sane base rate you need to make sure that you’re able to pay your bills every month. Make sure that your contract has strict terms of payment and your client understands them. If the client breaks these terms, contact them immediately and stop working. Most times this will result in almost immediate payment.
+Cashflow
+---
+
+Now that you’ve established a sane base rate you need to make sure that you’re
+able to pay your bills every month. Make sure that your contract has strict
+terms of payment and your client understands them. If the client breaks these
+terms, contact them immediately and stop working. Most times this will result in
+almost immediate payment.
 
 Use a time tracking and invoicing service that will allow you to set up automatic invoicing for hours worked on each project that you’re involved with, either semi-weekly or monthly. This will systematize your invoicing and remove the administrative task of sending out invoices. Beyond this, follow up with your clients if they haven’t paid you and the invoice is coming due. If they don’t respond, stop working immediately. This is very important. Your needs are important and you are not working for charity.
 
@@ -39,7 +47,10 @@ Additionally, writing articles about interesting things you've worked on and com
 Out of all these tips, this is the most difficult to accomplish. It is abstract, and until you understand how the process works it will seem a bit magical. To improve, just make sure you are are making steady progress increasing the publicity of yourself or your brand. As a natural introvert, I've had an especially hard time engaging with new and potential clients, but I am passionate enough about being successful in this profession to just make it happen. It might not be easy, but it's doable and practise will only make you better.
 
 Resource: <a href="http://jonathanwold.com/first-client/">Four Weeks to Your First Client</a>
-<h2>Work Habits</h2>
+
+Work Habits
+---
+
 Now that you set your own hours and don't answer to a manager, you've got all the time in the world. Don't waste it! Your business is now your day job and its success is solely your responsibility. This may seem daunting at first, but it is not unmanageable, and as time goes on, you will grow used to the independence and control you have over the direction of your professional life. Two ways to ensure productivity are by creating a dedicated work space and creating good work habits.
 
 Creating good work habits can take time. It is an investment in yourself. Procrastination is easy - the internet is full of tools to help you get better at procrastinating. The best way to create new habits is slowly, one day at a time making constant progress towards your goal. Set small, manageable goals for your day and hold yourself accountable. At first, they might be small like, 'write a blog post', 'finish this feature for this client'.

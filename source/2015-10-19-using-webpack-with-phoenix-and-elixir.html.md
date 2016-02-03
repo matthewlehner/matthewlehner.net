@@ -87,6 +87,8 @@ Now we'll tell Phoenix to run webpack when running the development server. Edit
 the `watchers` option in `config/dev.exs` to look like this:
 
 ```elixir
+config :matrimony, Matrimony.Endpoint,
+  # leave other settings and change the `watchers` option.
   watchers: [node: ["node_modules/webpack/bin/webpack.js",
                     "--watch-stdin", "--progress", "--colors"]]
 ```
@@ -201,13 +203,17 @@ I like to alias the file within webpack. Add the following `alias` option to
 the `resolve` configuration area:
 
 ```javascript
-resolve: {
-  modulesDirectories: [ __dirname + "/web/static/js" ],
-  alias: {
-    phoenix_html:
-      __dirname + "/deps/phoenix_html/web/static/js/phoenix_html.js",
-    phoenix:
-      __dirname + "/deps/phoenix/web/static/js/phoenix.js"
+module.exports = {
+  // Leave the entry, output, and module options we set previously
+
+  resolve: {
+    modulesDirectories: [ __dirname + "/web/static/js" ],
+    alias: {
+      phoenix_html:
+        __dirname + "/deps/phoenix_html/web/static/js/phoenix_html.js",
+      phoenix:
+        __dirname + "/deps/phoenix/web/static/js/phoenix.js"
+    }
   }
 }
 ```

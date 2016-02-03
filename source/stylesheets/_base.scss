@@ -67,6 +67,8 @@ blockquote {
 
 pre {
   background: lighten($light-gray, 10%);
+  border: $base-border;
+  border-radius: 2px;
   line-height: 1.2;
   margin: 2.2em auto;
   overflow-x: auto;
