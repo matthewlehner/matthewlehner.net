@@ -35,7 +35,7 @@ helpers do
     if build?
       "http://matthewlehner.net"
     else
-      "//localhost:4567"
+      "http://localhost:4567"
     end
   end
 end

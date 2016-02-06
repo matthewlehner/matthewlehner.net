@@ -24,9 +24,18 @@
       <%= yield %>
     </section>
 
+    <section class="entry-sharing">
+      <a href="https://twitter.com/intent/tweet?url=<%= CGI.escape(domain_name + current_page.url) %>&text=<%= current_page.title %>&via=matthewpearse" target="_blank" title="Tweet">
+        <%= render_partial "partials/twitter" %>
+      </a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=<%= CGI.escape(domain_name + current_page.url)%>&t=" title="Share on Facebook" target="_blank">
+        <%= render_partial "partials/facebook" %>
+      </a>
+    </section>
+
     <section class="discussion">
       <%= disqus %>
       <%= disqus_count %>
     </section>
-  <article>
+  </article>
 <% end %>
