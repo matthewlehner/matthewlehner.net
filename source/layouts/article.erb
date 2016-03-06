@@ -1,32 +1,34 @@
 <%= render_partial "partials/meta-tags" %>
 
 <% wrap_layout :layout do %>
-  <article class="wrap container">
-    <% if current_page.data.featured_image_old %>
-      <%= render_partial "partials/old-image-header" %>
-    <% else %>
-      <header class="post-header<%= " featured-image-container" if current_page.data.image %>">
-        <% if current_page.data.image %>
-          <figure>
-            <img src="<%= image_path current_page.data.image %>">
-          </figure>
-        <% end %>
-        <h1 class="entry-title">
-          <%= current_page.data.title %>
-        </h1>
-        <%# <p> %>
-        <%#   <span class="byline author vcard">By <a href="/about/" rel="author" class="fn">Matthew</a></span> on %>
-        <%#  <time class="published" datetime="<%= current_page.date %#>"><%= current_page.date.strftime('%B %e, %Y') %#></time> %>
-        <%# </p> %>
-      </header>
-    <% end %>
-    <section class="entry-content">
-      <%= yield %>
-    </section>
+  <main class="article-layout">
+    <article>
+      <% if current_page.data.featured_image_old %>
+        <%= render_partial "partials/old-image-header" %>
+      <% else %>
+        <header class="post-header<%= " featured-image-container" if current_page.data.image %>">
+          <% if current_page.data.image %>
+            <figure>
+              <img src="<%= image_path current_page.data.image %>">
+            </figure>
+          <% end %>
+          <h1 class="entry-title">
+            <%= current_page.data.title %>
+          </h1>
+          <%# <p> %>
+          <%#   <span class="byline author vcard">By <a href="/about/" rel="author" class="fn">Matthew</a></span> on %>
+          <%#  <time class="published" datetime="<%= current_page.date %#>"><%= current_page.date.strftime('%B %e, %Y') %#></time> %>
+          <%# </p> %>
+        </header>
+      <% end %>
+      <section class="entry-content">
+        <%= yield %>
+      </section>
 
-    <section class="discussion">
-      <%= disqus %>
-      <%= disqus_count %>
-    </section>
-  <article>
+      <section class="discussion">
+        <%= disqus %>
+        <%= disqus_count %>
+      </section>
+    <article>
+  </main>
 <% end %>

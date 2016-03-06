@@ -5,6 +5,10 @@
   a {
     text-decoration: none;
   }
+
+  .container {
+    @extend %outer-container;
+  }
 }
 
 .navbar-brand {

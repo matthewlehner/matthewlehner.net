@@ -10,18 +10,14 @@
   <title><%= current_page.data.title || "Matthew Lehner" %></title>
   <%= yield_content :head %>
 
-
   <%= stylesheet_link_tag "app" %>
   <%= render_partial "partials/google-analytics" if build? %>
 </head>
 
 <body class="<%= page_classes %>">
   <%= render_partial "partials/site-header" %>
-  <main class="body-content">
-    <%= yield %>
-  </main>
+  <%= yield %>
   <%= render_partial "partials/site-footer" %>
-
   <%= render_partial "partials/webfonts" %>
 </body>
 </html>
