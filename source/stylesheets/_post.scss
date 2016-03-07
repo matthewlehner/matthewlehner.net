@@ -41,6 +41,10 @@
   margin-top: 0;
 }
 
+.entry-list-container {
+  @extend %outer-container;
+}
+
 .entry-list {
   @extend %unstyled-list;
 
