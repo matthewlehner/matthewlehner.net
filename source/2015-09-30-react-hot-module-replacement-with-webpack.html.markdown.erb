@@ -125,15 +125,16 @@ within the `"scripts"` object.
 ```json
 {
   "scripts": {
-    "start": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --progress --inline"
+    "start": "webpack-dev-server --progress --inline"
   }
 }
 ```
 
-By referencing the webpack dev server directly, rather than with a global
-executable it removes a global dependency. Now, when someone clones your
-repository, they can run `npm install` and `npm start` to launch the development
-server.
+By referencing the webpack dev server within an npm script, rather than with a
+global executable we no longer rely on a global version of webpack and can use
+different versions of webpack in different projects. Now, when someone clones
+your repository, they can run `npm install` and `npm start` to launch the
+development server.
 
 From now on, use `npm start` to run the webpack dev server.
 
@@ -141,10 +142,14 @@ From now on, use `npm start` to run the webpack dev server.
 
 Now we've got a development environment that gives us quick feedback,
 so let's add in the interesting stuff: Babel for transpiling JSX and ES2015 (and
-beyond!), and React for the UI. Shut down the dev server and install Babel:
+beyond!), and React for the UI.
+
+As of Babel 6, we also need to install a few presets for ES2015 and JSX.
+
+Shut down the dev server and install Babel:
 
 ```shell
-npm install babel-core babel-loader --save-dev
+npm install babel-core babel-loader babel-preset-es2015 babel-preset-react --save-dev
 ```
 
 Now we need to add this to our webpack build pipeline. Add the following beneath
@@ -158,8 +163,11 @@ module.exports = {
     loaders: [{
       test: /\.js$/,
       exclude: /node_modules/,
-      loaders: ["babel"],
-      include: __dirname
+      loader: "babel",
+      include: __dirname,
+      query: {
+        presets: [ 'es2015', 'react' ]
+      }
     }]
   }
 }
@@ -173,8 +181,9 @@ Loaders are webpack's equivalent to preprocessors. The webpack
 > a different language like, CoffeeScript to JavaScript, or inline images as
 > data URLs.
 
-To test this out and make sure it's working, restart your dev server with `npm
-start` and change `index.js` to include some ES2015 flavoured JavaScript:
+To test out the babel-loader and make sure it's working with the presets,
+restart your dev server with `npm start` and change `index.js` to include some
+ES2015 flavoured JavaScript:
 
 ```javascript
 let docBody = "Webpack is doing its thing, with ES2015!";
@@ -257,32 +266,27 @@ To enable it for us, we need to turn on hot reloading within Webpack itself, and
 add the appropriate React tools to compile the modules with HMR support.
 
 ```shell
-npm install --save-dev babel-plugin-react-transform
-npm install --save-dev react-transform-hmr
+npm install --save-dev babel-preset-react-hmre
 ```
 
-These are the Babel plugins that allow HMR to be applied to React components.
-Because these are just plugins for Babel, we don't have to do anything other
-than enable them in our build pipeline. Create a `.babelrc` file in the project
-root and add the following configuration:
+These are a Babel preset that allows HMR to be applied to React components.
+Because these are presets for Babel, the only thing we have to do to get it
+working is add `react-hmre` to our array of presets.
 
-```json
-{
-  "env": {
-    "development": {
-      "plugins": [
-        "react-transform"
-      ],
-      "extra": {
-        "react-transform": {
-          "transforms": [{
-            "transform": "react-transform-hmr",
-            "imports": ["react"],
-            "locals": ["module"]
-          }]
-        }
+```javascript
+module.exports = {
+  // entry and output options
+
+  module: {
+    loaders: [{
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loader: "babel",
+      include: __dirname,
+      query: {
+        presets: [ 'es2015', 'react', 'react-hmre' ]
       }
-    }
+    }]
   }
 }
 ```
@@ -292,12 +296,25 @@ and edit our `start` script in `package.json` to enable the hot option:
 ```json
 {
   "scripts": {
-    "start": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --progress --inline --hot",
+    "start": "webpack-dev-server --progress --inline --hot",
   }
 }
 ```
 
-And now everything should be working as we anticipated!
+Now everything should be working as we anticipated in our dev environment, but
+there are few final things to consider.
+
+## Caveats
+
+The webpack config that we've put together here is very basic, if you bundle
+your app for production using this configuration you will be including HMR code
+within your app.
+
+I would encourage you to modularize your webpack config for the different build
+environments you'll need as production builds can differ greatly from what's
+used in development.
+
+That said, this is a great starting point for an initial webpack config!
 
 [1]: http://webpack.github.io/docs/loaders.html
 [what-is-hmr]: http://stackoverflow.com/questions/24581873/what-exactly-is-hot-module-replacement-in-webpack#answer-24587740
