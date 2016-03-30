@@ -11,7 +11,7 @@
   <meta property="og:type" content="article">
   <meta property="og:title" content="<%= current_page.data.title %>">
   <meta property="og:description" content="<%= current_page.data.meta_description %>">
-  <meta property="og:site_name" content="Matthew Lehner's Blog">
+  <meta property="og:site_name" content="Matthew Lehner">
   <% if current_page.data.image && !current_page.data.featured_image_old %>
     <meta name="og:image" content="<%= "#{domain_name}#{image_path current_page.data.image.gsub(".svg", "-og.jpg")}" %>">
   <% end %>
