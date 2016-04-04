@@ -191,34 +191,23 @@ module.exports = {
 }
 ```
 
-Now we can add back the `phoenix_html` module in `web/static/js/app.js`:
+As a final step, on the JavaScript side of things, we'll use npm to manage the
+`phoenix_html` and `phoenix` module dependencies, from the Elixir packages we've
+installed using hex.
+
+```
+npm install file:deps/phoenix_html file:deps/phoenix --save
+```
+
+and now we can import the modules normally:
 
 ```javascript
-import "deps/phoenix_html/web/static/js/phoenix_html";
+import "phoenix_html";
+import { Socket } from "phoenix";
 ```
 
 Restart the Phoenix server, and we should now have the Phoenix JavaScript
-included in our compiled file. This long path to import is a bit ugly for me, so
-I like to alias the file within webpack. Add the following `alias` option to
-the `resolve` configuration area:
-
-```javascript
-module.exports = {
-  // Leave the entry, output, and module options we set previously
-
-  resolve: {
-    modulesDirectories: [ __dirname + "/web/static/js" ],
-    alias: {
-      phoenix_html:
-        __dirname + "/deps/phoenix_html/web/static/js/phoenix_html.js",
-      phoenix:
-        __dirname + "/deps/phoenix/web/static/js/phoenix.js"
-    }
-  }
-}
-```
-
-Now, you can simply `import "phoenix_html"` or `import Phoenix from "phoenix"`.
+included in our compiled file.
 
 ### CSS and Webpack
 
