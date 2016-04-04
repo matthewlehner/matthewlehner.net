@@ -158,7 +158,7 @@ offer.
 #### Setting load paths
 
 With webpack, using `import` or `require` expects an explicit path, relative to
-the file you're working in. For exmample, if you have the following files:
+the file you're working in. For example, if you have the following files:
 
 ```
 app.js
