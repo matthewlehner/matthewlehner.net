@@ -243,16 +243,6 @@ module.exports = {
     filename: "js/app.js"
   },
 
-  resolve: {
-    modulesDirectories: [ __dirname + "/web/static/js" ],
-    alias: {
-      phoenix_html:
-        __dirname + "/deps/phoenix_html/web/static/js/phoenix_html.js",
-      phoenix:
-        __dirname + "/deps/phoenix/web/static/js/phoenix.js"
-    }
-  },
-
   module: {
     loaders: [{
       test: /\.js$/,
