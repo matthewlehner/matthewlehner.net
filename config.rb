@@ -40,10 +40,13 @@ helpers do
   end
 end
 
-activate :blog do |blog|
-  blog.permalink = "/{title}.html"
-  blog.layout = "article"
+activate :blog do |b|
+  b.permalink = "/{title}.html"
+  b.layout = "article"
+  b.default_extension = ".md"
+  b.new_article_template = "#{File.dirname(__FILE__)}/lib/article_template.tt"
 end
+
 activate :directory_indexes
 
 # Automatic image dimensions on image_tag helper
@@ -64,8 +67,7 @@ activate :livereload
 activate :external_pipeline,
          name: :webpack,
          command: build? ? "npm run build" : "npm start",
-         source: ".tmp/dist",
-         latency: 1
+         source: ".tmp/dist"
 
 # Build-specific configuration
 configure :build do

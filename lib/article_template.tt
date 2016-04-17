@@ -1,0 +1,8 @@
+---
+title: <%= @title %>
+date: <%= @date.strftime('%F %R %Z') %>
+meta_description:
+image:
+tags:
+---
+
