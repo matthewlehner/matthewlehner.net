@@ -83,14 +83,23 @@ module.exports = {
 This configuration tells webpack to look for `web/static/js/app.js` and compile
 it to `priv/static/js/app.js`.
 
+To run webpack, we'll add an entry to the `scripts` section of `package.json`.
+
+```json
+{
+  "scripts": {
+    "start": "webpack --watch-stdin --progress --color"
+  }
+}
+```
+
 Now we'll tell Phoenix to run webpack when running the development server. Edit
 the `watchers` option in `config/dev.exs` to look like this:
 
 ```elixir
 config :webpack_integration, WebpackIntegration.Endpoint,
   # leave other settings and change the `watchers` option.
-  watchers: [node: ["node_modules/webpack/bin/webpack.js",
-                    "--watch-stdin", "--progress", "--colors"]]
+  watchers: [npm: ["start"]]
 ```
 
 Now, we'll test this by editing `web/static/js/app.js`. Make sure that the
@@ -103,7 +112,7 @@ At this point, the only thing we'll want to run is:
 ```javascript
 
 // Ensure that this import is commented out for now.
-// import "deps/phoenix_html/web/static/js/phoenix_html"
+// import "phoenix_html"
 
 alert('webpack compiled me.');
 ```
