@@ -84,6 +84,8 @@ This configuration tells webpack to look for `web/static/js/app.js` and compile
 it to `priv/static/js/app.js`.
 
 To run webpack, we'll add an entry to the `scripts` section of `package.json`.
+This will allow us to run webpack on its own, with our preferred command line
+options by running `npm start` at the command line.
 
 ```json
 {
@@ -93,8 +95,8 @@ To run webpack, we'll add an entry to the `scripts` section of `package.json`.
 }
 ```
 
-Now we'll tell Phoenix to run webpack when running the development server. Edit
-the `watchers` option in `config/dev.exs` to look like this:
+Now we'll tell Phoenix to run webpack as a watcher while running the development
+server. Edit the `watchers` option in `config/dev.exs` to look like this:
 
 ```elixir
 config :webpack_integration, WebpackIntegration.Endpoint,
