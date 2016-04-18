@@ -188,7 +188,9 @@ import filePicker from './components/filePicker';
 
 This is not better or worse, just different. Since we're aiming for complete
 compatibility with the Brunch configuration we'll have to add a configuration
-option to tell it to look in `web/static/js` for a module.
+option to tell it to look in `web/static/js` for a module. While we're at it,
+we'll also tell webpack to look in the `node_modules` directory for any packages
+we install through npm.
 
 Add the following `webpack.config.js`:
 
@@ -197,7 +199,7 @@ module.exports = {
   // Leave the entry, output, and module options we set previously
 
   resolve: {
-    modulesDirectories: [ __dirname + "/web/static/js" ]
+    modulesDirectories: [ "node_modules", __dirname + "/web/static/js" ]
   }
 }
 ```
