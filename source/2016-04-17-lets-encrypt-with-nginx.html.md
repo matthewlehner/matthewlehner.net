@@ -134,10 +134,11 @@ certificates.
 
 This is a complete NGINX server block – with these certificates, it receives an
 A on the [Qualys SSL Labs Scanner][ssl-scanner] but won't support older versions
-of Android devices or Internet Explorer. *Disclaimer* – I am not a security
-expert, but relied on the [Mozilla SSL Configuration
+of Android devices or Internet Explorer. *Disclaimer* – these configurations
+come from the [Mozilla SSL Configuration
 Generator][mozilla-ssl-generator] and [an NGINX example
-config][letsencrypt-example-config] from the Let's Encrypt forums.
+config][letsencrypt-example-config] from the Let's Encrypt forums. You may want
+different options based on browser support.
 
 To use it, there's one additional step. You'll need to generate a `dhparam.pem`
 file in `/etc/nginx` by running:
