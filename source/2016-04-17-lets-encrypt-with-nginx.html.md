@@ -2,8 +2,8 @@
 title: Using Let's Encrypt With NGINX
 date: 2016-04-17 16:52 UTC
 meta_description: Quickly set up NGINX to use Let's Encrypt's free SSL certificates. Using them together is simple, but not as automated as it could be.
-image:
-tags: hidden
+image: lets-encrypt-with-nginx.svg
+tags:
 ---
 
 Setting up NGINX to use SSL certificates from Let's Encrypt isn't as automated
@@ -105,10 +105,14 @@ In the next step, I'll explain why, and how this works.
 Now that this is set up, we need to request the certificates from Let's Encrypt.
 Here's how:
 
-```sh
+```bash
 mkdir -p /tmp/letsencrypt
 
-/home/deployer/letsencrypt/letsencrypt-auto certonly --server https://acme-v01.api.letsencrypt.org/directory --agree-dev-preview --config /etc/letsencrypt/cli.ini
+/home/deployer/letsencrypt/letsencrypt-auto certonly \
+  --server https://acme-v01.api.letsencrypt.org/directory \
+  --agree-dev-preview \
+  --config /etc/letsencrypt/cli.ini
+
 sudo nginx -s reload
 ```
 
