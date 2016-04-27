@@ -60,6 +60,7 @@ The `index.html` will go in the base directory of the project.
     <title>React HMR example</title>
   </head>
   <body>
+    <div id="container"></div>
     <script src="/static/bundle.js"></script>
   </body>
 </html>
@@ -191,10 +192,10 @@ document.write(docBody);
 ```
 
 Webpack will compile this and the browser will update with the string we've
-used. Great! Now we can add React into the mix by running:
+used. Great! Now we can add React and ReactDOM into the mix by running:
 
 ```
-npm install react --save
+npm install react react-dom --save
 ```
 
 **Note:** Because React is required for our application to run, we're using
@@ -206,7 +207,9 @@ the string we're currently rendering.
 We'll create an `App` component in `components/App.js`:
 
 ```javascript
-class App extends Component {
+import React, { Component } from "react";
+
+export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = { counter: 0 };
@@ -242,15 +245,18 @@ class App extends Component {
 }
 ```
 
-Now, change `index.js` to import the component and render it to `document.body`:
+Now, change `index.js` to import the component and render it to the container `div`:
 
 ```javascript
-import React, { Component } from 'react';
-import App from './components/App';
+import { render } from "react-dom";
+import React from "react";
+import App from "./components/App";
 
-React.render(
+const containerEl = document.getElementById("container");
+
+render(
   <App/>,
-  document.body
+  containerEl
 );
 ```
 
