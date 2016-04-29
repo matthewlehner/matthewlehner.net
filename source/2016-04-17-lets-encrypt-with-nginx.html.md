@@ -75,7 +75,7 @@ We're going to use [webroot authentication][letsencrypt-webroot-authentication]
 in the Let's Encrypt client to obtain our SSL certificates. So, add this
 configuration option to your domain's NGINX server block:
 
-```
+```perl
 server {
   listen 80;
   server_name yourdomain.com
@@ -150,7 +150,7 @@ openssl dhparam -out /etc/nginx/dhparam.pem 2048
 Finally, here is the NGINX config – replace `yourdomain.com` in this file with your own
 domain name, tell NGINX where the project root is, and everything _should_ work.
 
-```
+```perl
 server {
   root /home/deployer/webroot-path;
   listen 443 ssl;
@@ -200,3 +200,4 @@ generated, you need restart NGINX, and you're done!
 [ssl-scanner]: https://www.ssllabs.com/ssltest/
 [mozilla-ssl-generator]: https://mozilla.github.io/server-side-tls/ssl-config-generator/
 [letsencrypt-example-config]: https://community.letsencrypt.org/t/nginx-configuration-sample/2173
+[letsencrypt-webroot-authentication]:http://letsencrypt.readthedocs.io/en/latest/using.html#webroot
