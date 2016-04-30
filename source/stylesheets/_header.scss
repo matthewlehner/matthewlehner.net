@@ -5,10 +5,6 @@
   a {
     text-decoration: none;
   }
-
-  .container {
-    @extend %outer-container;
-  }
 }
 
 .navbar-brand {
@@ -19,7 +15,7 @@
   height: 0;
   visibility: hidden;
 
-  @include media($large-screen-up) {
+  @include media($medium-screen-up) {
     @include span-columns(4);
     height: auto;
     visibility: inherit;
@@ -35,8 +31,8 @@
   text-align: center;
   text-transform: uppercase;
 
-  @include media($large-screen-up) {
-    @include span-columns(8);
+  @include media($medium-screen-up) {
+    @include span-columns(5);
     font-size: em(16);
     text-align: right;
   }

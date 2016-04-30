@@ -63,7 +63,7 @@
   margin-right: auto;
 
   @include media($large-screen-up) {
-    width: flex-grid(8, 12);
+    width: flex-grid(7.2, 12);
   }
 }
 
@@ -74,6 +74,16 @@
     font-weight: 600;
     margin: 1.6rem 0;
     text-align: center;
+  }
+
+  ul,
+  ol {
+    margin: 0 0 1.5rem 1.5rem;
+    padding: 0;
+  }
+
+  li {
+    margin-bottom: 0.45rem;
   }
 }
 

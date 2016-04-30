@@ -1,5 +1,5 @@
 @charset "utf-8";
-$em-base: 22;
+$em-base: 17.6;
 
 @import "variables";
 @import "normalize/normalize";
@@ -70,16 +70,16 @@ p img {
   padding-bottom: 3rem;
   padding-top: 3rem;
 
-  .container {
-    @extend %outer-container;
-  }
-
   p {
 
     color: $secondary-color;
     font-family: $header-font-family;
     font-size: 0.8em;
   }
+}
+
+.container {
+  @extend %outer-container;
 }
 
 // Webfonts!

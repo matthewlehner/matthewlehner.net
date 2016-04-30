@@ -3,11 +3,7 @@
 
   padding-left: 10px;
   padding-right: 10px;
-
-  @include media($large-screen-up) {
-    padding-left: inherit;
-    padding-right: inherit;
-  }
+  width: 100%;
 }
 
 %unstyled-list {
@@ -15,12 +11,12 @@
 }
 
 %inline-list {
+  @extend %unstyled-list;
+
   margin: 0;
   padding: 0;
 
   li {
     display: inline;
   }
-
-  @extend %unstyled-list; 
 }

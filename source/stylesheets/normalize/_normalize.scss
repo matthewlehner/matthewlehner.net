@@ -8,16 +8,13 @@
 
 html {
   box-sizing: border-box;
-  font-family: $base-font-family; /* 1 */
-  font-size: 137.5%;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
   font-style: normal;
-  font-weight: 400;
   font-variant: normal;
-  line-height: 1.5;
-  -ms-text-size-adjust: 100%; /* 2 */
-  -webkit-text-size-adjust: 100%; /* 2 */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-weight: 300;
+  line-height: $base-line-height;
+  text-size-adjust: 100%;
 }
 
 /**
