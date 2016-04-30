@@ -4,8 +4,8 @@
   "description": "matthewlehner.net ---",
   "main": "index.js",
   "scripts": {
-    "start": "$(npm root)/.bin/webpack --watch -d --colors --progress",
-    "build": "$(npm root)/.bin/webpack --bail -p",
+    "start": "webpack --watch -d --colors --progress",
+    "build": "webpack --bail -p",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
