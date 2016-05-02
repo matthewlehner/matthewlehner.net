@@ -238,7 +238,7 @@ to their correct location. On top of this, we need the
 to its own file.
 
 ```
-npm install css-loader extract-text-webpack-plugin --save-dev
+npm install css-loader style-loader extract-text-webpack-plugin --save-dev
 ```
 
 Now we'll add an additional entry point for webpack pointing to the
@@ -250,7 +250,7 @@ when you're done:
 ```javascript
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
-  entry: ["./web/static/js/app.js", "./web/static/css/app.css"],
+  entry: ["./web/static/css/app.css", "./web/static/js/app.js"],
   output: {
     path: "./priv/static",
     filename: "js/app.js"
@@ -261,10 +261,13 @@ module.exports = {
       test: /\.js$/,
       exclude: /node_modules/,
       loaders: ["babel"],
-      include: __dirname
+      include: __dirname,
+      query: {
+        presets: ["es2015"]
+      }
     }, {
       test: /\.css$/,
-      loader: ExtractTextPlugin.extract("css")
+      loader: ExtractTextPlugin.extract("style", "css")
     }]
   },
 
