@@ -4,7 +4,7 @@
   "description": "matthewlehner.net ---",
   "main": "index.js",
   "scripts": {
-    "start": "webpack --watch -d --colors --progress",
+    "start": "webpack --watch-stdin -d --colors --progress",
     "build": "webpack --bail -p",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
