@@ -31,7 +31,7 @@ GEM
     coffee-script-source (1.10.0)
     compass-import-once (1.0.5)
       sass (>= 3.2, < 3.5)
-    concurrent-ruby (1.0.1)
+    concurrent-ruby (1.0.2)
     contracts (0.13.0)
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
@@ -47,15 +47,16 @@ GEM
       tilt
     hamster (3.0.0)
       concurrent-ruby (~> 1.0)
-    hashie (3.4.3)
+    hashie (3.4.4)
     htmlcompressor (0.2.0)
     http_parser.rb (0.6.0)
     i18n (0.7.0)
     json (1.8.3)
-    kramdown (1.10.0)
-    listen (3.1.1)
-      rb-fsevent (>= 0.9.3)
-      rb-inotify (>= 0.9.7)
+    kramdown (1.11.1)
+    listen (3.1.3)
+      rb-fsevent (~> 0.9, >= 0.9.7)
+      rb-inotify (~> 0.9, >= 0.9.7)
+      ruby_dep (~> 1.2)
     method_source (0.8.2)
     middleman (4.1.7)
       coffee-script (~> 2.2)
@@ -137,6 +138,7 @@ GEM
       ffi (>= 0.5.0)
     redcarpet (3.3.4)
     rouge (1.10.1)
+    ruby_dep (1.2.0)
     sass (3.4.22)
     servolux (0.12.0)
     slop (3.6.0)
@@ -165,4 +167,4 @@ DEPENDENCIES
   redcarpet
 
 BUNDLED WITH
-   1.12.0.rc.4
+   1.12.1
