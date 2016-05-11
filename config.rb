@@ -53,7 +53,7 @@ activate :directory_indexes
 # activate :automatic_image_sizes
 
 set :markdown_engine, :redcarpet
-set :markdown, fenced_code_blocks: true, smartypants: true
+set :markdown, fenced_code_blocks: true, smartypants: true, with_toc_data: true
 
 activate :syntax
 
