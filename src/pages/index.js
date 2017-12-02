@@ -16,7 +16,7 @@ const IndexPage = ({ data: { allMarkdownRemark: { edges: posts } } }) => (
                 <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
               </h1>
               <h2>{post.frontmatter.date}</h2>
-              <p>{post.excerpt}</p>
+              <p>{post.frontmatter.meta_description || post.excerpt}</p>
             </div>
           );
         })}
@@ -37,6 +37,7 @@ export const pageQuery = graphql`
             title
             date(formatString: "MMMM DD, YYYY")
             path
+            meta_description
           }
         }
       }
