@@ -1,0 +1,107 @@
+---
+title: "2015 in Review: OneFeather Product Development"
+date: 2015-12-21T17:59Z
+tags: draft
+path: "/2015-in-review"
+---
+
+> 2015, What a year! The overall theme of the year for me, has been about finding
+> work-life balance and cutting out the things that don't matter. Financially
+> speaking, it's been the best year of my life, but this is largely due to 6
+> months of work without breaks from January — June.
+
+> ## OneFeather
+
+OneFeather is an online voting (and communications) platform for Canadian First
+Nations. I finished the voting portion of it towards the end of 2014, and its
+first election finished on January 15th. **This was Canada's first electronic
+election for a First Nation.**
+
+Canadian First Nations often do not achieve quorum in elections (not enough
+people show up to vote or mail in their ballots). This is a costly problem which
+most nations attempt to solve by doing heeavy advertising and promotion of the
+election, or running it again at a later date.
+
+OneFeather solves this problem and offers the same level of identity
+verification as is achieved by mail in ballots. In three of the four elections
+run on OneFeather, we saw more than 50% of eligible voters using OneFeather as
+their preferred way to vote.
+
+### Failed Search for Funding
+
+In February, we decided to search for funding to support further development and
+marketing of the voting platform – this search failed because:
+
+* There's no upside to running a successful election (it doesn't increase
+  credibility)
+* A single corrupted election would ruin OneFeather's credibility and potential
+  to run any further elections.
+
+### OneFeather in 2016
+
+Due to circumstances beyond my control, the non-technical side of things has
+slowed down, so we may pull the plug on OneFeather's future development.
+
+## Consulting
+
+The consulting side of my business has done better this year than ever before,
+primarily because of a budgetary increase from my anchor client. In years past,
+they have had a minimal budget, but this year marked a change from being a
+maintenance style contract to being a long term contract with active development.
+
+This is bad, because if this client goes away, so does my cashflow, but good
+because it's a great team of very talented developers, with an exciting roadmap
+for the next 8 months.
+
+### Training
+
+I ran one Ember.js workshop this year – it was great, and helped the team
+immensely with their product
+
+### Speaking
+
+No speaking this year. 😕
+Hopefully next year I'll get back on the wagon.
+
+## Technology
+
+This has been a year of learning a functional programming paradigm. Buzzwords
+include Elixir, React, Redux. I find myself increasingly finding myself wanting
+similar tools in Ruby and increasingly prefering to write ES2015 flavoured
+JavaScript rather than Ruby. It's a bit bittersweet to be having these feelings
+about my first language, but here's why:
+
+### Application State
+Managing state is hard, and it's hard to reason about. I'm not sure that this is
+a benefit of functional programming, specifically, but it forces you to think
+about state specifically. The OO paradigm tells you to keep state in its
+associated object, but as a system grows and becomes more complex, state is
+spread out further.
+
+With Elixir (specifically Phoenix), and Redux, you are forced to think about
+state because the lack of objects/instances of these objects means there's no
+"easy" place to store it, instead it must be specifically addressed. Redux
+forces you to keep all state in a single JavaScript object, and Elixir/OTP
+provides an excellent paradigm for managing state easily, even in complex
+applications.
+
+### Technology Choices in 2016
+
+The nice list:
+
+* 👍 Elixir
+* 👍 React
+* 👍 Redux
+* 👍 npm
+* 👍 Babel/ES2015
+
+The naughty list:
+
+* 👎 Bower
+* 👎 Ember.js
+* 👎 ActionCable
+
+## General 2016 Hopes and Dreams
+
+I've been working on a screencast series for doing TDD with webpack, React, and
+Redux. We'll see where this goes!
