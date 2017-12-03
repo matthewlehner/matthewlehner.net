@@ -8,6 +8,7 @@
     "gatsby-link": "^1.6.28",
     "gatsby-plugin-catch-links": "^1.0.13",
     "gatsby-plugin-react-helmet": "^2.0.2",
+    "gatsby-plugin-styled-components": "^2.0.3",
     "gatsby-remark-copy-linked-files": "^1.5.22",
     "gatsby-remark-images": "^1.5.33",
     "gatsby-remark-prismjs": "^1.2.10",
@@ -15,7 +16,8 @@
     "gatsby-transformer-remark": "^1.7.23",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "styled-components": "^2.2.4"
   },
   "keywords": [
     "gatsby"
