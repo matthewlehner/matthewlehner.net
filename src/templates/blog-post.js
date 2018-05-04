@@ -15,16 +15,24 @@ const Template = ({ data: { markdownRemark: post } }) => (
         content={post.frontmatter.meta_description || post.excerpt}
       />
     </Helmet>
-    <ArticleWrapper>
+    <ArticleWrapper itemScope="" itemType="http://schema.org/Article">
       <CoverPhoto image={post.frontmatter.image} card />
       <PostContent>
         <header>
-          <h1>{post.frontmatter.title}</h1>
-          <Time datetime={post.frontmatter.rawDate}>
-            {post.frontmatter.date}
-          </Time>
+          <h1 style={{ marginBottom: 0 }} itemprop="headline">
+            {post.frontmatter.title}
+          </h1>
+          <div>
+            Matthew Lehner –{" "}
+            <time datetime={post.frontmatter.rawDate}>
+              {post.frontmatter.date}
+            </time>
+          </div>
         </header>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div
+          itemprop="articleBody"
+          dangerouslySetInnerHTML={{ __html: post.html }}
+        />
       </PostContent>
     </ArticleWrapper>
   </Fragment>

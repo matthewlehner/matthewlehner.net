@@ -48,7 +48,7 @@ const TemplateWrapper = ({ data, children, location }) => {
         title={title}
         meta={[{ name: "description", content: "Sample" }]}
       />
-      {isHomepage ? null : <Header branding={title} />}
+      {/* {isHomepage ? null : <Header branding={title} />} */}
       <Main>{children()}</Main>
     </Fragment>
   );

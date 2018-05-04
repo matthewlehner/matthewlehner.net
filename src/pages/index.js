@@ -96,7 +96,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+    allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      filter: { frontmatter: { tags: { ne: "draft" } } }
+    ) {
       edges {
         node {
           excerpt(pruneLength: 160)
