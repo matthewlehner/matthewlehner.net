@@ -20,6 +20,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
               date
               path
               title
+              tags
             }
           }
         }
@@ -31,6 +32,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     }
 
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+      console.log(node.frontmatter);
       createPage({
         path: node.frontmatter.path,
         component: blogPostTemplate,

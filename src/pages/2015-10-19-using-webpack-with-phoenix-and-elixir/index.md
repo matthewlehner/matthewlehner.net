@@ -3,7 +3,7 @@ title: Using Webpack with Phoenix and Elixir
 date: 2015-10-19T02:38Z
 meta_description: Set up webpack as Phoenix's front end build tool to take advantage of hot module replacement and intelligent optimization for your front end app.
 image: webpack-and-phoenix-on-elixir.svg
-tags: elixir, phoenix, webpack
+tags: ["elixir", "phoenix", "webpack"]
 path: "/using-webpack-with-phoenix-and-elixir"
 ---
 
@@ -54,8 +54,7 @@ When that's done, `package.json` should look like this:
     "phoenix": "file:deps/phoenix",
     "phoenix_html": "file:deps/phoenix_html"
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }
 ```
 
@@ -127,19 +126,17 @@ Change your watchers options in `config/dev.exs` to:
 Start up your server again with `mix phoenix.server` and we'll test that webpack
 is working..
 
-Start by editing `web/static/js/app.js`. Make sure that the
-entire file is commented out – we don't have any ES2015 compilation working yet,
-so anything that relies on this syntax will cause a compilation issue with
-webpack.
+Start by editing `web/static/js/app.js`. Make sure that the entire file is
+commented out – we don't have any ES2015 compilation working yet, so anything
+that relies on this syntax will cause a compilation issue with webpack.
 
 At this point, the only thing we'll want to run is:
 
 ```javascript
-
 // Ensure that this import is commented out for now.
 // import "phoenix_html"
 
-alert('webpack compiled me.');
+alert("webpack compiled me.");
 ```
 
 Now you can install the dependencies, set up the database and run the server.
@@ -172,16 +169,18 @@ module.exports = {
   // entry and output options...
 
   module: {
-    loaders: [{
-      test: /\.js$/,
-      exclude: /node_modules/,
-      loader: "babel",
-      query: {
-        presets: ["es2015"]
+    loaders: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "babel",
+        query: {
+          presets: ["es2015"]
+        }
       }
-    }]
+    ]
   }
-}
+};
 ```
 
 This rules state that any file ending in `.js` that is required within the
@@ -203,10 +202,10 @@ To require `filePicker` from within `app.js` it'd look like this:
 
 ```javascript
 // Brunch
-import filePicker from 'components/filePicker';
+import filePicker from "components/filePicker";
 
 // Webpack
-import filePicker from './components/filePicker';
+import filePicker from "./components/filePicker";
 ```
 
 This is not better or worse, just different. Since we're aiming for complete
@@ -222,9 +221,9 @@ module.exports = {
   // Leave the entry, output, and module options we set previously
 
   resolve: {
-    modulesDirectories: [ "node_modules", __dirname + "/web/static/js" ]
+    modulesDirectories: ["node_modules", __dirname + "/web/static/js"]
   }
-}
+};
 ```
 
 If you're upgrading from an older version of Phoenix, you _may_ have to add the
@@ -257,25 +256,25 @@ included in our compiled file.
 If you've used webpack before, you've probably seen CSS being required from
 within the individual components of your application. Instead of generating
 separate CSS files, webpack will inline any CSS required when loading the page.
-Since we're aiming for the exact functionality that Brunch provided,
-we'll have to separate out the CSS from our JavaScript bundle. Implementing our
-CSS compilation this way is slightly different from the way it is normally
+Since we're aiming for the exact functionality that Brunch provided, we'll have
+to separate out the CSS from our JavaScript bundle. Implementing our CSS
+compilation this way is slightly different from the way it is normally
 demonstrated in webpack tutorials.
 
 We need both the style and css loaders to actually parse and compile `css` files
 to their correct location. On top of this, we need the
-`extract-text-webpack-plugin` to pull the CSS out of our bundle and output it
-to its own file.
+`extract-text-webpack-plugin` to pull the CSS out of our bundle and output it to
+its own file.
 
 ```
 npm install css-loader style-loader extract-text-webpack-plugin --save-dev
 ```
 
-Now we'll add an additional entry point for webpack pointing to the
-`app.css` file, redefine the output path to account for CSS and JS locations,
-add the style and css loaders, and configure the `ExtractText` plugin to output
-the individual CSS file. Here's what `webpack.config.js` file should look like
-when you're done:
+Now we'll add an additional entry point for webpack pointing to the `app.css`
+file, redefine the output path to account for CSS and JS locations, add the
+style and css loaders, and configure the `ExtractText` plugin to output the
+individual CSS file. Here's what `webpack.config.js` file should look like when
+you're done:
 
 ```javascript
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
@@ -287,27 +286,28 @@ module.exports = {
   },
 
   resolve: {
-    modulesDirectories: [ "node_modules", __dirname + "/web/static/js" ]
+    modulesDirectories: ["node_modules", __dirname + "/web/static/js"]
   },
 
   module: {
-    loaders: [{
-      test: /\.js$/,
-      exclude: /node_modules/,
-      loader: "babel",
-      include: __dirname,
-      query: {
-        presets: ["es2015"]
+    loaders: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "babel",
+        include: __dirname,
+        query: {
+          presets: ["es2015"]
+        }
+      },
+      {
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract("style", "css")
       }
-    }, {
-      test: /\.css$/,
-      loader: ExtractTextPlugin.extract("style", "css")
-    }]
+    ]
   },
 
-  plugins: [
-    new ExtractTextPlugin("css/app.css")
-  ]
+  plugins: [new ExtractTextPlugin("css/app.css")]
 };
 ```
 
@@ -375,11 +375,9 @@ important files are `package.json`, `webpack.config.js`, and `dev/config.exs`.
 
 Good luck!
 
-_This guide was inspired by Manuel Kallenbach's guide [Automatically
-Building Your Phoenix Assets with Webpack][phoenix-webpack-post]. This article
-provides a 1-to-1 mapping of webpack to the default Brunch setup that comes with
-Phoenix._
-
+_This guide was inspired by Manuel Kallenbach's guide [Automatically Building
+Your Phoenix Assets with Webpack][phoenix-webpack-post]. This article provides a
+1-to-1 mapping of webpack to the default Brunch setup that comes with Phoenix._
 
 [phoenix-webpack-post]: http://manukall.de/2015/05/01/automatically-building-your-phoenix-assets-with-webpack/
 [webpack-hmr-docs]: http://webpack.github.io/docs/hot-module-replacement-with-webpack.html

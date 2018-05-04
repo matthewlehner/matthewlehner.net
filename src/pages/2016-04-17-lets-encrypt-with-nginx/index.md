@@ -3,7 +3,6 @@ title: Using Let's Encrypt With NGINX
 date: 2016-04-17T16:52Z
 meta_description: Quickly set up NGINX to use Let's Encrypt's free SSL certificates. Using them together is simple, but not as automated as it could be.
 image: lets-encrypt-with-nginx.svg
-tags:
 path: "/lets-encrypt-with-nginx"
 ---
 
@@ -13,11 +12,11 @@ we can configure this to work with NGINX very easily.
 
 Here's what the entire setup process looks like:
 
-1. Install the Let's Encrypt client
-2. Create a Let's Encrypt configuration file for the domain
-3. Add an NGINX server block to allow Let's Encrypt to verify the domain
-4. Verify the domain and generate SSL certificates
-5. Set up NGINX to serve using our new SSL certificates
+1.  Install the Let's Encrypt client
+2.  Create a Let's Encrypt configuration file for the domain
+3.  Add an NGINX server block to allow Let's Encrypt to verify the domain
+4.  Verify the domain and generate SSL certificates
+5.  Set up NGINX to serve using our new SSL certificates
 
 ## A Note About File Permissions
 
@@ -43,9 +42,8 @@ cd letsencrypt
 ./letsencrypt-auto
 ```
 
-For more information about this, read the official
-[Let's Encrypt installation][lets-encrypt-install-docs] docs.
-
+For more information about this, read the official [Let's Encrypt
+installation][lets-encrypt-install-docs] docs.
 
 ## Create the Let's Encrypt Configuration File
 
@@ -55,7 +53,7 @@ this information to `/etc/letsencrypt/cli.ini` – both your user, and the user
 that runs NGINX will need read and write access to this directory and its
 children as it's also where the SSL certificates will be stored.
 
-```
+```ini
 # /etc/letsencrypt/cli.ini
 rsa-key-size = 4096
 email = youremail@address.com
@@ -69,14 +67,13 @@ webroot-path = /tmp/letsencrypt
 There are more details in the documentation for a [Let's Encrypt configuration
 file][letsencrypt-config-file].
 
-
 ## Configuring NGINX for Webroot Authentication
 
 We're going to use [webroot authentication][letsencrypt-webroot-authentication]
 in the Let's Encrypt client to obtain our SSL certificates. So, add this
 configuration option to your domain's NGINX server block:
 
-```perl
+```nginx
 server {
   listen 80;
   server_name yourdomain.com
@@ -95,9 +92,10 @@ Once you've added this to your server block, tell NGINX to reload the config
 files `sudo nginx -s reload`.
 
 What we're doing here is telling NGINX to statically serve any requests to
-yourdomain.com/.well-known/acme-challenge and its subdirectories from
-the `/tmp/letsencrypt/` directory on your server for the webroot authenticator.
-For this to work, **NGINX will need permission to read from the `/tmp/letsencrypt` directory**.
+yourdomain.com/.well-known/acme-challenge and its subdirectories from the
+`/tmp/letsencrypt/` directory on your server for the webroot authenticator. For
+this to work, **NGINX will need permission to read from the `/tmp/letsencrypt`
+directory**.
 
 In the next step, I'll explain why, and how this works.
 
@@ -119,14 +117,14 @@ sudo nginx -s reload
 
 To break down what happens:
 
-1. The Let's Encrypt client creates a file in `/tmp/letsencrypt` containing a
-   token.
-2. Then, the client tells the Let's Encrypt server that it can verify the domain
-   by requesting the file it has created with a request to
-   `yourdomain.com/.well-known/acme-challenge/token-filename`
-3. If the file is present, Let's Encrypt will generate SSL certificates for the
-   domain and copy them to `/etc/letsencrypt/live/yourdomain.com/`
-4. The Let's Encrypt client cleans up the file from `/tmp/letsencrypt`
+1.  The Let's Encrypt client creates a file in `/tmp/letsencrypt` containing a
+    token.
+2.  Then, the client tells the Let's Encrypt server that it can verify the
+    domain by requesting the file it has created with a request to
+    `yourdomain.com/.well-known/acme-challenge/token-filename`
+3.  If the file is present, Let's Encrypt will generate SSL certificates for the
+    domain and copy them to `/etc/letsencrypt/live/yourdomain.com/`
+4.  The Let's Encrypt client cleans up the file from `/tmp/letsencrypt`
 
 And that's it, you're ready to set up NGINX to use your brand new SSL
 certificates.
@@ -135,11 +133,10 @@ certificates.
 
 This is a complete NGINX server block – with these certificates, it receives an
 A on the [Qualys SSL Labs Scanner][ssl-scanner] but won't support older versions
-of Android devices or Internet Explorer. *Disclaimer* – these configurations
-come from the [Mozilla SSL Configuration
-Generator][mozilla-ssl-generator] and [an NGINX example
-config][letsencrypt-example-config] from the Let's Encrypt forums. You may want
-different options based on browser support.
+of Android devices or Internet Explorer. _Disclaimer_ – these configurations
+come from the [Mozilla SSL Configuration Generator][mozilla-ssl-generator] and
+[an NGINX example config][letsencrypt-example-config] from the Let's Encrypt
+forums. You may want different options based on browser support.
 
 To use it, there's one additional step. You'll need to generate a `dhparam.pem`
 file in `/etc/nginx` by running:
@@ -148,8 +145,9 @@ file in `/etc/nginx` by running:
 openssl dhparam -out /etc/nginx/dhparam.pem 2048
 ```
 
-Finally, here is the NGINX config – replace `yourdomain.com` in this file with your own
-domain name, tell NGINX where the project root is, and everything _should_ work.
+Finally, here is the NGINX config – replace `yourdomain.com` in this file with
+your own domain name, tell NGINX where the project root is, and everything
+_should_ work.
 
 ```perl
 server {
@@ -201,4 +199,4 @@ generated, you need restart NGINX, and you're done!
 [ssl-scanner]: https://www.ssllabs.com/ssltest/
 [mozilla-ssl-generator]: https://mozilla.github.io/server-side-tls/ssl-config-generator/
 [letsencrypt-example-config]: https://community.letsencrypt.org/t/nginx-configuration-sample/2173
-[letsencrypt-webroot-authentication]:http://letsencrypt.readthedocs.io/en/latest/using.html#webroot
+[letsencrypt-webroot-authentication]: http://letsencrypt.readthedocs.io/en/latest/using.html#webroot

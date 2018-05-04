@@ -3,7 +3,7 @@ title: Exporting CSVs Using Phoenix
 date: 2016-05-04T03:19Z
 meta_description: This article shows how to export CSVs from Elixir's web framework, Phoenix, using the underlying Elixir library, Plug.
 image: exporting-csv-files-from-phoenix.svg
-tags: elixir phoenix
+tags: ["elixir", "phoenix"]
 path: "/exporting-csvs-with-phoenix-elixir"
 ---
 
@@ -44,14 +44,15 @@ raw_csv_content = [['a', 'list'],['of', 'lists']]
 
 raw_csv_content # => "a,list\r\nof,lists\r\n"
 ```
+
 Let's break down what's happening here.
 
 First, we take a list of lists and pass it to `CSV.encode/2`.
 
 `CSV.encode/2` expects a stream of data in a tabular format, and encodes it to
-RFC 4180 compliant CSV lines. If you don't know what RFC 4180 is, don't worry,
-I didn't either, but I did some googling and found the [Common Format and MIME
- Type for Comma-Separated Values (CSV) Files][rfc-4180] specification. Great!
+RFC 4180 compliant CSV lines. If you don't know what RFC 4180 is, don't worry, I
+didn't either, but I did some googling and found the [Common Format and MIME
+Type for Comma-Separated Values (CSV) Files][rfc-4180] specification. Great!
 Since CSV returns a stream, we need to turn it back into a list. Streams are
 great for working with large datasets, but are more complex and worth an entire
 post in themselves.
@@ -61,7 +62,8 @@ The list we get back from `Enum.to_list/1` looks like this:
 ```elixir
 ["a,list\r\n", "of,lists\r\n"]
 ```
- Each of the items in it is a CSV row, so to make the entire CSV, we could write
+
+Each of the items in it is a CSV row, so to make the entire CSV, we could write
 it to a file, or in our case, we'll send it along as the response from our
 endpoint.
 
@@ -140,9 +142,9 @@ header name to `put_resp_header`. This the recommended approach with Plug, as
 the docs say:
 
 > It is recommended for header keys to be in lower-case, to avoid sending
-  duplicate keys in a request. As a convenience, this is validated during
-  testing which raises a `Plug.Conn.InvalidHeaderError` if the header key is not
-  lowercase.
+> duplicate keys in a request. As a convenience, this is validated during
+> testing which raises a `Plug.Conn.InvalidHeaderError` if the header key is not
+> lowercase.
 
 Using Plug like this illustrates how easy it is to dig down to the lower level
 functions that allow you to do extremely powerful things without much effort.
@@ -157,6 +159,7 @@ code into a template, and now all your end users will be able to download CSVs!
 ```
 
 #### Credits and Attribution
+
 _Thanks to Oliviu Stoian for the CSV File icon_
 
 [github-csv]: https://github.com/beatrichartz/csv

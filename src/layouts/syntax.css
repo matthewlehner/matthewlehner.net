@@ -1,0 +1,18 @@
+.token.keyword {
+  color: #069;
+  font-weight: 700;
+}
+
+.token.comment {
+  color: #09f;
+  font-style: italic;
+}
+
+.token.atom,
+.token.symbol {
+  color: #fdc61d;
+}
+
+.token.string {
+  color: #c30;
+}

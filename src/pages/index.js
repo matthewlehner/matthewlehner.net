@@ -1,43 +1,121 @@
-import React from "react";
+import React, { Fragment } from "react";
 import Link from "gatsby-link";
+import styled from "styled-components";
 
-const IndexPage = ({ data: { allMarkdownRemark: { edges: posts } } }) => (
-  <div>
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div className="blog-posts">
+import PostContent from "../components/post-content";
+import CoverPhoto from "../components/cover-photo";
+import Container from "../components/container";
+import Time from "../components/blog-time";
+import { baseColor } from "../styles/variables";
+
+const H1 = Container.withComponent("h1").extend`
+  font-size: 5rem;
+`;
+
+const H2 = styled.h2`
+  margin-top: 1rem;
+  margin-bottom: 0;
+`;
+
+const Header = styled.header`
+  height: 80vh;
+  max-height: 476px;
+  display: flex;
+  align-items: center;
+`;
+
+const BlogPosts = styled.div`
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgb(252, 252, 252);
+  padding-top: 4rem;
+`;
+
+const PostCard = PostContent.extend`
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  width: 38rem;
+  margin-top: 2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.075);
+  border-radius: 2px;
+`;
+
+const PostPreviewBody = styled.section`
+  padding: 0 1rem 1rem;
+  color: ${baseColor};
+`;
+
+const PostPreviewExcerpt = styled.p`
+  margin-bottom: 0;
+`;
+
+const IndexPage = ({
+  data: {
+    allMarkdownRemark: { edges: posts },
+    site: { siteMetadata: { title } }
+  }
+}) => (
+  <Fragment>
+    <Header>
+      <H1>
+        Matthew Lehner<br />
+        writes about software…<br />
+        sometimes
+      </H1>
+    </Header>
+    <BlogPosts>
       {posts
         .filter(post => post.node.frontmatter.title.length > 0)
         .map(({ node: post }) => {
           return (
-            <div className="blog-post-preview" key={post.id}>
-              <h1>
-                <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
-              </h1>
-              <h2>{post.frontmatter.date}</h2>
-              <p>{post.frontmatter.meta_description || post.excerpt}</p>
-            </div>
+            <PostCard key={post.id}>
+              <Link to={post.frontmatter.path}>
+                <CoverPhoto image={post.frontmatter.image} card />
+                <PostPreviewBody>
+                  <H2>{post.frontmatter.title}</H2>
+                  <Time datetime={post.frontmatter.rawDate}>
+                    {post.frontmatter.date}
+                  </Time>
+                  <PostPreviewExcerpt>
+                    {post.frontmatter.meta_description || post.excerpt}
+                  </PostPreviewExcerpt>
+                </PostPreviewBody>
+              </Link>
+            </PostCard>
           );
         })}
-    </div>
-  </div>
+    </BlogPosts>
+  </Fragment>
 );
 
 export default IndexPage;
 
 export const pageQuery = graphql`
   query IndexQuery {
+    site {
+      siteMetadata {
+        title
+      }
+    }
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
-          excerpt(pruneLength: 250)
+          excerpt(pruneLength: 160)
           id
           frontmatter {
             title
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "MMMM D, YYYY")
+            rawDate: date
             path
             meta_description
+            image {
+              publicURL
+              ext
+              childImageSharp {
+                sizes(maxWidth: 606) {
+                  ...GatsbyImageSharpSizes
+                }
+              }
+            }
           }
         }
       }

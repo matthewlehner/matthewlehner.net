@@ -1,14 +1,14 @@
 ---
 title: "2015 in Review: OneFeather Product Development"
 date: 2015-12-21T17:59Z
-tags: draft
+tags: ["draft"]
 path: "/2015-in-review"
 ---
 
-> 2015, What a year! The overall theme of the year for me, has been about finding
-> work-life balance and cutting out the things that don't matter. Financially
-> speaking, it's been the best year of my life, but this is largely due to 6
-> months of work without breaks from January — June.
+> 2015, What a year! The overall theme of the year for me, has been about
+> finding work-life balance and cutting out the things that don't matter.
+> Financially speaking, it's been the best year of my life, but this is largely
+> due to 6 months of work without breaks from January — June.
 
 > ## OneFeather
 
@@ -47,7 +47,8 @@ slowed down, so we may pull the plug on OneFeather's future development.
 The consulting side of my business has done better this year than ever before,
 primarily because of a budgetary increase from my anchor client. In years past,
 they have had a minimal budget, but this year marked a change from being a
-maintenance style contract to being a long term contract with active development.
+maintenance style contract to being a long term contract with active
+development.
 
 This is bad, because if this client goes away, so does my cashflow, but good
 because it's a great team of very talented developers, with an exciting roadmap
@@ -60,8 +61,7 @@ immensely with their product
 
 ### Speaking
 
-No speaking this year. 😕
-Hopefully next year I'll get back on the wagon.
+No speaking this year. 😕 Hopefully next year I'll get back on the wagon.
 
 ## Technology
 
@@ -72,6 +72,7 @@ JavaScript rather than Ruby. It's a bit bittersweet to be having these feelings
 about my first language, but here's why:
 
 ### Application State
+
 Managing state is hard, and it's hard to reason about. I'm not sure that this is
 a benefit of functional programming, specifically, but it forces you to think
 about state specifically. The OO paradigm tells you to keep state in its
