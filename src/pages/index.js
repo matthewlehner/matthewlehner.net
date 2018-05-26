@@ -10,6 +10,8 @@ import { baseColor } from "../styles/variables";
 
 const H1 = Container.withComponent("h1").extend`
   font-size: 5rem;
+  font-weight: 1000;
+  letter-spacing: -1px;
 `;
 
 const H2 = styled.h2`
@@ -25,8 +27,6 @@ const Header = styled.header`
 `;
 
 const BlogPosts = styled.div`
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  background: rgb(252, 252, 252);
   padding-top: 4rem;
 `;
 
@@ -48,12 +48,7 @@ const PostPreviewExcerpt = styled.p`
   margin-bottom: 0;
 `;
 
-const IndexPage = ({
-  data: {
-    allMarkdownRemark: { edges: posts },
-    site: { siteMetadata: { title } }
-  }
-}) => (
+const IndexPage = ({ data: { allMarkdownRemark: { edges: posts } } }) => (
   <Fragment>
     <Header>
       <H1>
@@ -91,11 +86,6 @@ export default IndexPage;
 
 export const pageQuery = graphql`
   query IndexQuery {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
       filter: { frontmatter: { tags: { ne: "draft" } } }

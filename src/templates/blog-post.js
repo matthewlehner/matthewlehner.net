@@ -3,7 +3,6 @@ import Helmet from "react-helmet";
 
 import CoverPhoto from "../components/cover-photo";
 import PostContent from "../components/post-content";
-import Time from "../components/blog-time";
 import ArticleWrapper from "../components/article-wrapper";
 
 const Template = ({ data: { markdownRemark: post } }) => (
@@ -19,18 +18,18 @@ const Template = ({ data: { markdownRemark: post } }) => (
       <CoverPhoto image={post.frontmatter.image} card />
       <PostContent>
         <header>
-          <h1 style={{ marginBottom: 0 }} itemprop="headline">
+          <h1 style={{ marginBottom: 0 }} itemProp="headline">
             {post.frontmatter.title}
           </h1>
           <div>
             Matthew Lehner –{" "}
-            <time datetime={post.frontmatter.rawDate}>
+            <time dateTime={post.frontmatter.rawDate}>
               {post.frontmatter.date}
             </time>
           </div>
         </header>
         <div
-          itemprop="articleBody"
+          itemProp="articleBody"
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
       </PostContent>

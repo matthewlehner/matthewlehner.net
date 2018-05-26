@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 import Img from "gatsby-image";
 
@@ -37,6 +38,10 @@ const CoverPhoto = ({ image }) => {
   }
 
   return null;
+};
+
+CoverPhoto.propTypes = {
+  image: PropTypes.object
 };
 
 export default CoverPhoto;
