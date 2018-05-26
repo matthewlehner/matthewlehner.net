@@ -1,7 +1,7 @@
 {
-  "name": "ml-blog",
-  "description": "Matthew Lehner's site",
-  "version": "1.0.0",
+  "name": "matthewlehner.net",
+  "description": "Matthew Lehner's website",
+  "version": "2.0.0",
   "author": "Matthew Lehner <matthew@mpl.io>",
   "dependencies": {
     "caniuse-db": "^1.0.30000780",
@@ -36,9 +36,17 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"src/**/*.js\"",
+    "lint": "eslint src/**/*.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "babel-eslint": "^8.2.3",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-react": "^7.8.2",
     "prettier": "^1.8.2"
   },
   "prettier": {
