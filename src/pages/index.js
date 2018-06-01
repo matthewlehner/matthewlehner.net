@@ -4,26 +4,13 @@ import styled from "styled-components";
 
 import PostContent from "../components/post-content";
 import CoverPhoto from "../components/cover-photo";
-import Container from "../components/container";
 import Time from "../components/blog-time";
 import { baseColor } from "../styles/variables";
 
-const H1 = Container.withComponent("h1").extend`
-  font-size: 5rem;
-  font-weight: 1000;
-  letter-spacing: -1px;
-`;
-
 const H2 = styled.h2`
+  font-weight: 900;
   margin-top: 1rem;
   margin-bottom: 0;
-`;
-
-const Header = styled.header`
-  height: 80vh;
-  max-height: 476px;
-  display: flex;
-  align-items: center;
 `;
 
 const BlogPosts = styled.div`
@@ -50,13 +37,6 @@ const PostPreviewExcerpt = styled.p`
 
 const IndexPage = ({ data: { allMarkdownRemark: { edges: posts } } }) => (
   <Fragment>
-    <Header>
-      <H1>
-        Matthew Lehner<br />
-        writes about software…<br />
-        sometimes
-      </H1>
-    </Header>
     <BlogPosts>
       {posts
         .filter(post => post.node.frontmatter.title.length > 0)

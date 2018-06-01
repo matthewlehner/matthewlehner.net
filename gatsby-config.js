@@ -34,6 +34,13 @@ module.exports = {
     "gatsby-plugin-sharp",
     "gatsby-plugin-catch-links",
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sitemap"
+    "gatsby-plugin-sitemap",
+    {
+      resolve: "gatsby-plugin-typography",
+      options: {
+        omitGoogleFont: true,
+        pathToConfigModule: "src/styles/typography"
+      }
+    }
   ]
 };
