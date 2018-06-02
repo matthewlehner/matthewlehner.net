@@ -1,38 +1,10 @@
 import React, { Fragment } from "react";
-import Link from "gatsby-link";
 import styled from "styled-components";
 
-import PostContent from "../components/post-content";
-import CoverPhoto from "../components/cover-photo";
-import Time from "../components/blog-time";
-import { baseColor } from "../styles/variables";
-
-const H2 = styled.h2`
-  font-weight: 900;
-  margin-top: 1rem;
-  margin-bottom: 0;
-`;
+import PostPreview from "../components/post-preview";
 
 const BlogPosts = styled.div`
   padding-top: 4rem;
-`;
-
-const PostCard = PostContent.extend`
-  background: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  width: 38rem;
-  margin-top: 2rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.075);
-  border-radius: 2px;
-`;
-
-const PostPreviewBody = styled.section`
-  padding: 0 1rem 1rem;
-  color: ${baseColor};
-`;
-
-const PostPreviewExcerpt = styled.p`
-  margin-bottom: 0;
 `;
 
 const IndexPage = ({ data: { allMarkdownRemark: { edges: posts } } }) => (
@@ -41,22 +13,7 @@ const IndexPage = ({ data: { allMarkdownRemark: { edges: posts } } }) => (
       {posts
         .filter(post => post.node.frontmatter.title.length > 0)
         .map(({ node: post }) => {
-          return (
-            <PostCard key={post.id}>
-              <Link to={post.frontmatter.path}>
-                <CoverPhoto image={post.frontmatter.image} card />
-                <PostPreviewBody>
-                  <H2>{post.frontmatter.title}</H2>
-                  <Time datetime={post.frontmatter.rawDate}>
-                    {post.frontmatter.date}
-                  </Time>
-                  <PostPreviewExcerpt>
-                    {post.frontmatter.meta_description || post.excerpt}
-                  </PostPreviewExcerpt>
-                </PostPreviewBody>
-              </Link>
-            </PostCard>
-          );
+          return <PostPreview key={post.id} post={post} />;
         })}
     </BlogPosts>
   </Fragment>

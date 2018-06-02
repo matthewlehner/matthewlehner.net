@@ -1,10 +1,9 @@
 import React, { Fragment } from "react";
 import Helmet from "react-helmet";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import Container from "../components/container";
 
 import "./syntax.css";
-// import "../styles/global.js";
 
 const Main = styled.main``;
 
@@ -20,7 +19,7 @@ const Header = styled.header`
 
 const H1 = Container.withComponent("h1").extend`
   font-weight: 900;
-  letter-spacing: -1px;
+  letter-spacing: -1.5px;
   line-height: 1.2;
   @media (min-width: 700px) {
   font-size: 5rem;

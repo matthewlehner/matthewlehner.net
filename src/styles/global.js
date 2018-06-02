@@ -43,16 +43,6 @@ injectGlobal`
     white-space: nowrap;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    color: ${headerColor};
-    font-weight: 600;
-  }
-
   :any-link {
     color: ${baseColor};
     text-decoration: none;

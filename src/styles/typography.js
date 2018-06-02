@@ -26,7 +26,8 @@ const typography = new Typography({
   headerColor,
   bodyColor: baseColor,
   blockMarginBottom: 1,
-  overrideStyles: ({ rhythm }, options) => ({
+  scaleRatio: 2.4,
+  overrideStyles: () => ({
     ":not(pre) > code": {
       background: codeBg,
       border: baseBorder,
