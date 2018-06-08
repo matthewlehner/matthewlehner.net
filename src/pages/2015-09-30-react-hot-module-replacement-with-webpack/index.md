@@ -20,10 +20,7 @@ a page reload, and css changes auto refresh too.
 
 ![React hot module replacement at work](./react-hmr.gif)
 
-<figure>
-  ![React hot module replacement at work](react-hmr.gif)
   <figcaption>React Hot Module Replacement at work</figcaption>
-</figure>
 
 Increasing the speed of your feedback loop frees time to do meaningful work and
 removes frustrating, repetitive activities from your workflow. If you're
@@ -59,7 +56,7 @@ together.
 
 The `index.html` will go in the base directory of the project.
 
-```xml
+```html
 <!DOCTYPE html>
 <html>
   <head>

@@ -16,3 +16,25 @@
 .token.string {
   color: #c30;
 }
+
+.token.doctype {
+  color: #099;
+}
+
+.token.tag {
+  font-weight: 700;
+  color: #309;
+}
+
+.tag .token.attr-name,
+.tag .token.attr-value {
+  font-weight: normal;
+}
+
+.token.attr-value {
+  color: #c30;
+}
+
+.attr-value .punctuation {
+  color: #309;
+}
