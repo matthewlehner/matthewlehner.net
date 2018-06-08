@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import Helmet from "react-helmet";
 import styled from "styled-components";
 
@@ -6,56 +6,46 @@ import CoverPhoto from "../components/cover-photo";
 import PostContent from "../components/post-content";
 import ArticleWrapper from "../components/article-wrapper";
 
-const PostTitle = styled.h1`
-  margin-bottom: 0;
-  font-weight: 900;
+const Header = styled.header`
+  grid-column: 2 / 3;
+  margin-bottom: 3rem;
 `;
 
-const MetaArea = styled.div`
+const Title = styled.h1`
+  font-weight: 900;
+  margin-bottom: 0.25rem;
+`;
+
+const Meta = styled.div`
   color: #222;
 `;
 
-const MetaAuthor = styled.div`
-  display: inline-block;
+const Template = ({ data: { markdownRemark: post } }) => (
+  <ArticleWrapper itemScope="" itemType="http://schema.org/Article">
+    <Helmet>
+      <title>{`${post.frontmatter.title}`}</title>
+      <meta
+        name="description"
+        content={post.frontmatter.meta_description || post.excerpt}
+      />
+    </Helmet>
 
-  &:after {
-    content: "–";
-    opacity: 0.6;
-    margin: 0 0.5rem;
-  }
-`;
+    <CoverPhoto image={post.frontmatter.image} card />
+    <Header>
+      <Title itemProp="headline">{post.frontmatter.title}</Title>
+      <Meta>
+        Matthew Lehner –{" "}
+        <time dateTime={post.frontmatter.rawDate}>{post.frontmatter.date}</time>
+      </Meta>
+    </Header>
+    <PostContent
+      itemProp="articleBody"
+      dangerouslySetInnerHTML={{ __html: post.html }}
+    />
+  </ArticleWrapper>
+);
 
-export default function Template({ data: { markdownRemark: post } }) {
-  return (
-    <Fragment>
-      <Helmet>
-        <title>{`${post.frontmatter.title}`}</title>
-        <meta
-          name="description"
-          content={post.frontmatter.meta_description || post.excerpt}
-        />
-      </Helmet>
-      <ArticleWrapper itemScope="" itemType="http://schema.org/Article">
-        <CoverPhoto image={post.frontmatter.image} card />
-        <PostContent>
-          <header>
-            <PostTitle itemProp="headline">{post.frontmatter.title}</PostTitle>
-            <MetaArea>
-              <MetaAuthor>Matthew Lehner</MetaAuthor>
-              <time dateTime={post.frontmatter.rawDate}>
-                {post.frontmatter.date}
-              </time>
-            </MetaArea>
-          </header>
-          <div
-            itemProp="articleBody"
-            dangerouslySetInnerHTML={{ __html: post.html }}
-          />
-        </PostContent>
-      </ArticleWrapper>
-    </Fragment>
-  );
-}
+export default Template;
 
 export const pageQuery = graphql`
   query BlogPostByPath($path: String!) {
@@ -71,7 +61,7 @@ export const pageQuery = graphql`
         image {
           publicURL
           childImageSharp {
-            resolutions(width: 960, height: 336) {
+            resolutions(width: 1076, height: 380) {
               ...GatsbyImageSharpResolutions
             }
           }

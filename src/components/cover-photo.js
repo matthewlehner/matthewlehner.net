@@ -4,7 +4,8 @@ import styled from "styled-components";
 import Img from "gatsby-image";
 
 const Figure = styled.figure`
-  margin: 0;
+  grid-column: 1 / 5;
+  margin: 0 0 2rem 0;
 `;
 
 const StyledGatsbyImg = styled(Img)`
@@ -18,7 +19,7 @@ const StyledImg = styled.img`
   max-width: 100%;
   vertical-align: middle;
   object-fit: cover;
-  max-height: 13.5rem;
+  max-height: 22rem;
   width: 100%;
 `;
 

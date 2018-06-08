@@ -1,22 +1,12 @@
 import React, { Fragment } from "react";
-import styled from "styled-components";
 
 import PostPreview from "../components/post-preview";
-
-const BlogPosts = styled.div`
-  padding-top: 4rem;
-`;
+import Wrapper from "../components/article-wrapper";
 
 const IndexPage = ({ data: { allMarkdownRemark: { edges: posts } } }) => (
-  <Fragment>
-    <BlogPosts>
-      {posts
-        .filter(post => post.node.frontmatter.title.length > 0)
-        .map(({ node: post }) => {
-          return <PostPreview key={post.id} post={post} />;
-        })}
-    </BlogPosts>
-  </Fragment>
+  <Wrapper>
+    {posts.map(({ node: post }) => <PostPreview key={post.id} post={post} />)}
+  </Wrapper>
 );
 
 export default IndexPage;
@@ -25,7 +15,7 @@ export const pageQuery = graphql`
   query IndexQuery {
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { frontmatter: { tags: { ne: "draft" } } }
+      filter: { frontmatter: { tags: { ne: "draft" }, title: { ne: "" } } }
     ) {
       edges {
         node {
