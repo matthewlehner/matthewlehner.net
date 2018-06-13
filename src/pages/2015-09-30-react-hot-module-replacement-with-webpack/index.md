@@ -1,13 +1,13 @@
 ---
 title: Using Webpack's Hot Module Replacement with React
-date: 2015-09-30T17:23Z
+date: 2015-09-30
 meta_description: Set up webpack to provide hot module replacement for React. Using BabelJS and the babel-preset-react-hmre preset, enabling HMR is only a few lines of configuration.
 tags: [react]
 path: "/react-hot-module-replacement-with-webpack"
 ---
 
-Out of the box, webpack supports a fancy new alternative to refreshing to see if
-your changes worked called hot module replacement, or HMR. At its core, HMR
+Out of the box, webpack supports a fancy new alternative to live reload to see
+if your changes worked called hot module replacement, or HMR. At its core, HMR
 works by watching changes to files, and signaling the browser to replace
 specific modules, or functions, but not reload the entire page.
 
@@ -212,7 +212,7 @@ the string we're currently rendering.
 
 We'll create an `App` component in `components/App.js`:
 
-```javascript
+```jsx
 import React, { Component } from "react";
 
 export default class App extends Component {

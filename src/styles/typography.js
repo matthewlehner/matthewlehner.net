@@ -31,7 +31,11 @@ const typography = new Typography({
   bodyColor: baseColor,
   blockMarginBottom: 1,
   scaleRatio: 3,
-  overrideStyles: () => ({
+  overrideStyles: ({ rhythm, scale }, options) => ({
+    code: {
+      fontSize: "inherit",
+      fontFamily: fixedFontFamily
+    },
     ":not(pre) > code": {
       background: codeBg,
       border: baseBorder,
@@ -49,9 +53,10 @@ const typography = new Typography({
       wordWrap: "normal"
     },
     "pre code": {
+      fontSize: "0.75rem",
       borderRadius: baseBorderRadius,
       display: "block",
-      fontFamily: fixedFontFamily,
+      lineHeight: 1.2,
       outline: "none",
       overflowX: "auto",
       padding: "0.8rem 1.1rem",
@@ -62,6 +67,19 @@ const typography = new Typography({
       marginLeft: 0,
       fontStyle: "italic",
       paddingLeft: "1.45rem"
+    },
+    h2: {
+      marginTop: rhythm(options.blockMarginBottom * 2),
+      marginBottom: rhythm(options.blockMarginBottom),
+      letterSpacing: "-0.0075em"
+    },
+    h3: {
+      ...scale(2 / 5),
+      fontWeight: 700,
+      lineHeight: 1,
+      letterSpacing: "-0.01em",
+      marginTop: rhythm(options.blockMarginBottom * 2),
+      marginBottom: rhythm(options.blockMarginBottom / 2)
     }
 
     // ":any-link": {

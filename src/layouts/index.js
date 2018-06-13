@@ -1,10 +1,14 @@
-import React from "react";
+import React, { Fragment } from "react";
 import Helmet from "react-helmet";
 import Link from "gatsby-link";
 import styled from "styled-components";
 import Container from "../components/container";
+import { rhythm } from "../styles/typography";
+import { maxWidth } from "../utils/presets";
 
 import "./syntax.css";
+
+import { actionColor } from "../styles/variables";
 
 const H1 = styled.h1`
   display: flex;
@@ -14,7 +18,10 @@ const H1 = styled.h1`
   letter-spacing: -1.5px;
   font-size: 2.4rem;
 
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 4rem;
+  max-width: ${rhythm(maxWidth)};
 
   @media (min-width: 700px) {
     font-weight: 900;
@@ -29,9 +36,18 @@ const Logo = styled(Link)`
   font-weight: 900;
   letter-spacing: -0.5px;
   text-decoration: none;
-  font-size: 2rem;
+  font-size: 1rem;
 
-  color: #4A4A4A;
+  color: rgba(0, 0, 0, 0.54);
+  transition: color 100ms linear;
+
+  &:hover {
+    color: ${actionColor};
+  }
+
+  @media (min-width: 700px) {
+    font-size: 2rem;
+  }
 `;
 
 const Line = styled.span`
@@ -58,7 +74,7 @@ export default function TemplateWrapper({ data, children, location }) {
         </header>
       ) : (
         <header>
-          <Logo to="/">MPL writes…</Logo>
+          <Logo to="/">MPL writes about…</Logo>
         </header>
       )}
       <main>{children()}</main>

@@ -27,7 +27,7 @@ of accomplishments:
 These are three huge lessons I've started putting into practise that are helping
 sleep better and allowing me to move confidently into the new year.
 
-### Systematize Everything<
+### Systematize Everything
 
 Over the past year I've systematized and automated as much of my business as
 possible. I'm just one guy and though I hires sub-contractors at times, it's

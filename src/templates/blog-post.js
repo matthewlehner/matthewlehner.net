@@ -2,22 +2,32 @@ import React from "react";
 import Helmet from "react-helmet";
 import styled from "styled-components";
 
+import { rhythm, options } from "../styles/typography";
 import CoverPhoto from "../components/cover-photo";
 import PostContent from "../components/post-content";
 import ArticleWrapper from "../components/article-wrapper";
 
 const Header = styled.header`
-  grid-column: 2 / 3;
-  margin-bottom: 3rem;
+  margin-bottom: ${rhythm(options.blockMarginBottom)};
+
+  @media (min-width: 700px) {
+    margin-bottom: ${rhythm(options.blockMarginBottom * 2)};
+  }
 `;
 
 const Title = styled.h1`
   font-weight: 900;
   margin-bottom: 0.25rem;
+  letter-spacing: -0.75px;
+
+  @media (max-width: 699px) {
+    font-size: 2rem;
+  }
 `;
 
 const Meta = styled.div`
-  color: #222;
+  color: rgba(0, 0, 0, 0.64);
+  font-size: 0.8rem;
 `;
 
 const Template = ({ data: { markdownRemark: post } }) => (
@@ -29,7 +39,6 @@ const Template = ({ data: { markdownRemark: post } }) => (
         content={post.frontmatter.meta_description || post.excerpt}
       />
     </Helmet>
-
     <CoverPhoto image={post.frontmatter.image} card />
     <Header>
       <Title itemProp="headline">{post.frontmatter.title}</Title>

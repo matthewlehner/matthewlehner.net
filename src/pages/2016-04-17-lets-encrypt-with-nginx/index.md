@@ -104,7 +104,7 @@ In the next step, I'll explain why, and how this works.
 Now that this is set up, we need to request the certificates from Let's Encrypt.
 Here's how:
 
-```bash
+```shell
 mkdir -p /tmp/letsencrypt
 
 /home/deployer/letsencrypt/letsencrypt-auto certonly \
@@ -141,7 +141,7 @@ forums. You may want different options based on browser support.
 To use it, there's one additional step. You'll need to generate a `dhparam.pem`
 file in `/etc/nginx` by running:
 
-```sh
+```shell
 openssl dhparam -out /etc/nginx/dhparam.pem 2048
 ```
 
@@ -149,7 +149,7 @@ Finally, here is the NGINX config – replace `yourdomain.com` in this file with
 your own domain name, tell NGINX where the project root is, and everything
 _should_ work.
 
-```perl
+```nginx
 server {
   root /home/deployer/webroot-path;
   listen 443 ssl;

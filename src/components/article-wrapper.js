@@ -1,11 +1,16 @@
 import styled from "styled-components";
-import { rhythm } from "../styles/typography";
+import { rhythm, options } from "../styles/typography";
 import { maxWidth } from "../utils/presets";
 
 const ArticleWrapper = styled.article`
-  display: grid;
-  grid-template-columns: 1fr ${rhythm(maxWidth * (3 / 5))} 1fr;
-  margin-top: 4rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: ${rhythm(options.blockMarginBottom)};
+  max-width: ${rhythm(maxWidth * (3 / 5))};
+
+  @media (min-width: 700px) {
+    margin-top: 4rem;
+  }
 `;
 
 export default ArticleWrapper;

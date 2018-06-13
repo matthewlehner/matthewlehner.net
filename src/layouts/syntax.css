@@ -8,6 +8,10 @@
   font-style: italic;
 }
 
+.token.number {
+  color: #f60;
+}
+
 .token.atom,
 .token.symbol {
   color: #ffaa00;
@@ -23,7 +27,6 @@
 
 .token.tag {
   font-weight: 700;
-  color: #309;
 }
 
 .tag .token.attr-name,
@@ -35,6 +38,8 @@
   color: #c30;
 }
 
+.token.tag,
+.token.property,
 .attr-value .punctuation {
   color: #309;
 }

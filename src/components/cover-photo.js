@@ -3,10 +3,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import Img from "gatsby-image";
 
-const Figure = styled.figure`
-  grid-column: 1 / 5;
-  margin: 0 0 2rem 0;
-`;
+const Figure = styled.figure``;
 
 const StyledGatsbyImg = styled(Img)`
   margin: 0;
