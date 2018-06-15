@@ -38,7 +38,7 @@ const Logo = styled(Link)`
   text-decoration: none;
   font-size: 1rem;
 
-  color: rgba(0, 0, 0, 0.54);
+  color: #9EBDE4; //rgba(0, 0, 0, 0.44);
   transition: color 100ms linear;
 
   &:hover {

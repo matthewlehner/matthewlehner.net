@@ -32,6 +32,7 @@ const StyledLink = styled(Link)`
 const PreviewFooter = styled.div`
   font-size: 0.8rem;
   margin-top: 0.5rem;
+  color: rgba(0, 0, 0, 0.64);
 `;
 
 export default function PostPreview({ post }) {
@@ -49,7 +50,7 @@ export default function PostPreview({ post }) {
       </PostPreviewBody>
 
       <PreviewFooter>
-        <Time datetime={post.frontmatter.rawDate}>{post.frontmatter.date}</Time>
+        <time datetime={post.frontmatter.rawDate}>{post.frontmatter.date}</time>
       </PreviewFooter>
     </PostPreviewContainer>
   );

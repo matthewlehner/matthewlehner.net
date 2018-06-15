@@ -6,7 +6,8 @@ import {
   baseBorderRadius,
   baseColor,
   headerColor,
-  fixedFontFamily
+  fixedFontFamily,
+  actionColor
 } from "./variables";
 
 const systemStack = [
@@ -59,7 +60,7 @@ const typography = new Typography({
       lineHeight: 1.2,
       outline: "none",
       overflowX: "auto",
-      padding: "0.8rem 1.1rem",
+      padding: "0.6rem",
       whiteSpace: "inherit"
     },
     blockquote: {
@@ -80,6 +81,16 @@ const typography = new Typography({
       letterSpacing: "-0.01em",
       marginTop: rhythm(options.blockMarginBottom * 2),
       marginBottom: rhythm(options.blockMarginBottom / 2)
+    },
+    a: {
+      color: actionColor,
+      transition: "color 100ms linear",
+      "-webkitTextDecorationSkip": "ink"
+      // textDecoration: "none"
+    },
+    "a:hover": {
+      color: "#4F5480"
+      // textDecoration: "underline"
     }
 
     // ":any-link": {

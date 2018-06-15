@@ -12,5 +12,5 @@ export default {
   fixedFontFamily, // "hack, monaco, courier, monospace",
   baseColor: gray,
   headerColor: darkGray,
-  actionColor: "#e45e5f"
+  actionColor: "#5775B3"
 };
