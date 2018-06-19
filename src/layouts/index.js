@@ -38,7 +38,7 @@ const Logo = styled(Link)`
   text-decoration: none;
   font-size: 1rem;
 
-  color: #9EBDE4; //rgba(0, 0, 0, 0.44);
+  color: rgba(0, 0, 0, 0.44);
   transition: color 100ms linear;
 
   &:hover {
@@ -55,7 +55,11 @@ const Line = styled.span`
 `;
 
 export default function TemplateWrapper({ data, children, location }) {
-  const { site: { siteMetadata: { title, description } } } = data;
+  const {
+    site: {
+      siteMetadata: { title, description }
+    }
+  } = data;
   const isIndex = location.pathname === "/";
 
   return (
@@ -74,7 +78,7 @@ export default function TemplateWrapper({ data, children, location }) {
         </header>
       ) : (
         <header>
-          <Logo to="/">MPL writes about…</Logo>
+          <Logo to="/">MPL</Logo>
         </header>
       )}
       <main>{children()}</main>

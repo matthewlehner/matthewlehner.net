@@ -3,7 +3,7 @@ import Link from "gatsby-link";
 import styled from "styled-components";
 
 import Time from "./blog-time";
-import { baseColor } from "../styles/variables";
+import { baseColor, actionColor } from "../styles/variables";
 
 const H2 = styled.h2`
   letter-spacing: -0.0125em;
@@ -25,7 +25,7 @@ const PostPreviewExcerpt = styled.p`
 `;
 
 const StyledLink = styled(Link)`
-  color: #e45e5f;
+  color: ${actionColor};
   text-decoration: none;
 `;
 
