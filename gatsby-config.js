@@ -71,6 +71,7 @@ module.exports = {
                        title
                        date
                        path
+                       meta_description
                      }
                    }
                  }
