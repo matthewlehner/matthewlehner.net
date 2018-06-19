@@ -91,6 +91,14 @@ module.exports = {
         omitGoogleFont: true,
         pathToConfigModule: "src/styles/typography"
       }
+    },
+    {
+      resolve: "gatsby-plugin-google-analytics",
+      options: {
+        trackingId: "UA-41609989-1",
+        respectDNT: true,
+        anonymize: true
+      }
     }
   ]
 };
