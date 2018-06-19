@@ -4,6 +4,7 @@ date: 2016-04-17T16:52Z
 meta_description: Quickly set up NGINX to use Let's Encrypt's free SSL certificates. Using them together is simple, but not as automated as it could be.
 image: lets-encrypt-with-nginx.svg
 path: "/lets-encrypt-with-nginx"
+draft: false
 ---
 
 Setting up NGINX to use SSL certificates from Let's Encrypt isn't as automated
@@ -194,9 +195,14 @@ you and symlink them into the same location. Once the new certificates have been
 generated, you need restart NGINX, and you're done!
 
 [lets-encrypt-client]: https://github.com/letsencrypt/letsencrypt
-[lets-encrypt-install-docs]: https://letsencrypt.readthedocs.org/en/latest/using.html#installation
-[letsencrypt-config-file]: https://letsencrypt.readthedocs.org/en/latest/using.html#configuration-file
+[lets-encrypt-install-docs]:
+  https://letsencrypt.readthedocs.org/en/latest/using.html#installation
+[letsencrypt-config-file]:
+  https://letsencrypt.readthedocs.org/en/latest/using.html#configuration-file
 [ssl-scanner]: https://www.ssllabs.com/ssltest/
-[mozilla-ssl-generator]: https://mozilla.github.io/server-side-tls/ssl-config-generator/
-[letsencrypt-example-config]: https://community.letsencrypt.org/t/nginx-configuration-sample/2173
-[letsencrypt-webroot-authentication]: http://letsencrypt.readthedocs.io/en/latest/using.html#webroot
+[mozilla-ssl-generator]:
+  https://mozilla.github.io/server-side-tls/ssl-config-generator/
+[letsencrypt-example-config]:
+  https://community.letsencrypt.org/t/nginx-configuration-sample/2173
+[letsencrypt-webroot-authentication]:
+  http://letsencrypt.readthedocs.io/en/latest/using.html#webroot

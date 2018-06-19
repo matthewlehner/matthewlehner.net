@@ -55,14 +55,14 @@ const Line = styled.span`
 `;
 
 export default function TemplateWrapper({ data, children, location }) {
-  const { site: { siteMetadata: { title } } } = data;
+  const { site: { siteMetadata: { title, description } } } = data;
   const isIndex = location.pathname === "/";
 
   return (
     <Container>
       <Helmet
         title={title}
-        meta={[{ name: "description", content: "Sample" }]}
+        meta={[{ name: "description", content: description }]}
       />
       {isIndex ? (
         <header>
@@ -87,6 +87,7 @@ export const query = graphql`
     site {
       siteMetadata {
         title
+        description
       }
     }
   }

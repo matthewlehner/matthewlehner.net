@@ -1,6 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: "Matthew Lehner writes about software",
+    title: "MPL writes…",
+    description:
+      "Matthew Lehner writes about software and working in the industry.",
     siteUrl: "https://matthewlehner.net"
   },
   plugins: [
@@ -35,6 +37,50 @@ module.exports = {
     "gatsby-plugin-catch-links",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
+    {
+      resolve: "gatsby-plugin-feed",
+      options: {
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.edges.map(edge => {
+                return Object.assign({}, edge.node.frontmatter, {
+                  description:
+                    edge.node.frontmatter.meta_description || edge.node.excerpt,
+                  url: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
+                  guid: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
+                  custom_elements: [
+                    {
+                      "content: encoded": edge.node.html
+                    }
+                  ]
+                });
+              });
+            },
+            query: `
+             {
+               allMarkdownRemark(
+                 sort: { order: DESC, fields: [frontmatter___date]},
+                 filter: { frontmatter: { draft: { ne: true } } }
+               ) {
+                 edges {
+                   node {
+                     excerpt
+                     html
+                     frontmatter {
+                       title
+                       date
+                     }
+                   }
+                 }
+               }
+             }
+            `,
+            output: "/rss.xml"
+          }
+        ]
+      }
+    },
     {
       resolve: "gatsby-plugin-typography",
       options: {
