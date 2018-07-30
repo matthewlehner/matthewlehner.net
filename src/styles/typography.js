@@ -82,14 +82,16 @@ const typography = new Typography({
       marginTop: rhythm(options.blockMarginBottom * 2),
       marginBottom: rhythm(options.blockMarginBottom / 2)
     },
-    a: {
+    "a, a code": {
       color: actionColor,
-      transition: "color 100ms linear",
+      backgroundColor: "transparent",
+      transition: "color 100ms linear, background-color 100ms linear",
       "-webkitTextDecorationSkip": "ink"
       // textDecoration: "none"
     },
-    "a:hover": {
-      color: "#4F5480"
+    "a:hover, a:hover code": {
+      color: "white",
+      backgroundColor: actionColor
       // textDecoration: "underline"
     }
 

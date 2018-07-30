@@ -16,6 +16,7 @@ const StyledImg = styled.img`
   max-width: 100%;
   vertical-align: middle;
   object-fit: cover;
+  margin-top: -4rem;
   max-height: 22rem;
   width: 100%;
 `;
