@@ -83,7 +83,9 @@ const typography = new Typography({
       marginBottom: rhythm(options.blockMarginBottom / 2)
     },
     "a, a code": {
-      color: actionColor,
+      color: baseColor,
+      "-webkitTextDecorationColor": actionColor,
+      textDecorationColor: actionColor,
       backgroundColor: "transparent",
       transition: "color 100ms linear, background-color 100ms linear",
       "-webkitTextDecorationSkip": "ink"

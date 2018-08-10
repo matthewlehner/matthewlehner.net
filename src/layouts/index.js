@@ -35,8 +35,12 @@ const H1 = styled.h1`
 `;
 
 const Logo = styled(Link)`
-  text-decoration: none;
   font-size: 1rem;
+  font-weight: 800;
+  padding: 0.25rem;
+  position: absolute;
+  left: 0;
+  top: 0;
 `;
 
 const Line = styled.span`
@@ -65,7 +69,7 @@ export default function TemplateWrapper({ data, children, location }) {
             {isIndex ? <Line>sometimes</Line> : null}
           </H1>
         ) : (
-          <Logo to="/">← Back</Logo>
+          <Logo to="/">ML</Logo>
         )}
       </header>
       <main>{children()}</main>

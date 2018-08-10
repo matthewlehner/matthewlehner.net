@@ -24,11 +24,6 @@ const PostPreviewExcerpt = styled.p`
   margin-bottom: 0;
 `;
 
-const StyledLink = styled(Link)`
-  color: ${actionColor};
-  text-decoration: none;
-`;
-
 const PreviewFooter = styled.div`
   font-size: 0.8rem;
   margin-top: 0.5rem;
@@ -46,9 +41,7 @@ export default class PostPreview extends React.Component {
       <PostPreviewContainer>
         <PostPreviewBody>
           <H2>
-            <StyledLink to={post.frontmatter.path}>
-              {post.frontmatter.title}
-            </StyledLink>
+            <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
           </H2>
           <PostPreviewExcerpt>
             {post.frontmatter.meta_description || post.excerpt}
