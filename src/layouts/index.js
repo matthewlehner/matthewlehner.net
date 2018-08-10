@@ -1,4 +1,5 @@
-import React, { Fragment } from "react";
+import React from "react";
+import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import Link from "gatsby-link";
 import styled from "styled-components";
@@ -7,8 +8,6 @@ import { rhythm } from "../styles/typography";
 import { maxWidth } from "../utils/presets";
 
 import "./syntax.css";
-
-import { actionColor } from "../styles/variables";
 
 const H1 = styled.h1`
   display: flex;
@@ -73,6 +72,10 @@ export default function TemplateWrapper({ data, children, location }) {
     </Container>
   );
 }
+
+TemplateWrapper.propTypes = {
+  location: PropTypes.object.isRequired
+};
 
 export const query = graphql`
   query HeaderQuery {

@@ -1,11 +1,17 @@
-import React, { Fragment } from "react";
+import React from "react";
 
 import PostPreview from "../components/post-preview";
 import Wrapper from "../components/article-wrapper";
 
-const IndexPage = ({ data: { allMarkdownRemark: { edges: posts } } }) => (
+const IndexPage = ({
+  data: {
+    allMarkdownRemark: { edges: posts }
+  }
+}) => (
   <Wrapper>
-    {posts.map(({ node: post }) => <PostPreview key={post.id} post={post} />)}
+    {posts.map(({ node: post }) => (
+      <PostPreview key={post.id} post={post} />
+    ))}
   </Wrapper>
 );
 
