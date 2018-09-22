@@ -1,11 +1,14 @@
+import { graphql } from "gatsby";
 import React from "react";
 import Helmet from "react-helmet";
 import styled from "styled-components";
 
-import { rhythm, options } from "../styles/typography";
+import typography from "../styles/typography";
 import CoverPhoto from "../components/cover-photo";
 import PostContent from "../components/post-content";
 import ArticleWrapper from "../components/article-wrapper";
+
+const { rhythm, options } = typography;
 
 const Header = styled.header`
   margin-bottom: ${rhythm(options.blockMarginBottom)};
@@ -57,7 +60,7 @@ const Template = ({ data: { markdownRemark: post } }) => (
 export default Template;
 
 export const pageQuery = graphql`
-  query BlogPostByPath($path: String!) {
+  query($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       excerpt(pruneLength: 160)
@@ -70,8 +73,8 @@ export const pageQuery = graphql`
         image {
           publicURL
           childImageSharp {
-            resolutions(width: 1076, height: 380) {
-              ...GatsbyImageSharpResolutions
+            fixed(width: 1076, height: 380) {
+              ...GatsbyImageSharpFixed
             }
           }
         }

@@ -1,6 +1,9 @@
 import styled from "styled-components";
-import { rhythm, options } from "../styles/typography";
-import { maxWidth } from "../utils/presets";
+import typography from "../styles/typography";
+import presets from "../utils/presets";
+
+const { rhythm, options } = typography;
+const { maxWidth } = presets;
 
 const ArticleWrapper = styled.article`
   margin-left: auto;

@@ -1,24 +1,29 @@
+import { graphql } from "gatsby";
 import React from "react";
 
 import PostPreview from "../components/post-preview";
 import Wrapper from "../components/article-wrapper";
+import Layout from "../components/layout";
 
 const IndexPage = ({
   data: {
     allMarkdownRemark: { edges: posts }
-  }
+  },
+  location
 }) => (
-  <Wrapper>
-    {posts.map(({ node: post }) => (
-      <PostPreview key={post.id} post={post} />
-    ))}
-  </Wrapper>
+  <Layout location={location}>
+    <Wrapper>
+      {posts.map(({ node: post }) => (
+        <PostPreview key={post.id} post={post} />
+      ))}
+    </Wrapper>
+  </Layout>
 );
 
 export default IndexPage;
 
 export const pageQuery = graphql`
-  query IndexQuery {
+  {
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
       filter: { frontmatter: { tags: { ne: "draft" }, title: { ne: "" } } }
@@ -33,15 +38,6 @@ export const pageQuery = graphql`
             rawDate: date
             path
             meta_description
-            image {
-              publicURL
-              ext
-              childImageSharp {
-                sizes(maxWidth: 606) {
-                  ...GatsbyImageSharpSizes
-                }
-              }
-            }
           }
         }
       }

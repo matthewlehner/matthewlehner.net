@@ -22,10 +22,10 @@ const StyledImg = styled.img`
 `;
 
 const CoverPhoto = ({ image }) => {
-  if (image && image.childImageSharp && image.childImageSharp.resolutions) {
+  if (image && image.childImageSharp && image.childImageSharp.fixed) {
     return (
       <Figure>
-        <StyledGatsbyImg resolutions={image.childImageSharp.resolutions} />
+        <StyledGatsbyImg resolutions={image.childImageSharp.fixed} />
       </Figure>
     );
   } else if (image && image.publicURL) {
