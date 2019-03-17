@@ -773,6 +773,16 @@
   resolved "https://registry.yarnpkg.com/@nodelib/fs.stat/-/fs.stat-1.1.3.tgz#2b5a3ab3f918cca48a8c754c08168e3f03eba61b"
   integrity sha512-shAmDyaQC4H92APFoIaVDHCx5bStIocgvbwQyxPRrbUY20V1EYTbSDchWbuwlMG3V17cprZhA6+78JfB+3DTPw==
 
+"@pieh/friendly-errors-webpack-plugin@1.7.0-chalk-2":
+  version "1.7.0-chalk-2"
+  resolved "https://registry.yarnpkg.com/@pieh/friendly-errors-webpack-plugin/-/friendly-errors-webpack-plugin-1.7.0-chalk-2.tgz#2e9da9d3ade9d18d013333eb408c457d04eabac0"
+  integrity sha512-65+vYGuDkHBCWWjqzzR/Ck318+d6yTI00EqII9qe3aPD1J3Olhvw0X38uM5moQb1PK/ksDXwSoPGt/5QhCiotw==
+  dependencies:
+    chalk "^2.4.2"
+    error-stack-parser "^2.0.0"
+    string-width "^2.0.0"
+    strip-ansi "^3"
+
 "@reach/router@^1.1.1":
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/@reach/router/-/router-1.2.1.tgz#34ae3541a5ac44fa7796e5506a5d7274a162be4e"
@@ -4537,15 +4547,6 @@ fresh@0.5.2:
   resolved "https://registry.yarnpkg.com/fresh/-/fresh-0.5.2.tgz#3d8cadd90d976569fa835ab1f8e4b23a105605a7"
   integrity sha1-PYyt2Q2XZWn6g1qx+OSyOhBWBac=
 
-friendly-errors-webpack-plugin@^1.6.1:
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/friendly-errors-webpack-plugin/-/friendly-errors-webpack-plugin-1.7.0.tgz#efc86cbb816224565861a1be7a9d84d0aafea136"
-  integrity sha512-K27M3VK30wVoOarP651zDmb93R9zF28usW4ocaK3mfQeIEI5BPht/EzZs5E8QLLwbLRJQMwscAjDxYPb1FuNiw==
-  dependencies:
-    chalk "^1.1.3"
-    error-stack-parser "^2.0.0"
-    string-width "^2.0.0"
-
 from2@^2.1.0, from2@^2.1.1:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/from2/-/from2-2.3.0.tgz#8bfb5502bde4a4d36cfdeea007fcca21d7e382af"
@@ -4645,10 +4646,10 @@ functional-red-black-tree@^1.0.1:
   resolved "https://registry.yarnpkg.com/functional-red-black-tree/-/functional-red-black-tree-1.0.1.tgz#1b0ab3bd553b2a0d6399d29c0e3ea0b252078327"
   integrity sha1-GwqzvVU7Kg1jmdKcDj6gslIHgyc=
 
-gatsby-cli@^2.4.15:
-  version "2.4.15"
-  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-2.4.15.tgz#4afc37a0ffb6a663de7ca6a5f0de6b22149581fb"
-  integrity sha512-nyAqFMn3zwcYcelSGlawGhP13UXKctmb6/t76pt6X1Li4Q2OMb1oOHMZhOGix6KSwrti/ZUyBM/hWuvd+Z02WA==
+gatsby-cli@^2.4.16:
+  version "2.4.16"
+  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-2.4.16.tgz#62581d5c6289ab72cbb34a36ad4ac83fc649768b"
+  integrity sha512-ZjvnGJHQw0mOS+xN4XIvfIv5bjptzv3MWaAdQcDfE59/0Lnv0Nl5CkbWvbY9NVzXg5M+qqniy6OeCHmuAW3vTg==
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/runtime" "^7.0.0"
@@ -4783,10 +4784,10 @@ gatsby-plugin-typography@^2.2.10:
   dependencies:
     "@babel/runtime" "^7.0.0"
 
-gatsby-react-router-scroll@^2.0.5:
-  version "2.0.5"
-  resolved "https://registry.yarnpkg.com/gatsby-react-router-scroll/-/gatsby-react-router-scroll-2.0.5.tgz#a6956796f430d539de658c90bdeb0d1423587cd3"
-  integrity sha512-NxyxjphvEOEj+NpYbjvqx4v96RuP+p2wJsER6utkCwKC6A90tr80CTNo4mxHPPeNeC56dxh1ilO1PVebfrvHyA==
+gatsby-react-router-scroll@^2.0.6:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/gatsby-react-router-scroll/-/gatsby-react-router-scroll-2.0.6.tgz#b04a8fe6ee77db5ca8f804b7ef476fd205dc4a40"
+  integrity sha512-Cn9Jlf3ikBQL4xRyxP/7Kl4WMNwqIO/kN8aHuvZd9wGYwI7AHylukkw3p7WJPNSqYWy3b76QggEvA7qzpJrglA==
   dependencies:
     "@babel/runtime" "^7.0.0"
     scroll-behavior "^0.9.9"
@@ -4920,10 +4921,10 @@ gatsby-transformer-sharp@^2.1.1:
     probe-image-size "^4.0.0"
     sharp "^0.21.3"
 
-gatsby@^2.0.7:
-  version "2.1.31"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.1.31.tgz#6f65fc903607292f95a4518f2aeefe791aa9daf4"
-  integrity sha512-PYa6cGojhmNweepbZ90VXMLbEPA9GUA6GWWHVjJnm2twxrJWk5C5/T/q2grRrUpmGeKwcP9Mjcc/AtN4GHsf2w==
+gatsby@^2.1.37:
+  version "2.1.37"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.1.37.tgz#bbb16aef7d4cd65a0757688b8fd2550299a123bb"
+  integrity sha512-TpzLmnA6bGWfA5OFcdSbQG3/jESdDUz8MsRTn+RpmkgkKmhtOrI0MGHwxx9L9gUxIlh1iajNyIpKnNQM7DK27w==
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/core" "^7.0.0"
@@ -4932,6 +4933,7 @@ gatsby@^2.0.7:
     "@babel/runtime" "^7.0.0"
     "@babel/traverse" "^7.0.0"
     "@gatsbyjs/relay-compiler" "2.0.0-printer-fix.2"
+    "@pieh/friendly-errors-webpack-plugin" "1.7.0-chalk-2"
     "@reach/router" "^1.1.1"
     address "1.0.3"
     autoprefixer "^9.4.3"
@@ -4976,13 +4978,12 @@ gatsby@^2.0.7:
     fast-levenshtein "~2.0.4"
     file-loader "^1.1.11"
     flat "^4.0.0"
-    friendly-errors-webpack-plugin "^1.6.1"
     fs-exists-cached "1.0.0"
     fs-extra "^5.0.0"
-    gatsby-cli "^2.4.15"
+    gatsby-cli "^2.4.16"
     gatsby-link "^2.0.16"
     gatsby-plugin-page-creator "^2.0.10"
-    gatsby-react-router-scroll "^2.0.5"
+    gatsby-react-router-scroll "^2.0.6"
     glob "^7.1.1"
     graphql "^14.1.1"
     graphql-playground-middleware-express "^1.7.10"
@@ -5015,6 +5016,7 @@ gatsby@^2.0.7:
     optimize-css-assets-webpack-plugin "^5.0.1"
     parseurl "^1.3.2"
     physical-cpu-count "^2.0.0"
+    pnp-webpack-plugin "^1.4.1"
     postcss-flexbugs-fixes "^3.0.0"
     postcss-loader "^2.1.3"
     prop-types "^15.6.1"
@@ -8501,6 +8503,13 @@ pngquant-bin@^5.0.0:
     execa "^0.10.0"
     logalot "^2.0.0"
 
+pnp-webpack-plugin@^1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/pnp-webpack-plugin/-/pnp-webpack-plugin-1.4.1.tgz#e8f8c683b496a71c0d200e664c4bb399a9c9585e"
+  integrity sha512-S4kz+5rvWvD0w1O63eTJeXIxW4JHK0wPRMO7GmPhbZXJnTePcfrWZlni4BoglIf7pLSY18xtqo3MSnVkoAFXKg==
+  dependencies:
+    ts-pnp "^1.0.0"
+
 portfinder@^1.0.9:
   version "1.0.20"
   resolved "https://registry.yarnpkg.com/portfinder/-/portfinder-1.0.20.tgz#bea68632e54b2e13ab7b0c4775e9b41bf270e44a"
@@ -10612,7 +10621,7 @@ stringify-entities@^1.0.1:
     is-alphanumerical "^1.0.0"
     is-hexadecimal "^1.0.0"
 
-strip-ansi@3.0.1, strip-ansi@^3.0.0, strip-ansi@^3.0.1:
+strip-ansi@3.0.1, strip-ansi@^3, strip-ansi@^3.0.0, strip-ansi@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-3.0.1.tgz#6a385fb8853d952d5ff05d0e8aaf94278dc63dcf"
   integrity sha1-ajhfuIU9lS1f8F0Oiq+UJ43GPc8=
@@ -11074,6 +11083,11 @@ ts-invariant@^0.3.2:
   integrity sha512-QsY8BCaRnHiB5T6iE4DPlJMAKEG3gzMiUco9FEt1jUXQf0XP6zi0idT0i0rMTu8A326JqNSDsmlkA9dRSh1TRg==
   dependencies:
     tslib "^1.9.3"
+
+ts-pnp@^1.0.0:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/ts-pnp/-/ts-pnp-1.0.1.tgz#fde74a6371676a167abaeda1ffc0fdb423520098"
+  integrity sha512-Zzg9XH0anaqhNSlDRibNC8Kp+B9KNM0uRIpLpGkGyrgRIttA7zZBhotTSEoEyuDrz3QW2LGtu2dxuk34HzIGnQ==
 
 tslib@^1.6.0, tslib@^1.9.0, tslib@^1.9.3:
   version "1.9.3"
