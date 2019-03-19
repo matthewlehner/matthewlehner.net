@@ -25,7 +25,7 @@
     "gatsby-remark-copy-images": "^0.2.1",
     "gatsby-remark-copy-linked-files": "^2.0.11",
     "gatsby-remark-images": "^3.0.10",
-    "gatsby-remark-prismjs": "^3.0.0",
+    "gatsby-remark-prismjs": "^3.2.6",
     "gatsby-remark-smartypants": "^2.0.5",
     "gatsby-source-filesystem": "^2.0.27",
     "gatsby-transformer-remark": "^2.3.5",
