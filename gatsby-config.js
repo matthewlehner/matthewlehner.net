@@ -6,6 +6,7 @@ module.exports = {
     siteUrl: "https://matthewlehner.net"
   },
   plugins: [
+    "gatsby-plugin-netlify-cms",
     "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-filesystem",
