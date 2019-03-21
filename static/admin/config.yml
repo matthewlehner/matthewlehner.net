@@ -4,6 +4,7 @@ backend:
 
 media_folder: static/img
 public_folder: /img
+publish_mode: editorial_workflow
 
 collections:
   - name: "blog"
@@ -12,9 +13,10 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     editor:
-     preview: false
+      preview: false
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Publish Date", name: "date", widget: "date" }
       - { label: "Description", name: "description", widget: "string" }
+      - { label: "Tags", name: "tags", widget: "list" }
       - { label: "Body", name: "body", widget: "markdown" }
