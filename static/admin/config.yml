@@ -11,12 +11,13 @@ collections:
     label: "Blog Post"
     folder: "src/pages"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}/index.md"
+    slug: "{{year}}-{{month}}-{{day}}-{{path}}"
     editor:
       preview: false
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "date" }
       - { label: "Description", name: "description", widget: "string" }
-      - { label: "Tags", name: "tags", widget: "list" }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Path", name: "path", widget: "string" }
