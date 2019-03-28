@@ -34,7 +34,7 @@
     "netlify-cms": "^2.8.1-beta.1",
     "prismjs": "^1.16.0",
     "react": "^16.8.6",
-    "react-dom": "^16.8.5",
+    "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0",
     "react-typography": "^0.16.13",
     "styled-components": "^3.1.6",
