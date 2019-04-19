@@ -1,4 +1,7 @@
 const path = require("path");
+const { createFilePath } = require("gatsby-source-filesystem");
+const { fmImagesToRelative } = require("gatsby-remark-relative-images");
+const _ = require("lodash");
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
@@ -13,14 +16,9 @@ exports.createPages = ({ actions, graphql }) => {
       ) {
         edges {
           node {
-            excerpt(pruneLength: 250)
-            html
             id
             frontmatter {
-              date
               path
-              title
-              tags
             }
           }
         }
@@ -32,11 +30,56 @@ exports.createPages = ({ actions, graphql }) => {
     }
 
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+      const path = `/${node.frontmatter.path}`;
+      const { id } = node;
       createPage({
-        path: node.frontmatter.path,
+        path,
         component: blogPostTemplate,
-        context: {} // additional data can be passed via context
+        context: {
+          id
+        } // additional data can be passed via context
       });
     });
   });
+};
+
+const fileNodes = [];
+
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions;
+
+  fileNodes.push(node);
+
+  if (node.internal.type === `MarkdownRemark` || node.internal.type === `Mdx`) {
+    if (node.frontmatter.cover_image) {
+      let imagePath;
+
+      const foundImageNode = _.find(fileNodes, file => {
+        if (!file.dir) return;
+        imagePath = path.join(
+          file.dir,
+          path.basename(node.frontmatter.cover_image)
+        );
+
+        return path.normalize(file.absolutePath) === imagePath;
+      });
+      if (foundImageNode) {
+        node.frontmatter.cover_image = path.relative(
+          path.join(node.fileAbsolutePath, ".."),
+          imagePath
+        );
+      }
+    }
+  }
+
+  if (node.internal.type === `MarkdownRemark`) {
+    const value = createFilePath({ node, getNode });
+    createNodeField({
+      name: `slug`,
+      node,
+      value
+    });
+  }
+
+  fmImagesToRelative(node); // convert image paths for gatsby images
 };

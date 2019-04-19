@@ -37,7 +37,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM D, YYYY")
             rawDate: date
             path
-            meta_description
+            description
           }
         }
       }

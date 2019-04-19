@@ -39,10 +39,10 @@ const Template = ({ data: { markdownRemark: post } }) => (
       <title>{`${post.frontmatter.title}`}</title>
       <meta
         name="description"
-        content={post.frontmatter.meta_description || post.excerpt}
+        content={post.frontmatter.description || post.excerpt}
       />
     </Helmet>
-    <CoverPhoto image={post.frontmatter.image} card />
+    <CoverPhoto image={post.frontmatter.cover_image} card />
     <Header>
       <Title itemProp="headline">{post.frontmatter.title}</Title>
       <Meta>
@@ -60,8 +60,9 @@ const Template = ({ data: { markdownRemark: post } }) => (
 export default Template;
 
 export const pageQuery = graphql`
-  query($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+  query BlogPostById($id: String!) {
+    markdownRemark(id: { eq: $id }) {
+      id
       html
       excerpt(pruneLength: 160)
       frontmatter {
@@ -69,8 +70,8 @@ export const pageQuery = graphql`
         rawDate: date
         path
         title
-        meta_description
-        image {
+        description
+        cover_image {
           publicURL
           childImageSharp {
             fixed(width: 1076, height: 380) {
