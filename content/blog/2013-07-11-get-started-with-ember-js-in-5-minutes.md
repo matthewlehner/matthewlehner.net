@@ -1,8 +1,10 @@
 ---
 title: Get started with Ember.js in 5 minutes
 date: 2013-07-11T00:00Z
-meta_description: Create an Ember.js application in 5 minutes using Yeoman and its associated tools. This Ember tutorial gets you up and running fast.
-path: "/get-started-with-ember-js-in-5-minutes"
+description:
+  Create an Ember.js application in 5 minutes using Yeoman and its associated
+  tools. This Ember tutorial gets you up and running fast.
+path: "get-started-with-ember-js-in-5-minutes"
 ---
 
 Recently there's been a lot of discussion around different JavaScript frameworks
@@ -57,7 +59,7 @@ to this:
 
 Say yes to the following options:
 
-* Would you like to include Twitter Bootstrap for Sass?
+- Would you like to include Twitter Bootstrap for Sass?
 
 Following this, Yeoman will scaffold out an Ember app and automatically install
 its required dependencies by running <code>bower install</code> and <code>npm
@@ -120,9 +122,9 @@ but a good illustration of how you can use handlebars to loop through an array.
 ```html
 <div class="hero-unit">
   <ul>
-  {{#each item in model}}
+    {{#each item in model}}
     <li>{{item}}</li>
-  {{/each}}
+    {{/each}}
   </ul>
 </div>
 ```

@@ -1,3 +1,10 @@
+const netlifyCMSPaths = {
+  resolve: "gatsby-plugin-netlify-cms-paths",
+  options: {
+    cmsConfig: "/static/admin/config.yml"
+  }
+};
+
 module.exports = {
   siteMetadata: {
     title: "Matthew Lehner writes, sometimes",
@@ -6,19 +13,29 @@ module.exports = {
     siteUrl: "https://matthewlehner.net"
   },
   plugins: [
-    "gatsby-plugin-netlify-cms",
-    "gatsby-transformer-sharp",
+    netlifyCMSPaths,
+    "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/src/pages`,
+        path: `${__dirname}/static/assets`,
+        name: "uploads"
+      }
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/content/blog`,
         name: "pages"
       }
     },
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-sharp",
     {
       resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
+          netlifyCMSPaths,
           {
             resolve: "gatsby-remark-images",
             options: {
@@ -34,9 +51,7 @@ module.exports = {
       }
     },
     "gatsby-plugin-styled-components",
-    "gatsby-plugin-sharp",
     "gatsby-plugin-catch-links",
-    "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
     {
       resolve: "gatsby-plugin-feed",
@@ -46,8 +61,7 @@ module.exports = {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
               return allMarkdownRemark.edges.map(edge => {
                 return Object.assign({}, edge.node.frontmatter, {
-                  description:
-                    edge.node.frontmatter.meta_description || edge.node.excerpt,
+                  description: edge.node.frontmatter.description || edge.node.excerpt,
                   url: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
                   guid: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
                   custom_elements: [
@@ -74,7 +88,7 @@ module.exports = {
                        title
                        date
                        path
-                       meta_description
+                       description
                      }
                    }
                  }
@@ -93,13 +107,6 @@ module.exports = {
         pathToConfigModule: "src/styles/typography"
       }
     },
-    {
-      resolve: "gatsby-plugin-google-analytics",
-      options: {
-        trackingId: "UA-41609989-1",
-        respectDNT: true,
-        anonymize: true
-      }
-    }
+    "gatsby-plugin-netlify-cms"
   ]
 };

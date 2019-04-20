@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Link } from "gatsby";
 import styled from "styled-components";
 
-import { baseColor, actionColor } from "../styles/variables";
+import { baseColor } from "../styles/variables";
 
 const H2 = styled.h2`
   letter-spacing: -0.0125em;
@@ -44,7 +44,7 @@ export default class PostPreview extends React.Component {
             <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
           </H2>
           <PostPreviewExcerpt>
-            {post.frontmatter.meta_description || post.excerpt}
+            {post.frontmatter.description || post.excerpt}
           </PostPreviewExcerpt>
         </PostPreviewBody>
 

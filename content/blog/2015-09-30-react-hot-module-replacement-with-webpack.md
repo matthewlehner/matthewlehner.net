@@ -1,9 +1,12 @@
 ---
 title: Using Webpack's Hot Module Replacement with React
 date: 2015-09-30
-meta_description: Set up webpack to provide hot module replacement for React. Using BabelJS and the babel-preset-react-hmre preset, enabling HMR is only a few lines of configuration.
+description:
+  Set up webpack to provide hot module replacement for React. Using BabelJS and
+  the babel-preset-react-hmre preset, enabling HMR is only a few lines of
+  configuration.
 tags: [react]
-path: "/react-hot-module-replacement-with-webpack"
+path: "react-hot-module-replacement-with-webpack"
 ---
 
 Out of the box, webpack supports a fancy new alternative to live reload to see
@@ -117,8 +120,8 @@ this, run the command with the following flags:
 webpack-dev-server --progress --inline
 ```
 
-* `--progress` displays the compilation progress when building
-* `--inline` adds webpacks automatic refresh code inline with the compile
+- `--progress` displays the compilation progress when building
+- `--inline` adds webpacks automatic refresh code inline with the compile
   application
 
 ### TIP: Reduce global dependencies!
@@ -328,7 +331,8 @@ That said, this is a great starting point for an initial webpack config!
 If you get stuck, have a look at the [example repo][example-repo].
 
 [1]: http://webpack.github.io/docs/loaders.html
-[what-is-hmr]: http://stackoverflow.com/questions/24581873/what-exactly-is-hot-module-replacement-in-webpack#answer-24587740
+[what-is-hmr]:
+  http://stackoverflow.com/questions/24581873/what-exactly-is-hot-module-replacement-in-webpack#answer-24587740
 [time-travel-react]: https://www.youtube.com/watch?v=xsSnOQynTHs
 [dan-abramov]: https://twitter.com/dan_abramov
 [example-repo]: https://github.com/matthewlehner/react-hmr-example

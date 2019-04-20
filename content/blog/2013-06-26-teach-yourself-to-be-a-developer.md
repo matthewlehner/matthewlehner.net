@@ -1,8 +1,10 @@
 ---
 title: Teach yourself to be a developer
 date: 2013-06-26T00:00Z
-meta_description: I am a self taught developer. I have never been employed by anyone but myself to write code and have never worked on a team where skills are shared between
-path: "/teach-yourself-to-be-a-developer"
+description:
+  I am a self taught developer. I have never been employed by anyone but myself
+  to write code and have never worked on a team where skills are shared between
+path: "teach-yourself-to-be-a-developer"
 ---
 
 I am a self taught developer. I have never been employed by anyone but myself to
@@ -33,17 +35,17 @@ Here are my hints for staying current:
 
 I'm a Rails developer, so here are my top picks:
 
-* <a href="http://railscasts.com/" target="_blank">RailsCasts</a> - Ryan Bates
+- <a href="http://railscasts.com/" target="_blank">RailsCasts</a> - Ryan Bates
   has put together a huge catalog of free screencasts here. A pro subscription
   will you get access to some of the most informative Rails information
   available anywhere. If you want to know a way to do something in Rails, Ryan
   has probably covered it here.
-* <a href="http://www.destroyallsoftware.com/" target="_blank">Destroy All
+- <a href="http://www.destroyallsoftware.com/" target="_blank">Destroy All
   Software</a> - Gary Bernhardt has put together 4 seasons of screencasts that
   focus on Ruby, testing, Unix and Vim. These have been the single most
   important screencasts in helping me how to write maintainable, clear code. I
   cannot recommend these highly enough.
-* <a href="http://www.rubytapas.com" target="_blank">Ruby Tapas</a> - Again,
+- <a href="http://www.rubytapas.com" target="_blank">Ruby Tapas</a> - Again,
   high quality ruby screencasts by the legend, Avdi Grimm. Quick bursts of dense
   information a couple times a week.
 
@@ -54,10 +56,10 @@ I pay attention to new stuff on
 not to spend too much time there. The community is a bit negative for my tastes.
 I haven't found a really great JavaScript blog, any recommendations?
 
-* <a href="http://robots.thoughtbot.com" title="thoughtbot" target="_blank">thoughtbot</a> -
+- <a href="http://robots.thoughtbot.com" title="thoughtbot" target="_blank">thoughtbot</a> -
   one of the best Rails consultancies around and really contribute back to the
   community.
-* <a href="http://css-tricks.com" target="_blank">CSS-Tricks</a> - whenever I'm
+- <a href="http://css-tricks.com" target="_blank">CSS-Tricks</a> - whenever I'm
   struggling with something with CSS, Chris Coyier has probably written a post
   about it.
 

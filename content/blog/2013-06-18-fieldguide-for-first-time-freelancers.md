@@ -1,7 +1,7 @@
 ---
 title: "Field guide for first time freelancers"
 date: 2013-06-18T00:00Z
-path: "/fieldguide-for-first-time-freelancers"
+path: "fieldguide-for-first-time-freelancers"
 ---
 
 If you’re a developer who is currently working for someone else, you’ve probably
@@ -35,8 +35,8 @@ expertise and the software that you create should make, or save your clients
 money well in excess of what you charge them for it.
 
 Your job is to communicate the value that you will create for their business and
-charge accordingly. This can (and should) be well in excess of $100/hour for you
-to implement business solutions using custom software.
+charge accordingly. This can (and should) be well in excess of \$100/hour for
+you to implement business solutions using custom software.
 
 Also, making more money means having to work less. You’re freelancing because
 you don’t want the day job. Give yourself a break from 80 hour weeks (but only
