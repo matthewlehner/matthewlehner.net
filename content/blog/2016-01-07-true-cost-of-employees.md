@@ -2,7 +2,7 @@
 title: The True Cost of an Employee
 date: 2016-01-07T01:10Z
 tags: ["freelancing", "draft"]
-path: "/true-cost-of-employees"
+path: "true-cost-of-employees"
 ---
 
 **Employees are expensive.** It's important to know the difference between an

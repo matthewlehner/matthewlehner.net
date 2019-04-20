@@ -1,8 +1,10 @@
 ---
 title: npm Basics for Rubyists
 date: 2015-11-17T23:22Z
-meta_description: A quick start guide about npm for Rubyists entering the node.js ecosystem. Compare Ruby gems and bundler to their node.js and npm equivalents.
-path: "/npm-basics-for-rubyists"
+description:
+  A quick start guide about npm for Rubyists entering the node.js ecosystem.
+  Compare Ruby gems and bundler to their node.js and npm equivalents.
+path: "npm-basics-for-rubyists"
 ---
 
 I recently began using npm in parallel with Sprockets on a Rails project. The
@@ -86,9 +88,9 @@ In npm, you would typically use global installed packages for tooling or
 utilities you will use often for multiple purposes. Examples of packages that
 are typically installed globally are:
 
-* [svgo][svgo-link]
-* [eslint][eslint-link]
-* [coffee-script][cs-link]
+- [svgo][svgo-link]
+- [eslint][eslint-link]
+- [coffee-script][cs-link]
 
 ```sh
 # Ruby
@@ -106,19 +108,19 @@ Modern Ruby projects typically use Bundler for managing dependencies and stores
 these in the project's `Gemfile`. node.js uses npm and `package.json`,
 respectively.
 
-* `npm install` – Installs dependencies listed in `package.json`<br> **Ruby
+- `npm install` – Installs dependencies listed in `package.json`<br> **Ruby
   equivalent:** `bundle install`<br>
 
-* `npm install react --save` – Installs the React package and saves an entry to
+- `npm install react --save` – Installs the React package and saves an entry to
   it in `package.json`<br> **Ruby equivalent:** add a gem to the `Gemfile` and
   run `bundle install`.
 
-* `npm install webpack --save-dev` – Installs the webpack package and saves an
+- `npm install webpack --save-dev` – Installs the webpack package and saves an
   entry to the `dev-dependencies` section of `package.json`<br> **Ruby
   equivalent:** add a gem to the development group in the `Gemfile` and run
   `bundle install`.
 
-* `npm install node-sass` – Installs a package, but doesn't reference it
+- `npm install node-sass` – Installs a package, but doesn't reference it
   anywhere. This is not useful, unless you're simply testing a package.<br>
   **Ruby equivalent:** none..
 

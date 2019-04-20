@@ -1,10 +1,11 @@
 ---
 title: "Lessons Learned: Successes and Failures of 2013"
 date: 2014-01-02T00:00Z
-meta_description: 2013 was a great year for business. I narrowed down my business, but need to achieve a strong focus.
-image: 2013-in-review.jpg
-featured_image_old: true
-path: "/successes-and-failures-2013"
+description:
+  2013 was a great year for business. I narrowed down my business, but need to
+  achieve a strong focus.
+cover_image: 2013-in-review.jpg
+path: "successes-and-failures-2013"
 ---
 
 Career wise, 2013 has been the best year of my life; both financially and with
@@ -13,14 +14,14 @@ been learning what motivates me and am transitioning my business to focus on
 these factors, rather than just focusing on the financials. Here's a quick list
 of accomplishments:
 
-* Increased my take home income by slightly more than 60%
-* Won the biggest contract I've worked on yet
-* Wrote 1/2 of a book about Ember.js (to be completed this year)
-* Visited Portland twice, San Francisco, Philadelphia and spent two weeks at a
+- Increased my take home income by slightly more than 60%
+- Won the biggest contract I've worked on yet
+- Wrote 1/2 of a book about Ember.js (to be completed this year)
+- Visited Portland twice, San Francisco, Philadelphia and spent two weeks at a
   remote cabin on a lake with no electricity or phone reception
-* Moved across the Pacific Ocean to Hong Kong from Victoria, BC
-* Built my blog from nothing to 34,000 views
-* Got 117 subscribers on my mailing list
+- Moved across the Pacific Ocean to Hong Kong from Victoria, BC
+- Built my blog from nothing to 34,000 views
+- Got 117 subscribers on my mailing list
 
 ## What did I do right?
 

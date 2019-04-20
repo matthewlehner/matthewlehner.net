@@ -1,8 +1,10 @@
 ---
 title: Freelancing Tips From a Vietnamese Tour Guide
 date: 2014-07-27T00:00Z
-meta_description: Stop hiding out in a sea of freelancers. Hang out where your clients are, build rapport, and establish credibility before anything else.
-image: ha-long-bay-vietnam.jpg
+description:
+  Stop hiding out in a sea of freelancers. Hang out where your clients are,
+  build rapport, and establish credibility before anything else.
+cover_image: ha-long-bay-vietnam.jpg
 featured_image_old: true
 path: "/vietnamese-freelancing-tips"
 ---

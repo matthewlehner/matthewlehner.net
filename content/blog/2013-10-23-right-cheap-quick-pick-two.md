@@ -1,7 +1,7 @@
 ---
 title: "Freelancer personality types: Good, cheap, or quick. Pick two."
 date: 2013-10-23T00:00Z
-path: "/right-cheap-quick-pick-two"
+path: "right-cheap-quick-pick-two"
 ---
 
 You can have it done right, cheap, or quick. Pick two.
@@ -78,7 +78,7 @@ kind of value you are bringing to your client and charging accordingly.
 #### Low rates equal less respect
 
 Another benefit to charging more is that your opinions will hold more weight.
-Think about this: if you charge $300 to make a website, you will be considered
+Think about this: if you charge \$300 to make a website, you will be considered
 to be providing the same skill level as someone's 'kid brother' or nephew, or
 that guy down the street that's really good with technology stuff. That's not
 you. You're not just some guy that can build a website. You're an expert in web
@@ -124,8 +124,8 @@ premium rates. Generally these commitments pay much higher because: _ you have a
 proven track record _ there is low risk that the project will fail to be
 delivered within the time and budgetary restraints that they have.
 
-These are the reasons that consulting firms can bill upwards of $800/hr to large
-clients. The extra cost is insurance that the job will get done.
+These are the reasons that consulting firms can bill upwards of \$800/hr to
+large clients. The extra cost is insurance that the job will get done.
 
 ### Find the sweet spot
 

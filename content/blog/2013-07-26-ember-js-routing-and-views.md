@@ -1,7 +1,9 @@
 ---
 title: Ember.js Routing and Rendering Simplified
 date: 2013-07-26T00:00Z
-meta_description: Using Ember.js routing, view rendering and nested resources to create responsive, asynchronous user interfaces.
+description:
+  Using Ember.js routing, view rendering and nested resources to create
+  responsive, asynchronous user interfaces.
 path: "/ember-js-routing-and-views"
 ---
 

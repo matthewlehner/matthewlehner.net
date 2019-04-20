@@ -1,9 +1,11 @@
 ---
 title: Using Let's Encrypt With NGINX
 date: 2016-04-17T16:52Z
-meta_description: Quickly set up NGINX to use Let's Encrypt's free SSL certificates. Using them together is simple, but not as automated as it could be.
-image: lets-encrypt-with-nginx.svg
-path: "/lets-encrypt-with-nginx"
+description:
+  Quickly set up NGINX to use Let's Encrypt's free SSL certificates. Using them
+  together is simple, but not as automated as it could be.
+cover_image: lets-encrypt-with-nginx.svg
+path: "lets-encrypt-with-nginx"
 draft: false
 ---
 

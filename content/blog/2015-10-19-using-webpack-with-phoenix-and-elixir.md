@@ -1,10 +1,12 @@
 ---
 title: Using Webpack with Phoenix and Elixir
 date: 2015-10-19T02:38Z
-meta_description: Set up webpack as Phoenix's front end build tool to take advantage of hot module replacement and intelligent optimization for your front end app.
-image: webpack-and-phoenix-on-elixir.svg
+description:
+  Set up webpack as Phoenix's front end build tool to take advantage of hot
+  module replacement and intelligent optimization for your front end app.
+cover_image: webpack-and-phoenix-on-elixir.svg
 tags: ["elixir", "phoenix", "webpack"]
-path: "/using-webpack-with-phoenix-and-elixir"
+path: "using-webpack-with-phoenix-and-elixir"
 ---
 
 _Updated October 13, 2016 for Phoenix 1.2.1 and webpack 1.13_
@@ -379,6 +381,9 @@ _This guide was inspired by Manuel Kallenbach's guide [Automatically Building
 Your Phoenix Assets with Webpack][phoenix-webpack-post]. This article provides a
 1-to-1 mapping of webpack to the default Brunch setup that comes with Phoenix._
 
-[phoenix-webpack-post]: http://manukall.de/2015/05/01/automatically-building-your-phoenix-assets-with-webpack/
-[webpack-hmr-docs]: http://webpack.github.io/docs/hot-module-replacement-with-webpack.html
-[webpack-phoenix-example]: https://github.com/matthewlehner/phoenix-webpack-example
+[phoenix-webpack-post]:
+  http://manukall.de/2015/05/01/automatically-building-your-phoenix-assets-with-webpack/
+[webpack-hmr-docs]:
+  http://webpack.github.io/docs/hot-module-replacement-with-webpack.html
+[webpack-phoenix-example]:
+  https://github.com/matthewlehner/phoenix-webpack-example

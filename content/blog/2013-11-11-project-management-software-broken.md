@@ -1,7 +1,9 @@
 ---
 title: Project Management Software is Broken
-meta_description: Project management software continues to let users down by catering to project managers and no one else. Let's put a stop the glorified to-do list.
-path: "/project-management-software-broken"
+description:
+  Project management software continues to let users down by catering to project
+  managers and no one else. Let's put a stop the glorified to-do list.
+path: "project-management-software-broken"
 date: 2013-11-11T00:00:00Z
 ---
 
@@ -10,8 +12,8 @@ of the week and invariably, there will be a post asking which project management
 or time tracking software to use. The answers are always the same. There are two
 types of results:
 
-* big names like Basecamp, Asana, Trello, Harvest, and Freshbooks
-* the little guys, which may or may not be the next big thing.
+- big names like Basecamp, Asana, Trello, Harvest, and Freshbooks
+- the little guys, which may or may not be the next big thing.
 
 People have been building online project management software for over 10 years
 now and we're still seeing the same iterations on a theme. The laundry list of

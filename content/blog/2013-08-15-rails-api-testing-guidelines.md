@@ -1,8 +1,10 @@
 ---
 title: Rails API Testing Best Practices
 date: 2013-08-15T00:00Z
-meta_description: Rails API testing best practises. Guidelines for testing an API using RSpec, what we should be testing for and setting correct expectations.
-path: "/rails-api-testing-guidelines"
+description:
+  Rails API testing best practises. Guidelines for testing an API using RSpec,
+  what we should be testing for and setting correct expectations.
+path: "rails-api-testing-guidelines"
 ---
 
 Writing an API is almost a given with modern web applications. I'd like to lay
@@ -25,11 +27,11 @@ sending the right content.
 Typical HTTP responses for a simple API on an application with authentication
 will generally fall within the following 4 status codes:
 
-* **200: OK** - Basically self-explanitory, the request went okay.
-* **401: Unauthorized** - Authentication credentials were invalid.
-* **403: Forbidden** - The resource requested is not accessible - in a Rails
+- **200: OK** - Basically self-explanitory, the request went okay.
+- **401: Unauthorized** - Authentication credentials were invalid.
+- **403: Forbidden** - The resource requested is not accessible - in a Rails
   app, this would generally be based on permissions.
-* **404: Not Found** - The resource doesn't exist on the server.
+- **404: Not Found** - The resource doesn't exist on the server.
 
 If you're wondering why not just use 401 - Unauthorized or 403 - Forbidden for
 every permission/auth error, I'd suggest reading

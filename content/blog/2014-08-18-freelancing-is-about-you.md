@@ -1,9 +1,11 @@
 ---
 title: Your Freelancing Business Is All About You
 date: 2014-08-18T00:00Z
-image: freelancing-is-about-your-opportunities.jpg
-meta_description: You have more opportunity available to you on your own than any employer will ever offer you. The best part is, you don’t need permission to access it.
-path: "/freelancing-is-about-you"
+cover_image: freelancing-is-about-your-opportunities.jpg
+description:
+  You have more opportunity available to you on your own than any employer will
+  ever offer you. The best part is, you don’t need permission to access it.
+path: "freelancing-is-about-you"
 ---
 
 As a freelancer, there’s a constant pressure to increase your rates, find better
@@ -29,17 +31,19 @@ I left my last job because of one simple fact:
 The best part is, you don’t need permission to access these opportunities, you
 just have to figure out where they are.
 
-I quit my job because I knew that it was possible to charge more than $100/hour.
+I quit my job because I knew that it was possible to charge more than
+\$100/hour.
 
 To justify quitting, I needed to replace my $40k salary; at $100/hour, that’s
 only 400 hours of work. At the time, I was very naïve.
 
-Though my initial goal was to bill $100/hr, I didn’t know how to make that
+Though my initial goal was to bill
+$100/hr, I didn’t know how to make that
 happen. Instead, I belly flopped into the freelance pool without any water wings
 and needed to hustle like crazy to keep myself afloat. There were a few months
-where rent was due in a week and I had only $80 in my bank account. I would
-frantically email clients that owed me money and make sure that I could scrape
-together enough to pay my rent.
+where rent was due in a week and I had only $80
+in my bank account. I would frantically email clients that owed me money and
+make sure that I could scrape together enough to pay my rent.
 
 Every time I encountered a roadblock, I had an opportunity to improve my working
 conditions. I would put systems in place to avoid the same problem in the
@@ -50,10 +54,11 @@ altogether.
 
 I’ll admit, leaving my job without a plan was impulsive, but once I’ve made up
 my mind about something, I don’t like to give up. Instead, I set my resolve and
-trudged on towards my goal, stepping up my rate incrementally, first from $28 to
+trudged on towards my goal, stepping up my rate incrementally, first from
+$28 to
 $40, then to $80 and to $120.
 
-When I reached $120/hour, I could stop my constant hustling for new work. The
+When I reached \$120/hour, I could stop my constant hustling for new work. The
 new rate created the breathing room I needed to take a few steps back from my
 business and evaluate what was truly going on. I realized that I needed a new
 goal. My business was sustainable. I’d achieved my original goal and was
