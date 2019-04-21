@@ -51,6 +51,7 @@ module.exports = {
       }
     },
     "gatsby-plugin-styled-components",
+    "gatsby-plugin-postcss",
     "gatsby-plugin-catch-links",
     "gatsby-plugin-sitemap",
     {
@@ -61,7 +62,8 @@ module.exports = {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
               return allMarkdownRemark.edges.map(edge => {
                 return Object.assign({}, edge.node.frontmatter, {
-                  description: edge.node.frontmatter.description || edge.node.excerpt,
+                  description:
+                    edge.node.frontmatter.description || edge.node.excerpt,
                   url: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
                   guid: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
                   custom_elements: [
