@@ -17,7 +17,6 @@
     "gatsby-plugin-feed": "^2.1.1",
     "gatsby-plugin-netlify-cms": "^3.0.18",
     "gatsby-plugin-netlify-cms-paths": "^1.2.1",
-    "gatsby-plugin-postcss": "^2.0.7",
     "gatsby-plugin-react-helmet": "^3.0.12",
     "gatsby-plugin-sharp": "^2.0.35",
     "gatsby-plugin-sitemap": "^2.0.12",
@@ -41,6 +40,7 @@
     "react-helmet": "^5.2.0",
     "react-typography": "^0.16.13",
     "styled-components": "^3.1.6",
+    "tailwind.macro": "^0.5.10",
     "tailwindcss": "^0.7.4",
     "typography": "^0.16.17"
   },
