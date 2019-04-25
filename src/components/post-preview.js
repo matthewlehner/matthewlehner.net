@@ -39,7 +39,9 @@ export default class PostPreview extends React.Component {
       <PostPreviewContainer>
         <PostPreviewBody>
           <H2>
-            <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
+            <Link to={`/${post.frontmatter.path}`}>
+              {post.frontmatter.title}
+            </Link>
           </H2>
           <PostPreviewExcerpt>
             {post.frontmatter.description || post.excerpt}
