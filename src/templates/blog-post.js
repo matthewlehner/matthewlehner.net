@@ -1,5 +1,6 @@
 import { graphql } from "gatsby";
 import React from "react";
+import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import styled from "styled-components";
 import tw from "tailwind.macro";
@@ -56,6 +57,10 @@ const Template = ({ data: { markdownRemark: post }, location }) => (
     </ArticleWrapper>
   </Layout>
 );
+
+Template.propTypes = {
+  location: PropTypes.object
+};
 
 export default Template;
 

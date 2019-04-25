@@ -1,5 +1,6 @@
 import { graphql } from "gatsby";
 import React from "react";
+import PropTypes from "prop-types";
 
 import PostPreview from "../components/post-preview";
 import Wrapper from "../components/article-wrapper";
@@ -19,6 +20,10 @@ const IndexPage = ({
     </Wrapper>
   </Layout>
 );
+
+IndexPage.propTypes = {
+  location: PropTypes.object
+};
 
 export default IndexPage;
 
