@@ -2,17 +2,17 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "gatsby";
 import styled from "styled-components";
+import tw from "tailwind.macro";
 
 import { baseColor } from "../styles/variables";
 
 const H2 = styled.h2`
+  ${tw`font-black mx-0 my-2`}
   letter-spacing: -0.0125em;
-  margin: 0.5rem 0;
-  font-weight: 900;
 `;
 
 const PostPreviewContainer = styled.div`
-  margin-bottom: 3rem;
+  ${tw`mb-12`}
   grid-column: 2 / 3;
 `;
 
@@ -21,13 +21,11 @@ const PostPreviewBody = styled.section`
 `;
 
 const PostPreviewExcerpt = styled.p`
-  margin-bottom: 0;
+  ${tw`mb-0`}
 `;
 
 const PreviewFooter = styled.div`
-  font-size: 0.8rem;
-  margin-top: 0.5rem;
-  color: rgba(0, 0, 0, 0.64);
+  ${tw`text-xs mt-2 text-grey-darker`}
 `;
 
 export default class PostPreview extends React.Component {
