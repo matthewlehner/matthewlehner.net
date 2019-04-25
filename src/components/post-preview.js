@@ -25,7 +25,7 @@ const PostPreviewExcerpt = styled.p`
 `;
 
 const PreviewFooter = styled.div`
-  ${tw`text-xs mt-2 text-grey-darker`}
+  ${tw`text-xs mt-2 text-gray-700`}
 `;
 
 export default class PostPreview extends React.Component {

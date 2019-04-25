@@ -16,7 +16,7 @@ const { rhythm } = typography;
 const { maxWidth } = presets;
 
 const H1 = styled.h1`
-  ${tw`flex flex-col justify-center leading-tight tracking-tight font-extrabold text-3xl md:text-5xl md:font-black mx-auto mb-16 md:mb-0`}
+  ${tw`flex flex-col justify-center leading-tight tracking-tight font-extrabold text-3xl md:text-5xl md:font-black mx-auto md:mb-16 mb-0`}
   max-width: ${rhythm(maxWidth)};
 
   @media (min-width: 700px) {
@@ -28,7 +28,7 @@ const H1 = styled.h1`
 `;
 
 const Logo = styled(Link)`
-  ${tw`text-base font-extrabold p-1 absolute pin-t pin-l`}
+  ${tw`text-base font-extrabold p-1 absolute top-0 left-0`}
 `;
 
 const Line = styled.span`

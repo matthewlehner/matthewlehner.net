@@ -26,7 +26,7 @@ const Title = styled.h1`
 `;
 
 const Meta = styled.div`
-  ${tw`text-xs text-grey-darker`}
+  ${tw`text-xs text-gray-700`}
 `;
 
 const Template = ({ data: { markdownRemark: post }, location }) => (
