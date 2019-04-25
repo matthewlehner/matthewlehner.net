@@ -19,8 +19,11 @@ module.exports = {
     sourceType: "module"
   },
   plugins: ["react"],
-  globals: {
-    graphql: true
+  settings: {
+    react: {
+      version: "detect"
+    },
+    linkComponents: [{ name: "Link", linkAttribute: "to" }]
   },
   rules: {
     "react/prop-types": [

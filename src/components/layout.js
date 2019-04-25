@@ -5,6 +5,7 @@ import { StaticQuery, graphql } from "gatsby";
 import Helmet from "react-helmet";
 import { Link } from "gatsby";
 import styled from "styled-components";
+import tw from "tailwind.macro";
 import Container from "../components/container";
 import typography from "../styles/typography";
 import presets from "../utils/presets";
@@ -15,41 +16,23 @@ const { rhythm } = typography;
 const { maxWidth } = presets;
 
 const H1 = styled.h1`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  line-height: 1.2;
-  letter-spacing: -1.5px;
-  font-size: ${rhythm(1.2)};
-  font-weight: 800;
-
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 4rem;
+  ${tw`flex flex-col justify-center leading-tight tracking-tight font-extrabold text-3xl md:text-5xl md:font-black mx-auto md:mb-16 mb-0`}
   max-width: ${rhythm(maxWidth)};
 
   @media (min-width: 700px) {
-    font-size: ${rhythm(2)};
-    font-weight: 900;
     height: 30vh;
     min-height: 220px;
     max-height: 450px;
-    margin-bottom: 0;
     max-width: ${rhythm(maxWidth * (3 / 5))};
   }
 `;
 
 const Logo = styled(Link)`
-  font-size: 1rem;
-  font-weight: 800;
-  padding: 0.25rem;
-  position: absolute;
-  left: 0;
-  top: 0;
+  ${tw`text-base font-extrabold p-1 absolute top-0 left-0`}
 `;
 
 const Line = styled.span`
-  margin: 0;
+  ${tw`m-0`}
 `;
 
 const query = graphql`

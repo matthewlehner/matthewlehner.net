@@ -123,10 +123,6 @@ samp {
   font-size: 1em; /* 2 */
 }
 
-:not(pre) > code {
-  background: ;
-}
-
 /**
  * Add the correct font style in Android 4.3-.
  */

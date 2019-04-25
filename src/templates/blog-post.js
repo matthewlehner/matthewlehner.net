@@ -1,9 +1,12 @@
 import { graphql } from "gatsby";
 import React from "react";
+import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import styled from "styled-components";
+import tw from "tailwind.macro";
 
 import typography from "../styles/typography";
+import Layout from "../components/layout";
 import CoverPhoto from "../components/cover-photo";
 import PostContent from "../components/post-content";
 import ArticleWrapper from "../components/article-wrapper";
@@ -19,43 +22,45 @@ const Header = styled.header`
 `;
 
 const Title = styled.h1`
-  font-weight: 900;
-  margin-bottom: 0.25rem;
+  ${tw`mb-1 font-black text-3xl md:text-5xl`}
   letter-spacing: -0.75px;
-
-  @media (max-width: 699px) {
-    font-size: 2rem;
-  }
 `;
 
 const Meta = styled.div`
-  color: rgba(0, 0, 0, 0.64);
-  font-size: 0.8rem;
+  ${tw`text-xs text-gray-700`}
 `;
 
-const Template = ({ data: { markdownRemark: post } }) => (
-  <ArticleWrapper itemScope="" itemType="http://schema.org/Article">
-    <Helmet>
-      <title>{`${post.frontmatter.title}`}</title>
-      <meta
-        name="description"
-        content={post.frontmatter.description || post.excerpt}
+const Template = ({ data: { markdownRemark: post }, location }) => (
+  <Layout location={location}>
+    <ArticleWrapper itemScope="" itemType="http://schema.org/Article">
+      <Helmet>
+        <title>{`${post.frontmatter.title}`}</title>
+        <meta
+          name="description"
+          content={post.frontmatter.description || post.excerpt}
+        />
+      </Helmet>
+      <CoverPhoto image={post.frontmatter.cover_image} card />
+      <Header>
+        <Title itemProp="headline">{post.frontmatter.title}</Title>
+        <Meta>
+          Matthew Lehner –{" "}
+          <time dateTime={post.frontmatter.rawDate}>
+            {post.frontmatter.date}
+          </time>
+        </Meta>
+      </Header>
+      <PostContent
+        itemProp="articleBody"
+        dangerouslySetInnerHTML={{ __html: post.html }}
       />
-    </Helmet>
-    <CoverPhoto image={post.frontmatter.cover_image} card />
-    <Header>
-      <Title itemProp="headline">{post.frontmatter.title}</Title>
-      <Meta>
-        Matthew Lehner –{" "}
-        <time dateTime={post.frontmatter.rawDate}>{post.frontmatter.date}</time>
-      </Meta>
-    </Header>
-    <PostContent
-      itemProp="articleBody"
-      dangerouslySetInnerHTML={{ __html: post.html }}
-    />
-  </ArticleWrapper>
+    </ArticleWrapper>
+  </Layout>
 );
+
+Template.propTypes = {
+  location: PropTypes.object
+};
 
 export default Template;
 

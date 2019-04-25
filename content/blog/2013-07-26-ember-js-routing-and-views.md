@@ -4,7 +4,7 @@ date: 2013-07-26T00:00Z
 description:
   Using Ember.js routing, view rendering and nested resources to create
   responsive, asynchronous user interfaces.
-path: "/ember-js-routing-and-views"
+path: "ember-js-routing-and-views"
 ---
 
 Last week we quickly scaffolding an Ember.js application using

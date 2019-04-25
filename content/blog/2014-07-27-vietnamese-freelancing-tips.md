@@ -6,7 +6,7 @@ description:
   build rapport, and establish credibility before anything else.
 cover_image: ha-long-bay-vietnam.jpg
 featured_image_old: true
-path: "/vietnamese-freelancing-tips"
+path: "vietnamese-freelancing-tips"
 ---
 
 A few months ago I had the opportunity to visit northern Vietnam for 5 days. On
