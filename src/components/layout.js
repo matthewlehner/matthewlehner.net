@@ -7,23 +7,16 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 import tw from "tailwind.macro";
 import Container from "../components/container";
-import typography from "../styles/typography";
-import presets from "../utils/presets";
 
 import "../layouts/syntax.css";
 
-const { rhythm } = typography;
-const { maxWidth } = presets;
-
 const H1 = styled.h1`
-  ${tw`flex flex-col justify-center leading-tight tracking-tight font-extrabold text-3xl md:text-5xl md:font-black mx-auto md:mb-16 mb-0`}
-  max-width: ${rhythm(maxWidth)};
+  ${tw`flex flex-col justify-center leading-tight tracking-tight font-extrabold text-3xl md:text-5xl md:font-black mx-auto md:mb-16 mb-0 max-w-xl`}
 
   @media (min-width: 700px) {
     height: 30vh;
     min-height: 220px;
     max-height: 450px;
-    max-width: ${rhythm(maxWidth * (3 / 5))};
   }
 `;
 

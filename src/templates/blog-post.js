@@ -5,20 +5,13 @@ import Helmet from "react-helmet";
 import styled from "styled-components";
 import tw from "tailwind.macro";
 
-import typography from "../styles/typography";
 import Layout from "../components/layout";
 import CoverPhoto from "../components/cover-photo";
 import PostContent from "../components/post-content";
 import ArticleWrapper from "../components/article-wrapper";
 
-const { rhythm, options } = typography;
-
 const Header = styled.header`
-  margin-bottom: ${rhythm(options.blockMarginBottom)};
-
-  @media (min-width: 700px) {
-    margin-bottom: ${rhythm(options.blockMarginBottom * 2)};
-  }
+  ${tw`md:mb-12 mb-6`}
 `;
 
 const Title = styled.h1`
