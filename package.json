@@ -12,7 +12,7 @@
     "caniuse-db": "^1.0.30000963",
     "gatsby": "^2.3.33",
     "gatsby-image": "^2.0.40",
-    "gatsby-link": "^2.0.1",
+    "gatsby-link": "^2.0.17",
     "gatsby-plugin-catch-links": "^2.0.2",
     "gatsby-plugin-feed": "^2.1.1",
     "gatsby-plugin-netlify-cms": "^3.0.18",
