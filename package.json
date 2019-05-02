@@ -8,6 +8,7 @@
     "yarn": ">= 1.13.0"
   },
   "dependencies": {
+    "autoprefixer": "^9.5.1",
     "babel-plugin-styled-components": "^1.7.1",
     "caniuse-db": "^1.0.30000963",
     "gatsby": "^2.3.31",
@@ -22,7 +23,6 @@
     "gatsby-plugin-sharp": "^2.0.35",
     "gatsby-plugin-sitemap": "^2.0.12",
     "gatsby-plugin-styled-components": "^3.0.0",
-    "gatsby-plugin-typography": "^2.2.13",
     "gatsby-remark-autolink-headers": "^2.0.6",
     "gatsby-remark-copy-images": "^0.2.1",
     "gatsby-remark-copy-linked-files": "^2.0.12",
@@ -39,11 +39,9 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0",
-    "react-typography": "^0.16.13",
     "styled-components": "^3.1.6",
     "tailwind.macro": "^1.0.0-alpha.2",
-    "tailwindcss": "^1.0.0-beta.5",
-    "typography": "^0.16.17"
+    "tailwindcss": "^1.0.0-beta.5"
   },
   "keywords": [
     "gatsby"
