@@ -40,7 +40,7 @@
     "react-helmet": "^5.2.1",
     "react-typography": "^0.16.13",
     "styled-components": "^3.1.6",
-    "tailwind.macro": "^1.0.0-alpha.2",
+    "tailwind.macro": "^1.0.0-alpha.5",
     "tailwindcss": "^1.0.0-beta.5",
     "typography": "^0.16.17"
   },
