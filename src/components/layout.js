@@ -9,6 +9,7 @@ import tw from "tailwind.macro";
 import Container from "../components/container";
 
 import "../layouts/syntax.css";
+import "../layouts/index.css";
 
 const H1 = styled.h1`
   ${tw`flex flex-col justify-center leading-tight tracking-tight font-extrabold text-3xl md:text-5xl md:font-black mx-auto md:mb-16 mb-0 max-w-xl`}

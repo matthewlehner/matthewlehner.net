@@ -15,7 +15,7 @@ const Header = styled.header`
 `;
 
 const Title = styled.h1`
-  ${tw`mb-1 font-black text-3xl md:text-5xl`}
+  ${tw`mb-1 font-black text-3xl md:text-5xl md:leading-tight`}
   letter-spacing: -0.75px;
 `;
 
