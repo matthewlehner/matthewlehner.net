@@ -12894,10 +12894,10 @@ table@^5.2.3:
     slice-ansi "^2.1.0"
     string-width "^3.0.0"
 
-tailwind.macro@^1.0.0-alpha.8:
-  version "1.0.0-alpha.8"
-  resolved "https://registry.yarnpkg.com/tailwind.macro/-/tailwind.macro-1.0.0-alpha.8.tgz#1f6fac20c02e50676003fded145429e664397d87"
-  integrity sha512-o8oFbNOSuc+cPwwVdgr8uYZI7AvE9nBnY1zZnJFl8Km+2+vCEDVFmESgFVhI4Ol2c9wTyI1EsIBYkPQoj0FsSA==
+tailwind.macro@^1.0.0-alpha.10:
+  version "1.0.0-alpha.10"
+  resolved "https://registry.yarnpkg.com/tailwind.macro/-/tailwind.macro-1.0.0-alpha.10.tgz#f617661dabfdde2276ab7e1bb07ce1f590ced3c4"
+  integrity sha512-JmQ6kz3qssU2Ov7GPM1lH9435vwQ98YpJfKwIYw4taCJ3sPpfuL7kMQtOnFlp0fi6TgWewJwaq4oRrJ9RrEiEw==
   dependencies:
     "@babel/parser" "^7.4.2"
     babel-plugin-macros "^2.5.1"
