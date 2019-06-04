@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.7.1",
-    "caniuse-db": "^1.0.30000971",
+    "caniuse-db": "^1.0.30000973",
     "gatsby": "^2.8.2",
     "gatsby-image": "^2.1.2",
     "gatsby-link": "^2.1.1",
