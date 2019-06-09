@@ -38,7 +38,7 @@ clone it to our user's home directory. In this instance, the username is
 `deployer`. After this, running `letsencrypt-auto` will install Let's Encrypt's
 dependencies using `apt-get` or `yum`.
 
-```sh
+```shell
 cd /home/deployer
 git clone https://github.com/letsencrypt/letsencrypt
 cd letsencrypt

@@ -116,7 +116,7 @@ Right now, if you alter the contents of `index.js`, nothing happens. Instead, we
 want webpack to recompile our application, and notify the page to reload. To do
 this, run the command with the following flags:
 
-```
+```shell
 webpack-dev-server --progress --inline
 ```
 
@@ -203,7 +203,7 @@ document.write(docBody);
 Webpack will compile this and the browser will update with the string we've
 used. Great! Now we can add React and ReactDOM into the mix by running:
 
-```
+```shell
 npm install react react-dom --save
 ```
 

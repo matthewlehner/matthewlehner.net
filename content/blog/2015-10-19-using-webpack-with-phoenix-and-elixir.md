@@ -31,13 +31,13 @@ Brunch rather than recreate the directory structure manually.
 
 When you're asked to install dependencies, say no.
 
-```bash
+```shell
 mix phoenix.new webpack_integration
 ```
 
 Next, we'll remove the Brunch specific configuration:
 
-```bash
+```shell
 rm brunch-config.js
 ```
 
@@ -71,7 +71,7 @@ generate an empty version of it.
 
 To install webpack, run:
 
-```bash
+```shell
 npm install --save-dev webpack
 ```
 
@@ -143,7 +143,7 @@ alert("webpack compiled me.");
 
 Now you can install the dependencies, set up the database and run the server.
 
-```sh
+```shell
 mix deps.get
 mix ecto.create
 mix phoenix.server
@@ -160,7 +160,7 @@ with Babel for JavaScript compilation.
 
 Install babel, and the babel loader for webpack:
 
-```sh
+```shell
 npm install babel-loader babel-core babel-preset-es2015 --save-dev
 ```
 
@@ -195,7 +195,7 @@ offer.
 With webpack, using `import` or `require` expects an explicit path, relative to
 the file you're working in. For example, if you have the following files:
 
-```
+```shell
 app.js
 components/filePicker.js
 ```
@@ -235,7 +235,7 @@ already have an entry for them in your dependencies, we'll use npm to manage the
 included in the Elixir packages installed using hex, so we need to bring them
 into our `node_modules` directory with npm.
 
-```bash
+```shell
 # If you've already got the Phoenix dependencies in package.json:
 npm install
 
@@ -327,7 +327,7 @@ moves them to `priv/static`, so `web/static/assets/favicon.ico` will be moved to
 
 To do this, install the `copy-webpack-plugin`:
 
-```bash
+```shell
 npm install --save-dev copy-webpack-plugin
 ```
 
@@ -354,7 +354,7 @@ restart webpack when a file is added to this directory.
 The last step in this process is to tell elixir webpack to build production
 ready assets, this is simple. From the command line, run:
 
-```bash
+```shell
 webpack -p
 ```
 

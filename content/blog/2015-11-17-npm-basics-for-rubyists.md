@@ -24,7 +24,7 @@ The main problem with npm in the past has been that peer dependencies were not
 flattened, so it may have been requiring multiple versions of the same
 dependency, like this:
 
-```
+```shell
 lib-a v1.0.0
   ↳ dependency-a v0.8
 lib-b v1.0.0
@@ -92,7 +92,7 @@ are typically installed globally are:
 - [eslint][eslint-link]
 - [coffee-script][cs-link]
 
-```sh
+```shell
 # Ruby
 # installs the Rails gem globally
 gem install rails
@@ -136,7 +136,7 @@ installed binary, you must prefix the command with `npm run`. For example, if
 you wanted to install and run svgo in a local folder, you would do the
 following:
 
-```sh
+```shell
 # installs svgo and saves it to `package.json`
 npm install svgo --save
 
