@@ -35,16 +35,15 @@ module.exports = {
       resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
-          netlifyCMSPaths,
+          "gatsby-remark-relative-images",
           {
             resolve: "gatsby-remark-images",
             options: {
-              maxWidth: 640,
-              backgroundColor: `#ffffff`
+              maxWidth: 640
             }
           },
-          "gatsby-remark-prismjs",
           "gatsby-remark-copy-linked-files",
+          "gatsby-remark-prismjs",
           "gatsby-remark-autolink-headers",
           "gatsby-remark-smartypants"
         ]
