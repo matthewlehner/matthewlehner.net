@@ -8675,7 +8675,7 @@ neo-async@^2.5.0:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.1.tgz#ac27ada66167fa8849a6addd837f6b189ad2081c"
   integrity sha512-iyam8fBuCUpWeKPGpaNMetEocMt364qkCsfL9JuhjXX6dRnguRVOfk2GZaDpPjcOKiiXCPINZC1GczQ7iTq3Zw==
 
-netlify-cms-app@^2.9.1, netlify-cms-app@^2.9.2:
+netlify-cms-app@^2.9.2:
   version "2.9.2"
   resolved "https://registry.yarnpkg.com/netlify-cms-app/-/netlify-cms-app-2.9.2.tgz#ad03a7ee8c1e2a28702a0bfb03f51d0396ccf243"
   integrity sha512-03gZ3HVOV92hgDFvZ6jQvRwmxq4YPtncHj6Lj/eBt+bVZvaGjWKJjxl9fisTuHwWDEu078QODNHNQ1vuQ5kJww==
@@ -8943,12 +8943,12 @@ netlify-cms-widget-text@^2.2.2:
   dependencies:
     react-textarea-autosize "^7.1.0"
 
-netlify-cms@^2.9.1:
-  version "2.9.1"
-  resolved "https://registry.yarnpkg.com/netlify-cms/-/netlify-cms-2.9.1.tgz#11e82b0ee74ea69bf7d80b702df94426a606c976"
-  integrity sha512-NYdpSZo4jUs0nRlsA3aqneZrCYaeU+S4hs2v7uZdcnKhTKkoTP20A7NdPbmqtVKAkr/sJUS/D7iExiQ5znWOZg==
+netlify-cms@^2.9.2:
+  version "2.9.2"
+  resolved "https://registry.yarnpkg.com/netlify-cms/-/netlify-cms-2.9.2.tgz#d0dd7b7ffe882e9baab0ca361d0ff48bd39bb1bd"
+  integrity sha512-k3+GYXdrxLt1KgtpgtKLjMmwFYQL0Yqm0D+9NefcktzySe11fug5zid5UbMaMXebdiw2kwJhCaX2NRvXZ8d7Qg==
   dependencies:
-    netlify-cms-app "^2.9.1"
+    netlify-cms-app "^2.9.2"
     netlify-cms-media-library-cloudinary "^1.3.2"
     netlify-cms-media-library-uploadcare "^0.5.2"
     react "^16.8.4"
