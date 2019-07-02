@@ -9,4 +9,4 @@ export const baseBorderRadius = "3px";
 export const baseBorder = `1px solid ${lightGray}`;
 export const baseColor = gray;
 export const headerColor = darkGray;
-export const actionColor = "#7FFFD4"; // "#5775B3"
+export const actionColor = "#0000FF"; // "#7FFFD4"; // "#5775B3"
