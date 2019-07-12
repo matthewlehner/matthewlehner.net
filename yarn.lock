@@ -5457,13 +5457,14 @@ gatsby-plugin-feed@^2.3.2:
     lodash.merge "^4.6.0"
     rss "^1.2.2"
 
-gatsby-plugin-netlify-cms-paths@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-netlify-cms-paths/-/gatsby-plugin-netlify-cms-paths-1.2.1.tgz#4f536542aa29f01d0b5985f6c2b05bfae79e1e97"
-  integrity sha512-5j9Q0WaBQphz2GspffF76ucMZBI3C1XpcnzARYOLITUEDGLlepZcdk6AWur9vRz+y/QlinzEWZrHDioor+zXYg==
+gatsby-plugin-netlify-cms-paths@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-netlify-cms-paths/-/gatsby-plugin-netlify-cms-paths-1.2.2.tgz#d63fc366b8b32cc704fbbf636c37b9f86d33b880"
+  integrity sha512-+HyPVrL/j+emlkzhjFd7pyNwLgKga555jkcP551qLkMpUzfLRWjpt4AHK5a19qF1TRKMRON2ErUnDj/Dr+Z+Nw==
   dependencies:
     babel-runtime "^6.26.0"
     read-yaml-promise "^1.0.2"
+    slash "^3.0.0"
     unist-util-select "^1.5.0"
 
 gatsby-plugin-netlify-cms@^4.0.3:
@@ -12200,6 +12201,11 @@ slash@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/slash/-/slash-1.0.0.tgz#c41f2f6c39fc16d1cd17ad4b5d896114ae470d55"
   integrity sha1-xB8vbDn8FtHNF61LXYlhFK5HDVU=
+
+slash@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/slash/-/slash-3.0.0.tgz#6539be870c165adbd5240220dbe361f1bc4d4634"
+  integrity sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==
 
 slate-base64-serializer@^0.2.34:
   version "0.2.107"
