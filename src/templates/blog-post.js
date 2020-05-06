@@ -1,7 +1,7 @@
 import { graphql } from "gatsby";
 import React from "react";
 import PropTypes from "prop-types";
-import Helmet from "react-helmet";
+import { Helmet } from "react-helmet";
 import styled from "styled-components";
 import tw from "tailwind.macro";
 

@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { StaticQuery, graphql } from "gatsby";
 
-import Helmet from "react-helmet";
+import { Helmet } from "react-helmet";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import tw from "tailwind.macro";
@@ -16,7 +16,7 @@ const { rhythm } = typography;
 const { maxWidth } = presets;
 
 const H1 = styled.h1`
-  ${tw`flex flex-col justify-center leading-tight tracking-tight font-extrabold text-3xl md:text-5xl md:font-black mx-auto md:mb-16 mb-0`}
+  ${tw`flex flex-col justify-center mx-auto mb-0 text-3xl font-extrabold leading-tight tracking-tight md:text-5xl md:font-black md:mb-16`}
   max-width: ${rhythm(maxWidth)};
 
   @media (min-width: 700px) {
