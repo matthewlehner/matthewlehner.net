@@ -35,7 +35,7 @@
     "lodash": "^4.17.13",
     "netlify-cms": "^2.9.6",
     "netlify-cms-app": "^2.9.3",
-    "prismjs": "^1.16.0",
+    "prismjs": "^1.22.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^6.0.0",
