@@ -8,6 +8,7 @@
     "yarn": ">= 1.13.0"
   },
   "dependencies": {
+    "autoprefixer": "^10.1.0",
     "babel-plugin-styled-components": "^1.10.1",
     "caniuse-db": "^1.0.30000975",
     "gatsby": "^2.9.11",
@@ -15,8 +16,7 @@
     "gatsby-link": "^2.2.1",
     "gatsby-plugin-catch-links": "^2.0.15",
     "gatsby-plugin-feed": "^2.3.2",
-    "gatsby-plugin-netlify-cms": "^4.0.3",
-    "gatsby-plugin-netlify-cms-paths": "^1.2.2",
+    "gatsby-plugin-postcss": "^3.4.0",
     "gatsby-plugin-react-helmet": "^3.0.12",
     "gatsby-plugin-sharp": "^2.2.4",
     "gatsby-plugin-sitemap": "^2.2.2",
@@ -33,16 +33,15 @@
     "gatsby-transformer-remark": "^2.6.3",
     "gatsby-transformer-sharp": "^2.1.21",
     "lodash": "^4.17.13",
-    "netlify-cms": "^2.9.6",
-    "netlify-cms-app": "^2.9.3",
+    "postcss": "^8.2.2",
     "prismjs": "^1.16.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "react-helmet": "^6.0.0",
     "react-typography": "^0.16.13",
     "styled-components": "^5.0.0-rc.3",
     "tailwind.macro": "^1.0.0-alpha.10",
-    "tailwindcss": "^1.0.4",
+    "tailwindcss": "^2.0.2",
     "typography": "^0.16.17"
   },
   "keywords": [
@@ -65,7 +64,8 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.13.0",
-    "prettier": "^2.0.0"
+    "prettier": "^2.0.0",
+    "typescript": "^4.1.3"
   },
   "prettier": {
     "proseWrap": "always",
