@@ -1,32 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "gatsby";
-import styled from "styled-components";
-import tw from "tailwind.macro";
-
-import { baseColor } from "../styles/variables";
-
-const H2 = styled.h2`
-  ${tw`font-black mx-0 my-2`}
-  letter-spacing: -0.0125em;
-`;
-
-const PostPreviewContainer = styled.div`
-  ${tw`mb-12`}
-  grid-column: 2 / 3;
-`;
-
-const PostPreviewBody = styled.section`
-  color: ${baseColor};
-`;
-
-const PostPreviewExcerpt = styled.p`
-  ${tw`mb-0`}
-`;
-
-const PreviewFooter = styled.div`
-  ${tw`text-xs mt-2 text-gray-700`}
-`;
 
 export default class PostPreview extends React.Component {
   static propTypes = {
@@ -36,26 +10,22 @@ export default class PostPreview extends React.Component {
   render() {
     const { post } = this.props;
     return (
-      <PostPreviewContainer>
-        <PostPreviewBody>
-          <H2>
-            <Link to={`/${post.frontmatter.path}`}>
-              {post.frontmatter.title}
-            </Link>
-          </H2>
-          <PostPreviewExcerpt>
-            {post.frontmatter.description || post.excerpt}
-          </PostPreviewExcerpt>
-        </PostPreviewBody>
-
-        <PreviewFooter>
-          <time dateTime={post.frontmatter.rawDate}>
-            {post.frontmatter.date}
-          </time>
-        </PreviewFooter>
-      </PostPreviewContainer>
+      <section className="pt-12">
+        <time
+          className="text-xs text-gray-700 dark:text-gray-400 mb-1 block"
+          dateTime={post.frontmatter.rawDate}
+        >
+          {post.frontmatter.date}
+        </time>
+        <h2 className="mt-0">{post.frontmatter.title}</h2>
+        <p className="text">{post.frontmatter.description || post.excerpt}</p>
+        <Link
+          className="dark:hover:border-gray-400 border dark:border-gray-700 border-gray-200 hover:border-gray-400 px-2 py-1 inline-block border-transparent rounded transition-colors ease-in-out text-sm font-medium"
+          to={`/${post.frontmatter.path}`}
+        >
+          Read More →
+        </Link>
+      </section>
     );
   }
 }
-
-PostPreview.prop;

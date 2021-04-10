@@ -1,10 +1,3 @@
-const netlifyCMSPaths = {
-  resolve: "gatsby-plugin-netlify-cms-paths",
-  options: {
-    cmsConfig: "/static/admin/config.yml"
-  }
-};
-
 module.exports = {
   siteMetadata: {
     title: "Matthew Lehner writes, sometimes",
@@ -13,7 +6,6 @@ module.exports = {
     siteUrl: "https://matthewlehner.net"
   },
   plugins: [
-    netlifyCMSPaths,
     "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-source-filesystem",
@@ -49,7 +41,8 @@ module.exports = {
         ]
       }
     },
-    "gatsby-plugin-styled-components",
+    "gatsby-plugin-postcss",
+    // "gatsby-plugin-styled-components",
     "gatsby-plugin-catch-links",
     "gatsby-plugin-sitemap",
     {
@@ -58,7 +51,7 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.edges.map(edge => {
+              return allMarkdownRemark.edges.map((edge) => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description:
                     edge.node.frontmatter.description || edge.node.excerpt,
@@ -99,14 +92,13 @@ module.exports = {
           }
         ]
       }
-    },
-    {
-      resolve: "gatsby-plugin-typography",
-      options: {
-        omitGoogleFont: true,
-        pathToConfigModule: "src/styles/typography"
-      }
-    },
-    "gatsby-plugin-netlify-cms"
+    }
+    // {
+    //   resolve: "gatsby-plugin-typography",
+    //   options: {
+    //     omitGoogleFont: true,
+    //     pathToConfigModule: "src/styles/typography"
+    //   }
+    // }
   ]
 };

@@ -1,8 +1,5 @@
-import styled from "styled-components";
-import tw from "tailwind.macro";
+import * as React from "react";
 
-const Container = styled.div`
-  ${tw`my-0 mx-auto px-2`}
-`;
-
-export default Container;
+export default function Container({ children }) {
+  return <div className="px-2 mx-auto my-0">{children}</div>;
+}

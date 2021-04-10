@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import * as React from "react";
 
-const PostBody = styled.div`
-  margin-top: 2rem;
-`;
+function PostBody(props) {
+  return <div className="mt-8" {...props} />;
+}
 
 export default PostBody;

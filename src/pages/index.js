@@ -3,7 +3,6 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import PostPreview from "../components/post-preview";
-import Wrapper from "../components/article-wrapper";
 import Layout from "../components/layout";
 
 const IndexPage = ({
@@ -13,11 +12,11 @@ const IndexPage = ({
   location
 }) => (
   <Layout location={location}>
-    <Wrapper>
+    <article className="max-w-prose space-y-12 divide-y divide-gray-200 dark:divide-gray-600 mx-auto">
       {posts.map(({ node: post }) => (
         <PostPreview key={post.id} post={post} />
       ))}
-    </Wrapper>
+    </article>
   </Layout>
 );
 

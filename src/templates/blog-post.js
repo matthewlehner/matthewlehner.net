@@ -2,37 +2,17 @@ import { graphql } from "gatsby";
 import React from "react";
 import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
-import styled from "styled-components";
-import tw from "tailwind.macro";
 
-import typography from "../styles/typography";
 import Layout from "../components/layout";
 import CoverPhoto from "../components/cover-photo";
-import PostContent from "../components/post-content";
-import ArticleWrapper from "../components/article-wrapper";
-
-const { rhythm, options } = typography;
-
-const Header = styled.header`
-  margin-bottom: ${rhythm(options.blockMarginBottom)};
-
-  @media (min-width: 700px) {
-    margin-bottom: ${rhythm(options.blockMarginBottom * 2)};
-  }
-`;
-
-const Title = styled.h1`
-  ${tw`mb-1 font-black text-3xl md:text-5xl`}
-  letter-spacing: -0.75px;
-`;
-
-const Meta = styled.div`
-  ${tw`text-xs text-gray-700`}
-`;
 
 const Template = ({ data: { markdownRemark: post }, location }) => (
   <Layout location={location}>
-    <ArticleWrapper itemScope="" itemType="http://schema.org/Article">
+    <article
+      className="mx-auto mt-6 max-w-prose text-lg"
+      itemScope=""
+      itemType="http://schema.org/Article"
+    >
       <Helmet>
         <title>{`${post.frontmatter.title}`}</title>
         <meta
@@ -41,20 +21,26 @@ const Template = ({ data: { markdownRemark: post }, location }) => (
         />
       </Helmet>
       <CoverPhoto image={post.frontmatter.cover_image} card />
-      <Header>
-        <Title itemProp="headline">{post.frontmatter.title}</Title>
-        <Meta>
-          Matthew Lehner –{" "}
+      <header className="my-6 md:my-12">
+        <h1
+          className="mb-1 text-5xl font-semibold text-gray-700 dark:text-gray-300"
+          itemProp="headline"
+        >
+          {post.frontmatter.title}
+        </h1>
+        <div className="text-sm text-gray-500 dark:text-gray-300">
           <time dateTime={post.frontmatter.rawDate}>
             {post.frontmatter.date}
-          </time>
-        </Meta>
-      </Header>
-      <PostContent
+          </time>{" "}
+          • Matthew Lehner
+        </div>
+      </header>
+      <div
         itemProp="articleBody"
+        className="prose"
         dangerouslySetInnerHTML={{ __html: post.html }}
       />
-    </ArticleWrapper>
+    </article>
   </Layout>
 );
 

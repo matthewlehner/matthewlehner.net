@@ -4,36 +4,6 @@ import { StaticQuery, graphql } from "gatsby";
 
 import { Helmet } from "react-helmet";
 import { Link } from "gatsby";
-import styled from "styled-components";
-import tw from "tailwind.macro";
-import Container from "../components/container";
-import typography from "../styles/typography";
-import presets from "../utils/presets";
-
-import "../layouts/syntax.css";
-
-const { rhythm } = typography;
-const { maxWidth } = presets;
-
-const H1 = styled.h1`
-  ${tw`flex flex-col justify-center mx-auto mb-0 text-3xl font-extrabold leading-tight tracking-tight md:text-5xl md:font-black md:mb-16`}
-  max-width: ${rhythm(maxWidth)};
-
-  @media (min-width: 700px) {
-    height: 30vh;
-    min-height: 220px;
-    max-height: 450px;
-    max-width: ${rhythm(maxWidth * (3 / 5))};
-  }
-`;
-
-const Logo = styled(Link)`
-  ${tw`text-base font-extrabold p-1 absolute top-0 left-0`}
-`;
-
-const Line = styled.span`
-  ${tw`m-0`}
-`;
 
 const query = graphql`
   query HeaderQuery {
@@ -57,25 +27,28 @@ export default function TemplateWrapper({ children, location }) {
           siteMetadata: { title, description }
         }
       }) => (
-        <Container>
+        <div className="p-4 mx-auto max-w-5xl space-y-10 mb-32">
           <Helmet
             title={title}
             meta={[{ name: "description", content: description }]}
+            bodyAttributes={{
+              class:
+                "dark:bg-gray-900 dark:text-gray-200 text-gray-700 transition duration-150 ease-out"
+            }}
           />
-          <header>
+          <header className="max-w-prose mx-auto">
             {isIndex ? (
-              <H1>
-                <Line>Matthew Lehner</Line>
-                <Line>writes about software…</Line>
-                {isIndex ? <Line>sometimes</Line> : null}
-              </H1>
+              <h1 className="mx-auto text-5xl font-semibold leading-7 text-gray-700 dark:text-gray-300">
+                Matthew Lehner
+              </h1>
             ) : (
-              // <Logo to="/">← Back</Logo>
-              <Logo to="/">ML</Logo>
+              <Link className="text-base dark:text-gray-400 text-sm" to="/">
+                ← Back to all posts
+              </Link>
             )}
           </header>
           <main>{children}</main>
-        </Container>
+        </div>
       )}
     />
   );

@@ -1,9 +1,5 @@
-import styled from "styled-components";
-import { options } from "../styles/typography";
+import * as React from "react";
 
-const BlogTime = styled.time`
-  color: ${options.headerColor};
-  font-size: 0.8rem;
-`;
-
-export default BlogTime;
+export default function BlogTime(props) {
+  return <time className="text-sm text-gray-800" {...props} />;
+}
