@@ -11,13 +11,13 @@ export default class PostPreview extends React.Component {
     const { post } = this.props;
     return (
       <section className="pt-12">
+        <h2 className="my-0">{post.frontmatter.title}</h2>
         <time
-          className="text-xs text-gray-700 dark:text-gray-400 mb-1 block"
+          className="text-xs text-gray-700 dark:text-gray-400 mt-1 mb-4 block"
           dateTime={post.frontmatter.rawDate}
         >
           {post.frontmatter.date}
         </time>
-        <h2 className="mt-0">{post.frontmatter.title}</h2>
         <p className="text">{post.frontmatter.description || post.excerpt}</p>
         <Link
           className="dark:hover:border-gray-400 border dark:border-gray-700 border-gray-200 hover:border-gray-400 px-2 py-1 inline-block rounded transition-colors ease-in-out text-sm font-medium"

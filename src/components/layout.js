@@ -38,8 +38,8 @@ export default function TemplateWrapper({ children, location }) {
           />
           <header className="max-w-prose mx-auto">
             {isIndex ? (
-              <h1 className="mx-auto text-5xl font-semibold leading-7 text-gray-700 dark:text-gray-300">
-                Matthew Lehner
+              <h1 className="mx-auto text-2xl font-semibold text-gray-700 dark:text-gray-300">
+                Matthew Lehner writes about software
               </h1>
             ) : (
               <Link className="dark:text-gray-400 text-gray-500 text-sm" to="/">
