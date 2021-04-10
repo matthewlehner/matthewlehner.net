@@ -4,8 +4,8 @@
   "version": "2.0.0",
   "author": "Matthew Lehner <matthew@mpl.io>",
   "engines": {
-    "node": ">= 10.0.0",
-    "yarn": ">= 1.13.0"
+    "node": ">= 14.16.0",
+    "yarn": ">= 1.22.5"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.3.1",
