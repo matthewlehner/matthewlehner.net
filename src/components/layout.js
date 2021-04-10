@@ -42,7 +42,7 @@ export default function TemplateWrapper({ children, location }) {
                 Matthew Lehner
               </h1>
             ) : (
-              <Link className="text-base dark:text-gray-400 text-sm" to="/">
+              <Link className="dark:text-gray-400 text-gray-500 text-sm" to="/">
                 ← Back to all posts
               </Link>
             )}

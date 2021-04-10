@@ -19,7 +19,7 @@ const CoverPhoto = ({ image }) => {
   if (image && image.childImageSharp && image.childImageSharp.fixed) {
     return (
       <figure>
-        <StyledGatsbyImg resolutions={image.childImageSharp.fixed} />
+        <StyledGatsbyImg fixed={image.childImageSharp.fixed} />
       </figure>
     );
   } else if (image && image.publicURL) {

@@ -20,7 +20,7 @@ export default class PostPreview extends React.Component {
         <h2 className="mt-0">{post.frontmatter.title}</h2>
         <p className="text">{post.frontmatter.description || post.excerpt}</p>
         <Link
-          className="dark:hover:border-gray-400 border dark:border-gray-700 border-gray-200 hover:border-gray-400 px-2 py-1 inline-block border-transparent rounded transition-colors ease-in-out text-sm font-medium"
+          className="dark:hover:border-gray-400 border dark:border-gray-700 border-gray-200 hover:border-gray-400 px-2 py-1 inline-block rounded transition-colors ease-in-out text-sm font-medium"
           to={`/${post.frontmatter.path}`}
         >
           Read More →
