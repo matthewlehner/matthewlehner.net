@@ -96,13 +96,7 @@ module.exports = {
           }
         ]
       }
-    }
-    // {
-    //   resolve: "gatsby-plugin-typography",
-    //   options: {
-    //     omitGoogleFont: true,
-    //     pathToConfigModule: "src/styles/typography"
-    //   }
-    // }
+    },
+    "gatsby-plugin-no-javascript"
   ]
 };
