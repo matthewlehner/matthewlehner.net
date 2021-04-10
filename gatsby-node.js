@@ -1,6 +1,5 @@
 const path = require("path");
 const { createFilePath } = require("gatsby-source-filesystem");
-const { fmImagesToRelative } = require("gatsby-remark-relative-images");
 const _ = require("lodash");
 
 exports.createPages = ({ actions, graphql }) => {
@@ -24,7 +23,7 @@ exports.createPages = ({ actions, graphql }) => {
         }
       }
     }
-  `).then(result => {
+  `).then((result) => {
     if (result.errors) {
       return Promise.reject(result.errors);
     }
@@ -54,7 +53,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     if (node.frontmatter.cover_image) {
       let imagePath;
 
-      const foundImageNode = _.find(fileNodes, file => {
+      const foundImageNode = _.find(fileNodes, (file) => {
         if (!file.dir) return;
         imagePath = path.join(
           file.dir,
@@ -80,6 +79,4 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       value
     });
   }
-
-  fmImagesToRelative(node); // convert image paths for gatsby images
 };

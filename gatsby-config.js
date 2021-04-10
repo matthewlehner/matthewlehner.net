@@ -27,7 +27,12 @@ module.exports = {
       resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
-          "gatsby-remark-relative-images",
+          {
+            resolve: "gatsby-remark-relative-images",
+            options: {
+              staticFolderName: "static"
+            }
+          },
           {
             resolve: "gatsby-remark-images",
             options: {
@@ -42,7 +47,6 @@ module.exports = {
       }
     },
     "gatsby-plugin-postcss",
-    // "gatsby-plugin-styled-components",
     "gatsby-plugin-catch-links",
     "gatsby-plugin-sitemap",
     {
