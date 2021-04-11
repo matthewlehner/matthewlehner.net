@@ -42,7 +42,10 @@ export default function TemplateWrapper({ children, location }) {
                 Matthew Lehner writes about software
               </h1>
             ) : (
-              <Link className="dark:text-gray-400 text-gray-500 text-sm" to="/">
+              <Link
+                className="dark:text-gray-400 text-gray-500 hover:text-indigo-700 dark:hover:text-indigo-400 text-sm transition-colors"
+                to="/"
+              >
                 ← Back to all posts
               </Link>
             )}

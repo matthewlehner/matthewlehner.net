@@ -13,190 +13,118 @@
 /* Grid is from: */
 /* https://www.gridlover.net/try */
 
-body {
-  @apply text-lg;
-}
+@layer base {
+  body {
+    @apply text-lg;
+  }
 
-h2 {
-  @apply font-semibold text-4xl;
-  /* font-size: 2.3888889rem; */
-  /* line-height: 2.7777778rem; */
-  margin-top: 1.3888889rem;
-  margin-bottom: 1.3888889rem;
-}
+  h2 {
+    @apply font-semibold text-4xl;
+    /* font-size: 2.3888889rem; */
+    /* line-height: 2.7777778rem; */
+    margin-top: 1.3888889rem;
+    margin-bottom: 1.3888889rem;
+  }
 
-h3 {
-  @apply font-semibold text-3xl;
-  /* font-size: 1.7777778rem; */
-  /* line-height: 2.7777778rem; */
-  margin-top: 1.3888889rem;
-  margin-bottom: 1.3888889rem;
-}
+  h3 {
+    @apply font-semibold text-3xl;
+    /* font-size: 1.7777778rem; */
+    /* line-height: 2.7777778rem; */
+    margin-top: 1.3888889rem;
+    margin-bottom: 1.3888889rem;
+  }
 
-h4 {
-  @apply font-semibold;
-  font-size: 1.3333333rem;
-  line-height: 1.3888889rem;
-  margin-top: 1.3888889rem;
-  margin-bottom: 0rem;
-}
+  h4 {
+    @apply font-semibold;
+    font-size: 1.3333333rem;
+    line-height: 1.3888889rem;
+    margin-top: 1.3888889rem;
+    margin-bottom: 0rem;
+  }
 
-p,
-ul,
-ol,
-pre,
-table,
-blockquote {
-  margin-top: 0rem;
-  margin-bottom: 1.3888889rem;
-}
+  p,
+  ul,
+  ol,
+  pre,
+  table,
+  blockquote {
+    margin-top: 0rem;
+    margin-bottom: 1.3888889rem;
+  }
 
-blockquote {
-  @apply italic border-l-4 border-indigo-200 dark:border-indigo-700 pl-4;
-}
+  blockquote {
+    @apply italic border-l-4 border-indigo-200 dark:border-indigo-700 pl-4;
+  }
 
-figure,
-figure figcaption,
-figure img {
-  margin-top: 0rem;
-  margin-bottom: 1.3888889rem;
-}
+  figure,
+  figure figcaption,
+  figure img {
+    margin-top: 0rem;
+    margin-bottom: 1.3888889rem;
+  }
 
-figcaption {
-  @apply text-gray-500 dark:text-gray-400;
-}
+  figcaption {
+    @apply text-gray-500 dark:text-gray-400;
+  }
 
-ul {
-  list-style-type: disc;
-}
+  ul {
+    list-style-type: disc;
+  }
 
-ol {
-  list-style-type: decimal;
-}
+  ol {
+    list-style-type: decimal;
+  }
 
-ul,
-ol {
-  margin-left: 1.3888889rem;
-}
+  ul,
+  ol {
+    margin-left: 1.3888889rem;
+  }
 
-table {
-  @apply w-full;
-}
+  table {
+    @apply w-full;
+  }
 
-thead {
-  @apply border-b border-gray-400 dark:border-gray-600;
-}
+  thead {
+    @apply border-b border-gray-400 dark:border-gray-600;
+  }
 
-th {
-  @apply text-left;
-  padding-bottom: 0.69444445rem;
-}
+  th {
+    @apply text-left;
+    padding-bottom: 0.69444445rem;
+  }
 
-tbody tr {
-  @apply border-b border-gray-300 dark:border-gray-700;
-}
+  tbody tr {
+    @apply border-b border-gray-300 dark:border-gray-700;
+  }
 
-tbody tr:last-child {
-  @apply border-b-0;
-}
+  tbody tr:last-child {
+    @apply border-b-0;
+  }
 
-tbody td {
-  padding-bottom: 0.69444445rem;
-  padding-top: 0.69444445rem;
-}
+  tbody td {
+    padding-bottom: 0.69444445rem;
+    padding-top: 0.69444445rem;
+  }
 
-:not(pre) > code {
-  @apply rounded-sm border dark:border-gray-700 border-gray-200 p-0.5 dark:text-gray-300 bg-gray-100 text-gray-800;
-}
-
-@media (prefers-color-scheme: dark) {
   :not(pre) > code {
-    background-color: #22252b;
+    @apply rounded-sm border dark:border-gray-700 border-gray-200 p-0.5 dark:text-gray-300 bg-gray-100 text-gray-800;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :not(pre) > code {
+      background-color: #22252b;
+    }
+  }
+
+  pre {
+    @apply rounded-md shadow overflow-x-auto;
+  }
+
+  pre code {
+    @apply block p-3 text-sm;
+  }
+
+  :any-link {
+    @apply text-indigo-700 dark:text-indigo-400 hover:underline;
   }
 }
-
-pre {
-  @apply rounded-md shadow overflow-x-auto;
-}
-
-pre code {
-  @apply block p-3 text-sm;
-}
-
-/* 
-html,
-.root {
-  font-size: 18px;
-  line-height: 25px;
-}
-body,
-.article {
-  font-size: 1rem;
-  line-height: 1.3888889rem;
-  max-width: 560px;
-  margin: auto;
-}
-h1,
-.h1 {
-  font-size: 2.8333333rem;
-  line-height: 4.1666667rem;
-  margin-top: 1.3888889rem;
-  margin-bottom: 2.7777778rem;
-}
-h3,
-.h3 {
-  font-size: 1.3888889rem;
-  line-height: 1.3888889rem;
-  margin-top: 1.3888889rem;
-  margin-bottom: 0rem;
-}
-h4,
-.h4 {
-  font-size: 1rem;
-  line-height: 1.3888889rem;
-  margin-top: 1.3888889rem;
-  margin-bottom: 0rem;
-}
-h5,
-.h5 {
-  font-size: 1rem;
-  line-height: 1.3888889rem;
-  margin-top: 1.3888889rem;
-  margin-bottom: 0rem;
-}
-ul ul,
-ol ol,
-ul ol,
-ol ul {
-  margin-top: 0rem;
-  margin-bottom: 0rem;
-}
-
-/* Let's make sure all's aligned * /
-hr,
-.hr {
-  border: 1px solid;
-  margin: -1px 0;
-}
-a,
-b,
-i,
-strong,
-em,
-small,
-code {
-  line-height: 0;
-}
-sub,
-sup {
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-sup {
-  top: -0.5em;
-}
-sub {
-  bottom: -0.25em;
-}
-*/
