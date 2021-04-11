@@ -19,6 +19,9 @@ const Template = ({ data: { markdownRemark: post }, location }) => (
           name="description"
           content={post.frontmatter.description || post.excerpt}
         />
+        {post.frontmatter.canonical ? (
+          <link rel="canonical" href={post.frontmatter.canonical} />
+        ) : null}
       </Helmet>
       <CoverPhoto image={post.frontmatter.cover_image} card />
       <header className="my-6 md:my-12">
@@ -62,6 +65,7 @@ export const pageQuery = graphql`
         path
         title
         description
+        canonical
         cover_image {
           publicURL
           childImageSharp {
