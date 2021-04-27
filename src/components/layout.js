@@ -5,6 +5,9 @@ import { StaticQuery, graphql } from "gatsby";
 import { Helmet } from "react-helmet";
 import { Link } from "gatsby";
 
+import LinkedInLogo from "../../assets/linkedin-logo.svg";
+import TwitterLogo from "../../assets/twitter-logo.svg";
+
 const query = graphql`
   query HeaderQuery {
     site {
@@ -51,6 +54,32 @@ export default function TemplateWrapper({ children, location }) {
             )}
           </header>
           <main>{children}</main>
+          <footer className="border-t border-gray-200 dark:border-gray-800 mt-[1.3888889rem] pt-[1.3888889rem] max-w-prose mx-auto">
+            <p>
+              MatthewLehner.net • <Link to="/rss.xml">RSS</Link>
+            </p>
+            <ul className="list-none ml-0">
+              <li>
+                <Link
+                  to="https://www.linkedin.com/in/matthewlehner/"
+                  className="inline-flex space-x-2 items-center"
+                >
+                  <LinkedInLogo className="w-4 h-4 fill-current" />
+                  <span>Matthew Lehner</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="https://twitter.com/matthewpearse"
+                  className="inline-flex space-x-2 items-center"
+                >
+                  <TwitterLogo className="w-4 h-4 fill-current" />
+                  <span>@matthewpearse</span>
+                </Link>
+              </li>
+            </ul>
+            <p className="text-xs">© 2021 Matthew Lehner</p>
+          </footer>
         </div>
       )}
     />
