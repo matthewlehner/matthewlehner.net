@@ -92,5 +92,9 @@ I'm proud to be able to say that OneFeather is actively working to build
 accessible ways for all Indigenous Peoples in Canada to reconnect with their
 traditional languages through modern technology.
 
+_Originally published on [OneFeather][canonical-link]_
+
 [cbc-article]:
   https://www.cbc.ca/news/canada/british-columbia/bc-government-denies-woman-to-register-business-indigenous-language-1.5962694
+[canonical-link]:
+  https://news.onefeather.ca/how-technology-decisions-can-perpetuate-unintentional-systemic-oppression-of-indigenous-languages-and-the-opportunity-for-inclusive-modern-systems
