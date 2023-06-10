@@ -10,7 +10,7 @@
   "dependencies": {
     "autoprefixer": "^10.1.0",
     "caniuse-db": "^1.0.30000975",
-    "gatsby": "^3.0.0",
+    "gatsby": "^5.10.0",
     "gatsby-image": "^3.0.0",
     "gatsby-link": "^3.0.0",
     "gatsby-plugin-catch-links": "^3.0.0",
